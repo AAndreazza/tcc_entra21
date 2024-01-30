@@ -1,0 +1,123 @@
+body {
+}
+
+/*ESTILIZAÇÃO CABEÇALHO*/
+header {
+    background-color: #5C7243;
+}
+
+.headerEntrar button, .headerCadastrar button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.headerEntrar:hover, .headerCadastrar:hover {
+    color: #A3C977;
+}
+
+/*ESTILIZAÇÃO MAIN INICIAL*/
+.mainStart {
+    background-color: #5C7243;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    align-items: center;
+    color: #ffffff;
+    padding: 0 50px 20px 50px;
+    height: 630px;
+}
+
+.mainStart img {
+    padding: 30px 10px 10px 10px;
+}
+
+.mainStart h1 {
+    font-weight: 700;
+    font-size: xx-large;
+    max-width: 600px;
+}
+
+.mainStart p {
+    font-weight: 400;
+    font-size: large;
+    max-width: 600px;
+    padding-top: 10px;
+}
+
+.mainStart .mainText button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #A3C977;
+    height: 50px;
+    width: 250px;
+    font-weight: 800;
+    color: #495b36;
+}
+
+/*ESTILIZAÇÃO DO MAIN DEVS*/
+.mainDevs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    margin: auto;
+}
+
+
+/*ESTILIZAÇÃO RODAPÉ PAGINA PRINCIPAL APENAS*/
+#rodape {
+    background-color: #5C7243;
+}
+
+#frase-impacto{
+    color: #FFFFFF;
+    text-align: center;
+    font-size: small;
+    margin-left: -150px;
+}
+
+#frase-newsletter {
+    font-size: small;
+    padding-left: 45px;
+}
+
+#input-email {
+    font-size: smaller;
+    width: 230px;
+    border-radius: 20px;
+    margin-top: -10px;
+}
+
+#botao-inscreva-se {
+    color: #495b36;
+    background-color: #A3C977;
+    font-size: smaller;
+    border-radius: 20px;
+    margin-top: -10px;
+    font-weight: 600;
+}
+
+#botao-inscreva-se:hover {
+    background-color: #7c995a;
+    color: white;
+}
+
+
+/* FLEX-BOX PARA A FRASE DE IMPACTO FICAR CENTER NO RODAPÉ */
+@media only screen and (max-width: 932px) {
+    #frase-impacto{
+        margin-left: 0px;
+    }
+
+    #frase-newsletter {
+        padding-left: 0px;
+    }
+}
