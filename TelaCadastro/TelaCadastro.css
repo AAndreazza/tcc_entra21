@@ -1,26 +1,32 @@
+/*ESTILIZAÇÃO CABEÇALHO*/
+header {
+  background-color: #5C7243;
+  padding: 15px;
+}
+
+header a, header img {
+  margin-left: 25px;
+}
+
 body {
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   margin: 0;
 }
 
 .container {
   width: 350px;
+  margin: 50px auto;
   padding: 60px;
   border: none;
   border-radius: 40px;
   background-color: #CDE1B7;
   color: #5C7243;
-  
 }
 
 .cadastro {
   display: flex;
   flex-direction: column;
-  
+
 }
 
 label {
@@ -36,6 +42,7 @@ input {
   border: none;
   margin-top: -2%;
 }
+
 button {
   padding: 10px;
   background-color: #A3C977;
@@ -53,8 +60,9 @@ button {
 }
 
 button:hover {
-  background-color: #b0d18d;
+  background-color: #5C7243;
 }
+
 h2 {
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

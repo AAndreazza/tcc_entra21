@@ -9,13 +9,13 @@ function validarCadastro() {
 
   if (x.indexOf("@") == -1 || x.indexOf("@") == 0 || x.indexOf(".") == -1) {
 
-    alert("Não condiz com um email");
+    alert("O texto digitado não condiz com um email...");
     return;
 
   }
 
   if (senha !== senhaConfirmar) {
-    alert("As senhas nao coincidem.")
+    alert("As senhas não coincidem...")
     return;
   }
 
@@ -29,7 +29,7 @@ function validarCadastro() {
     return;
   }
 
-  alert("Cadastro efetuado com sucesso.");
+  alert("Cadastro efetuado com sucesso!");
 
 }
 
