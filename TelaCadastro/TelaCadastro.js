@@ -5,13 +5,10 @@ function validarCadastro() {
   var dataNasc = document.getElementById("data").value;
   var dataNasci = new Date(dataNasc);
   var dataAgora = new Date();
-  var anoAtual = new Date().getFullYear() - 18;
 
   if (x.indexOf("@") == -1 || x.indexOf("@") == 0 || x.indexOf(".") == -1) {
-
     alert("O texto digitado não condiz com um email...");
     return;
-
   }
 
   if (senha !== senhaConfirmar) {
@@ -24,13 +21,7 @@ function validarCadastro() {
     return;
   }
 
-  if (dataNasci.getFullYear() > anoAtual) {
-    alert("Idade informada inválida.");
-    return;
-  }
-
   alert("Cadastro efetuado com sucesso!");
-
 }
 
 function validarTelefone(input) {
