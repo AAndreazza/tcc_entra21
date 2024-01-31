@@ -1,9 +1,11 @@
 /*ESTILIZAÇÃO CABEÇALHO*/
 header {
     background-color: #5C7243;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
-.headerEntrar button, .headerCadastrar button {
+#headerEntrar, #headerCadastrar {
     align-items: end;
     font-weight: 600;
     color: #ffffff;
@@ -13,15 +15,14 @@ header {
     color: #A3C977;
 }
 
-
-/******** ARRUMAR O FLEX-BOX *******/
 /* FLEX-BOX PARA O CABEÇALHO */
-@media only screen and (max-width: 932px) {
-    .headerEntrar button, .headerCadastrar Button {
-        margin-left: 0;
+@media only screen and (max-width: 750px) {
+    header {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
     }
 }
-
 
 /*ESTILIZAÇÃO MAIN INICIAL*/
 .mainStart {
