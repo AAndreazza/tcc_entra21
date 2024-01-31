@@ -26,7 +26,6 @@ body {
 .cadastro {
   display: flex;
   flex-direction: column;
-
 }
 
 label {
@@ -68,4 +67,28 @@ h2 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #5C7243;
   margin-top: -5%;
+}
+
+/*ESTILIZAÇÃO RODAPÉ*/
+#rodape {
+  background-color: #5C7243;
+  padding: 15px;
+}
+
+#frase-impacto{
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+/* FLEX-BOX PARA CELULAR */
+@media only screen and (max-width: 500px) {
+  .container {
+    margin: 20px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }

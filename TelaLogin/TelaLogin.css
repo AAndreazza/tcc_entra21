@@ -15,15 +15,14 @@ body {
 }
 
 /*Estilização do container*/
-.container {
-  width: 300px;
-  margin: 50px auto;
-  padding: 60px;
+.container-card-login {
+  width: 350px;
+  margin: 30px auto;
+  padding: 20px;
   border: none;
   border-radius: 40px;
   background-color: #CDE1B7;
   color: #5C7243;
-  height: 40%;
 }
 
 /*Estilização do titulo*/
@@ -37,7 +36,7 @@ h2 {
 .login {
   display: flex;
   flex-direction: column;
-  margin-top: -16%;
+  margin-top: -15px;
 }
 
 /*Estilização dos inputs*/
@@ -49,10 +48,10 @@ label {
 input {
   padding: 10px;
   margin-bottom: 20px;
+  margin-top: -2%;
   border-radius: 4px;
   background-color: #E6E6E6;
   border: none;
-  margin-top: -2%;
 }
 
 /*Estilização do botão*/
@@ -66,10 +65,10 @@ button {
   width: 50%;
   justify-content: center;
   margin-left: 25%;
+  margin-top: 5%;
   font-weight: bold;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: smaller;
-  margin-top: 5%;
 }
 
 button:hover {
@@ -97,4 +96,17 @@ a {
 
 #cadastre-se:hover {
   color: #899c73;
+}
+
+/*ESTILIZAÇÃO RODAPÉ*/
+#rodape {
+    background-color: #5C7243;
+    padding: 15px;
+}
+
+#frase-impacto{
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
 }
