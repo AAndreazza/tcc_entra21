@@ -1,15 +1,10 @@
-body {
-}
-
 /*ESTILIZAÇÃO CABEÇALHO*/
 header {
     background-color: #5C7243;
 }
 
 .headerEntrar button, .headerCadastrar button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: end;
     font-weight: 600;
     color: #ffffff;
 }
@@ -17,6 +12,16 @@ header {
 .headerEntrar:hover, .headerCadastrar:hover {
     color: #A3C977;
 }
+
+
+/******** ARRUMAR O FLEX-BOX *******/
+/* FLEX-BOX PARA O CABEÇALHO */
+@media only screen and (max-width: 932px) {
+    .headerEntrar button, .headerCadastrar Button {
+        margin-left: 0;
+    }
+}
+
 
 /*ESTILIZAÇÃO MAIN INICIAL*/
 .mainStart {
@@ -32,7 +37,7 @@ header {
 
 .mainStart img {
     padding: 30px 10px 10px 10px;
-    height: 500px;
+    height: 550px;
 }
 
 .mainStart h1 {
@@ -62,17 +67,24 @@ header {
     color: #495b36;
 }
 
+.mainStart .mainText button:hover {
+    color: #5C7243;
+}
+
 /*ESTILIZAÇÃO DO MAIN DEVS*/
 .mainDevs {
+    background-color: #ffffff;
+    color: #5C7243;
+    margin: auto; 
+}
+
+.mainDevs h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap; 
-    background-color: #ffffff;
-    color: #5C7243;
-    margin: auto;
     padding-top: 50px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .cardDevs {
@@ -81,7 +93,6 @@ header {
     align-items: center;
     flex-wrap: wrap; 
     padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 .cardDevs img {
@@ -92,13 +103,59 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
-    margin-left: 50px;
-    border: 1px ;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border: 1px;
     background-color: #CDE1B7;
+    text-decoration: none;
 }
 
-/*ESTILIZAÇÃO RODAPÉ PAGINA PRINCIPAL APENAS*/
+.card .cardText {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    color: #000000;
+    font-weight: 700;
+}
+
+.card .contactButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #CDE1B7;
+    color: #000000;
+    text-decoration: none;
+}
+
+.card .contactLink {
+    color: #000000;
+    text-decoration: none;
+}
+
+.contactLink:hover {
+    color: #5C7243;
+}
+
+/* FLEX-BOX PARA A PARTE INICIAL */
+@media only screen and (max-width: 1300px) {
+    .mainDevs{
+        margin-top: 30px;
+    }
+
+    .mainStart {
+        max-height: 800px;
+        min-height: 700px;
+    }
+
+    .mainStart img {
+        height: 400px;
+    }
+}
+
+/*ESTILIZAÇÃO RODAPÉ DA PAGINA PRINCIPAL*/
 #rodape {
     background-color: #5C7243;
 }
@@ -135,7 +192,6 @@ header {
     background-color: #7c995a;
     color: white;
 }
-
 
 /* FLEX-BOX PARA A FRASE DE IMPACTO FICAR CENTER NO RODAPÉ */
 @media only screen and (max-width: 932px) {

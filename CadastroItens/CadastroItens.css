@@ -1,0 +1,141 @@
+/* AJUSTE NO MAIN PARA POSICIONAR MENU LATERAL E CARD */
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*ESTILIZAÇÃO DO MENU LATERAL*/
+.menuLateral {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  background-color: #5C7243;
+  max-width: 270px;
+  padding-top: 10px;
+  color: #ffffff;
+}
+
+.menuLateral .list-group-item {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  background-color: #5C7243;
+  max-width: 270px;
+  padding: 15px 25px 16px 0;
+}
+
+.menuLateral .list-group-item a {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menuLateral p {
+  padding-top: 30px;
+}
+
+/*ESTILIZAÇÃO DO SUBMENU*/
+.menuLateral .dropdown {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+}
+
+.menuLateral .dropdown .dropdown-menu {
+  position: relative;
+  background-color: #5C7243;
+  padding: 10px;
+}
+
+.menuLateral .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/*ESTILIZAÇÃO CARD*/
+.containerCard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  align-items: center;
+  width: 600px;
+  padding: 50px 20px 20px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #CDE1B7;
+  color: #5C7243;
+  margin: 20px 300px 20px 0;
+  }
+
+.containerCard .cadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 0 90px 0;
+  margin-top: -10%;
+}
+
+.containerCard .cadastro h2 {
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #5C7243;
+  margin-bottom: 20px;
+}
+
+.containerCard .cadastro label {
+  margin-bottom: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #466F17;
+}
+
+.containerCard .cadastro input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #E6E6E6;
+  border: none;
+}
+
+.containerCard .cadastro button:hover {
+  color: #b0d18d;
+}
+
+#cancelar, #cadastrar {
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 40%;
+  justify-content: center;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: medium;
+}
+
+#cancelar {
+  margin-bottom: -12%;
+  background-color: #A3C977;
+} 
+
+#cadastrar {
+  margin-left: 55%;
+  margin-bottom: -25%;
+  background-color: #5C7243;
+}
+
+#cadastroDeItem {
+  margin-top: -40px;
+  margin-left: -60px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #466F17;
+}
+
+#descricao {
+  height: 150px;
+}
+
