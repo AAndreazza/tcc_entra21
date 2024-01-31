@@ -22,7 +22,7 @@ main {
   flex-direction: column;
   background-color: #5C7243;
   max-width: 270px;
-  padding: 15px 25px 16px 0;
+  padding: 15px 25px 15px 0;
 }
 
 .menuLateral .list-group-item a {
@@ -37,6 +37,21 @@ main {
 }
 
 /*ESTILIZAÇÃO DO SUBMENU*/
+.menuLateral .dropdown .list-group-item {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  background-color: #5C7243;
+  max-width: 270px;
+  padding: 15px 25px 16px 0;
+  border: none;
+}
+
+.menuLateral .dropdown .list-group-item a {
+  margin: 0;
+}
+
 .menuLateral .dropdown {
   margin-left: 20px;
   color: #ffffff;
@@ -48,94 +63,112 @@ main {
 .menuLateral .dropdown .dropdown-menu {
   position: relative;
   background-color: #5C7243;
-  padding: 10px;
+  border: none;
 }
 
 .menuLateral .dropdown:hover .dropdown-menu {
   display: block;
+  padding-left: 20px;
 }
 
-/*ESTILIZAÇÃO CARD*/
-.containerCard {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; 
-  align-items: center;
-  width: 600px;
-  padding: 50px 20px 20px 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #CDE1B7;
-  color: #5C7243;
-  margin: 20px 300px 20px 0;
+.menuLateral .dropdown .list-group-item:hover {
+  color: #ffffff;
+}
+
+/* FLEX-BOX PARA O CABEÇALHO EM TELAS PEQUENAS */
+@media only screen and (max-width: 600px) {
+  .menuLateral {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #5C7243;
   }
 
-.containerCard .cadastro {
+  .menuLateral.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ESTILIZAÇÃO DO CARD */
+.containerCard {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: center;
-  padding: 70px 0 90px 0;
-  margin-top: -10%;
-}
-
-.containerCard .cadastro h2 {
-  text-align: center;
-  font-weight: 700;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #5C7243;
-  margin-bottom: 20px;
-}
-
-.containerCard .cadastro label {
-  margin-bottom: 5px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #CDE1B7;
   color: #466F17;
+  width: 450px;
+  padding: 20px;
+  border-radius: 20px;
+  margin: auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.containerCard .cadastro input {
-  padding: 10px;
+.containerCard h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
   margin-bottom: 20px;
-  border-radius: 5px;
+} 
+
+.containerCard label {
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 5px;
+} 
+
+.containerCard input {
   background-color: #E6E6E6;
   border: none;
-}
-
-.containerCard .cadastro button:hover {
-  color: #b0d18d;
-}
-
-#cancelar, #cadastrar {
+  border-radius: 10px;
   padding: 10px;
-  color: #fff;
+  margin-bottom: 20px;
+}
+
+.containerCard .botoesCadastro {
+  display: flex;
+  justify-content: center; 
+}
+
+.cancelar, .cadastrar {
+  color: #ffffff;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
-  width: 40%;
   justify-content: center;
   font-weight: bold;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: medium;
+  padding: 10px;
+  margin: auto;
 }
 
-#cancelar {
-  margin-bottom: -12%;
+.cancelar {
   background-color: #A3C977;
 } 
 
-#cadastrar {
-  margin-left: 55%;
-  margin-bottom: -25%;
+.cadastrar {
   background-color: #5C7243;
 }
 
-#cadastroDeItem {
-  margin-top: -40px;
-  margin-left: -60px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.containerCard .botoesCadastro .cadastrar:hover {
+  color: #CDE1B7;
+}
+
+.containerCard .botoesCadastro .cancelar:hover {
+  color: #5C7243;
+}
+
+.cadastroDeItem {
   color: #466F17;
 }
 
-#descricao {
-  height: 150px;
+.containerCard input#descricao {
+  height: 150px; 
 }
-
