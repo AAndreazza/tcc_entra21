@@ -75,26 +75,9 @@ main {
   color: #ffffff;
 }
 
-/* FLEX-BOX PARA O CABEÇALHO EM TELAS PEQUENAS */
-@media only screen and (max-width: 600px) {
-  .menuLateral {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #5C7243;
-  }
-
-  .menuLateral.active {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* Estilização para ocultar o botão de menu quando a tela for maior que 600px */
+.menu-toggle {
+  display: none;
 }
 
 /* ESTILIZAÇÃO DO CARD */
@@ -171,4 +154,40 @@ main {
 
 .containerCard input#descricao {
   height: 150px; 
+}
+
+@media only screen and (max-width: 750px) {
+  .menuLateral {
+    display: none;
+  }
+
+  .menuLateral.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: #5C7243;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #botao-abrir-menu {
+    background: #5C7243;
+    border: none;
+    color: #ffffff;
+    font-size: larger;
+  }
+
+  header {
+    flex-direction: row;
+  }
+
+  .containerCard{
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
