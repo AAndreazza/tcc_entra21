@@ -76,7 +76,7 @@ main {
 }
 
 /* Estilização para ocultar o botão de menu quando a tela for maior que 600px */
-.menu-toggle {
+  .menu-toggle {
   display: none;
 }
 
@@ -148,12 +148,28 @@ main {
   color: #5C7243;
 }
 
-.cadastroDeItem {
-  color: #466F17;
-}
-
 .containerCard input#descricao {
   height: 150px; 
+}
+
+.corMenu {
+  display: none;
+}
+
+/*ESTILIZAÇÃO RODAPÉ*/
+#rodape {
+    background-color: #5C7243;
+}
+
+#frase-impacto{
+    color: #FFFFFF;
+}
+
+#botao-atendimento {
+    color: #FFFFFF;
+    background-color: #A3C977;
+    font-size: smaller;
+    border-radius: 20px;
 }
 
 @media only screen and (max-width: 750px) {
@@ -166,11 +182,10 @@ main {
   }
 
   .menu-toggle {
-    display: block;
+    display: flex;
     background: #5C7243;
     color: #ffffff;
     border: none;
-    padding: 10px;
     cursor: pointer;
   }
 
@@ -182,12 +197,24 @@ main {
   }
 
   header {
-    flex-direction: row;
+    display: flex;
+    padding-right: 100px;
+  }
+
+  .corMenu {
+    display: flex;
+    background-color: #5C7243;
+    position: absolute;
+    width: 750px;
+    top: 0;
+    height: 80px;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 
   .containerCard{
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 100px auto 50px -80px;
   }
 }

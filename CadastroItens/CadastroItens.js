@@ -1,5 +1,9 @@
 function Cancelar() {
-    window.location = "../CadastroItens/CadastroItens.htm";
+    window.location = "../PáginaPrincipal/PáginaPrincipal.htm";
+}
+
+function Cadastrar() {
+  window.location = "../CadastroItens/CadastroItens.htm";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
