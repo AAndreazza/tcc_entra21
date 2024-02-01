@@ -1,0 +1,359 @@
+/* AJUSTE NO MAIN PARA POSICIONAR MENU LATERAL E CARD */
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*ESTILIZAÇÃO DO MENU LATERAL*/
+.menuLateral {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #5C7243;
+    max-width: 270px;
+    padding-top: 10px;
+    color: #ffffff;
+    padding-bottom: 200px;
+}
+
+.menuLateral .list-group-item {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: #5C7243;
+    max-width: 270px;
+    padding: 15px 25px 15px 0;
+}
+
+.menuLateral .list-group-item a {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menuLateral p {
+    padding-top: 30px;
+}
+
+/*ESTILIZAÇÃO DO SUBMENU*/
+.menuLateral .dropdown .list-group-item {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: #5C7243;
+    max-width: 270px;
+    padding: 15px 25px 16px 0;
+    border: none;
+}
+
+.menuLateral .dropdown .list-group-item a {
+    margin: 0;
+}
+
+.menuLateral .dropdown {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+}
+
+.menuLateral .dropdown .dropdown-menu {
+    position: relative;
+    background-color: #5C7243;
+    border: none;
+}
+
+.menuLateral .dropdown:hover .dropdown-menu {
+    display: block;
+    padding-left: 20px;
+}
+
+.menuLateral .dropdown .list-group-item:hover {
+    color: #ffffff;
+}
+
+/* Estilização para ocultar o botão de menu quando a tela for maior que 600px */
+.menu-toggle {
+    display: none;
+}
+
+/*ESTILIZAÇÃO RODAPÉ*/
+#rodape {
+    background-color: #5C7243;
+}
+
+#frase-impacto {
+    color: #FFFFFF;
+}
+
+#botao-atendimento {
+    color: #FFFFFF;
+    background-color: #A3C977;
+    font-size: smaller;
+    border-radius: 20px;
+}
+
+/*ESTILIZAÇÃO CARDS*/
+
+#container-card{
+    display: flex;
+    justify-content: center;
+    margin-left: -350px;
+    margin-top: 4px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #A3C977;
+    border-radius: 20px;
+    max-width: 280px;
+    height: 200px;
+}
+
+.card-title {
+    text-align: center;
+    color: #354129;
+}
+
+.card-text {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .menuLateral {
+        display: none;
+    }
+
+    .menuLateral.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        background: #5C7243;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .menu-toggle-img {
+        margin-left: 40px;
+    }
+
+
+    header {
+        display: flex;
+        padding-right: 5000px;
+    }
+
+    .corMenu {
+        display: flex;
+        background-color: #5C7243;
+        position: absolute;
+        width: 1200px;
+        top: 0;
+        height: 80px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #container-card{
+        display: flex;
+        justify-content: center;
+        margin-left: -480px;
+        margin-top: 85px;
+        margin-bottom: 30px;
+    }
+    
+    .card {
+        background-color: #A3C977;
+        border-radius: 20px;
+        max-width: 280px;
+        height: 260px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .menuLateral {
+        display: none;
+    }
+
+    .menuLateral.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        background: #5C7243;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .menu-toggle-img {
+        margin-left: 40px;
+    }
+
+    header {
+        display: flex;
+        padding-right: 5000px;
+    }
+
+    .corMenu {
+        display: flex;
+        background-color: #5C7243;
+        position: absolute;
+        width: 1200px;
+        top: 0;
+        height: 80px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #container-card{
+        display: flex;
+        justify-content: center;
+        margin-left: -400px;
+        margin-top: 85px;
+        margin-bottom: 30px;
+    }
+    
+    .card {
+        background-color: #A3C977;
+        border-radius: 20px;
+        max-width: 200px;
+        height: 260px;
+    }
+}
+
+@media only screen and (max-width: 777px) {
+    .menuLateral {
+        display: none;
+    }
+
+    .menuLateral.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        background: #5C7243;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .menu-toggle-img {
+        margin-left: 40px;
+    }
+
+    header {
+        display: flex;
+        padding-right: 5000px;
+    }
+
+    .corMenu {
+        display: flex;
+        background-color: #5C7243;
+        position: absolute;
+        width: 1200px;
+        top: 0;
+        height: 80px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #container-card{
+        display: flex;
+        justify-content: center;
+        margin-left: -200px;
+        margin-top: 85px;
+        margin-bottom: 30px;
+    }
+    
+    .card {
+        background-color: #A3C977;
+        border-radius: 20px;
+        max-width: 400px;
+        height: 180px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .menuLateral {
+        display: none;
+    }
+
+    .menuLateral.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        background: #5C7243;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .menu-toggle-img {
+        margin-left: 40px;
+    }
+
+    header {
+        display: flex;
+    }
+
+    .corMenu {
+        display: flex;
+        background-color: #5C7243;
+        position: absolute;
+        width: 750px;
+        top: 0;
+        height: 80px;
+    }
+
+    footer {
+        display: flex;
+        margin-right: -330px;
+        margin-left: -100px;
+    }
+
+    #rodape-conteudo {
+        margin-left: 50px;
+    }
+
+    #container-card{
+        display: flex;
+        justify-content: center;
+        margin-left: -200px;
+        margin-right: -300px;
+        margin-top: 85px;
+        margin-bottom: 30px;
+    }
+    
+    .card {
+        background-color: #A3C977;
+        border-radius: 20px;
+        max-width: 800px;
+        height: 130px;
+    }
+}

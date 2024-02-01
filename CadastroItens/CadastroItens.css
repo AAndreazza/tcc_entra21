@@ -169,7 +169,7 @@ main {
     color: #FFFFFF;
     background-color: #A3C977;
     font-size: smaller;
-    border-radius: 20px;
+    border-radius: 20px;
 }
 
 @media only screen and (max-width: 750px) {
@@ -187,6 +187,11 @@ main {
     color: #ffffff;
     border: none;
     cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .menu-toggle-img {
+    margin-left: 40px;
   }
 
   #botao-abrir-menu {
@@ -194,6 +199,7 @@ main {
     border: none;
     color: #ffffff;
     font-size: larger;
+    margin-left: 300px;
   }
 
   header {
@@ -215,6 +221,64 @@ main {
   }
 
   .containerCard{
-    margin: 100px auto 50px -80px;
+    margin: 100px auto 20px auto;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .menuLateral {
+    display: none;
+  }
+
+  .menuLateral.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    background: #5C7243;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .menu-toggle-img {
+    margin-left: 40px;
+  }
+
+  #botao-abrir-menu {
+    background: #5C7243;
+    border: none;
+    color: #ffffff;
+    font-size: larger;
+    margin-left: 550px;
+  }
+
+  header {
+    display: flex;
+  }
+
+  .corMenu {
+    display: flex;
+    background-color: #5C7243;
+    position: absolute;
+    width: 750px;
+    top: 0;
+    height: 80px;
+  }
+  
+  .containerCard{
+    margin: 150px -170px 80px 0px;
+  }
+
+  footer {
+    display: flex;
+    margin-right: -330px;
+    margin-left: -100px;
+  }
+
+  #rodape-conteudo {
+    margin-left: 50px;
   }
 }
