@@ -6,7 +6,7 @@ function Entrar() {
     window.location="../TelaLogin/TelaLogin.html";
 }
 
-function validateEmail() {
+function validarCadastro() {
     let x = document.getElementById("input-email").value;
     
     if (x.indexOf("@") == -1 || x.indexOf("@") == 0 || x.indexOf(".") == -1) {

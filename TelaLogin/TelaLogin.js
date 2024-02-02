@@ -1,7 +1,6 @@
-function validateForm() {
+function validarLogin() {
   let x = document.getElementById("email").value;
   let y = document.getElementById("senha").value;
-
 
   if (x.indexOf("@") == -1 || x.indexOf("@") == 0 || x.indexOf(".") == -1) {
 
@@ -11,7 +10,5 @@ function validateForm() {
   }
 
   /* ALTERAR WINDOW LOCATION */
-  window.location = ""
-
-  alert("Login efetuado com sucesso!");
+  window.location = "../PaginaInicial/PaginaInicial.html"
 }

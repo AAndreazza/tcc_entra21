@@ -171,6 +171,11 @@ main {
     border-radius: 20px;
 }
 
+#botao-atendimento a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 750px) {
   .menuLateral {
     display: none;

@@ -8,12 +8,11 @@ main {
 .menuLateral {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     background-color: #5C7243;
     max-width: 270px;
     padding-top: 10px;
     color: #ffffff;
-    padding-bottom: 200px;
 }
 
 .menuLateral .list-group-item {
@@ -77,7 +76,7 @@ main {
 }
 
 /* Estilização para ocultar o botão de menu quando a tela for maior que 600px */
-.menu-toggle {
+    .menu-toggle {
     display: none;
 }
 
@@ -98,7 +97,6 @@ main {
 }
 
 /*ESTILIZAÇÃO CARDS*/
-
 #container-card{
     display: flex;
     justify-content: center;
@@ -143,12 +141,54 @@ a {
         border: none;
         cursor: pointer;
         margin-top: 10px;
+        gap: 650px;
     }
 
     .menu-toggle-img {
         margin-left: 40px;
     }
 
+    .dropdown-menu {
+        background: #5C7243;
+        border: none;
+        font-size: larger;
+    }
+    
+    .dropdown-menu a {
+        color: #ffffff;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .dropdown-menu a:hover {
+        color: #A3C977;
+    }
+    
+    .dropdown {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    
+    .dropdown .dropdown-menu .list-group-item {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #5C7243;
+        height: 40px;
+        border: none;
+        position: relative;
+    }
+    
+    .dropdown .dropdown-menu  {
+        position: relative;
+        font-size: large;
+        padding-left: 10px;
+    }
+    
+    .dropdown:hover .dropdown-menu, .dropdown .dropdown-menu a:hover {
+        display: block;
+    }
 
     header {
         display: flex;
@@ -184,6 +224,12 @@ a {
     }
 }
 
+@media only screen and (max-width: 1100px) {
+    .menu-toggle {
+        gap: 550px;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .menuLateral {
         display: none;
@@ -200,10 +246,19 @@ a {
         border: none;
         cursor: pointer;
         margin-top: 10px;
+        gap: 400px;
     }
 
     .menu-toggle-img {
         margin-left: 40px;
+    }
+    
+    #botao-abrir-menu {
+        background: #5C7243;
+        border: none;
+        color: #ffffff;
+        font-size: larger;
+        margin-left: 550px;
     }
 
     header {
@@ -240,6 +295,12 @@ a {
     }
 }
 
+@media only screen and (max-width: 900px) {
+    .menu-toggle {
+        gap: 300px;
+    }
+}
+
 @media only screen and (max-width: 777px) {
     .menuLateral {
         display: none;
@@ -256,6 +317,7 @@ a {
         border: none;
         cursor: pointer;
         margin-top: 10px;
+        gap: 200px;
     }
 
     .menu-toggle-img {
@@ -296,7 +358,13 @@ a {
     }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 595px) {
+    .menu-toggle {
+        gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
     .menuLateral {
         display: none;
     }
@@ -312,6 +380,7 @@ a {
         border: none;
         cursor: pointer;
         margin-top: 10px;
+        gap: 240px;
     }
 
     .menu-toggle-img {
