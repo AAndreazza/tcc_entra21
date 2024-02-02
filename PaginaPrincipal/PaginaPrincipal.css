@@ -8,11 +8,12 @@ main {
 .menuLateral {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     background-color: #5C7243;
     max-width: 270px;
     padding-top: 10px;
     color: #ffffff;
+    padding-bottom: 200px;
 }
 
 .menuLateral .list-group-item {

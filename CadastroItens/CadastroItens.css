@@ -8,7 +8,7 @@ main {
 .menuLateral {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   background-color: #5C7243;
   max-width: 270px;
   padding-top: 10px;
@@ -76,14 +76,14 @@ main {
 }
 
 /* Estilização para ocultar o botão de menu quando a tela for maior que 600px */
-  .menu-toggle {
+.menu-toggle {
   display: none;
 }
 
 /* ESTILIZAÇÃO DO CARD */
 .containerCard {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   background-color: #CDE1B7;
   color: #466F17;
@@ -92,6 +92,8 @@ main {
   border-radius: 20px;
   margin: auto;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 300px;
+  margin-top: 20px;
 }
 
 .containerCard h2 {
@@ -100,12 +102,12 @@ main {
   align-items: center;
   font-weight: 700;
   margin-bottom: 10px;
-} 
+}
 
 .containerCard label {
   display: flex;
-  flex-direction: column; 
-} 
+  flex-direction: column;
+}
 
 .containerCard input {
   background-color: #E6E6E6;
@@ -117,10 +119,11 @@ main {
 
 .containerCard .botoesCadastro {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
-.cancelar, .cadastrar {
+.cancelar,
+.cadastrar {
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -133,7 +136,7 @@ main {
 
 .cancelar {
   background-color: #A3C977;
-} 
+}
 
 .cadastrar {
   background-color: #5C7243;
@@ -148,7 +151,7 @@ main {
 }
 
 .containerCard input#descricao {
-  height: 150px; 
+  height: 150px;
 }
 
 .corMenu {
@@ -157,23 +160,53 @@ main {
 
 /*ESTILIZAÇÃO RODAPÉ*/
 #rodape {
-    background-color: #5C7243;
+  background-color: #5C7243;
 }
 
-#frase-impacto{
-    color: #FFFFFF;
+#frase-impacto {
+  color: #FFFFFF;
 }
 
 #botao-atendimento {
-    color: #FFFFFF;
-    background-color: #A3C977;
-    font-size: smaller;
-    border-radius: 20px;
+  color: #FFFFFF;
+  background-color: #A3C977;
+  font-size: smaller;
+  border-radius: 20px;
 }
 
 #botao-atendimento a {
   color: #ffffff;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 1300px) {
+  .containerCard {
+    margin-left: 200px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .containerCard {
+    margin-left: 150px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .containerCard {
+    margin-left: 100px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .containerCard {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .containerCard {
+    margin-left: 5px;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -192,6 +225,7 @@ main {
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    gap: 200px
   }
 
   .menu-toggle-img {
@@ -229,14 +263,15 @@ main {
     border: none;
     position: relative;
   }
-  
-  .dropdown .dropdown-menu  {
+
+  .dropdown .dropdown-menu {
     position: relative;
     font-size: large;
     padding-left: 10px;
   }
 
-  .dropdown:hover .dropdown-menu, .dropdown .dropdown-menu a:hover {
+  .dropdown:hover .dropdown-menu,
+  .dropdown .dropdown-menu a:hover {
     display: block;
   }
 
@@ -258,12 +293,26 @@ main {
     overflow-x: hidden;
   }
 
-  .containerCard{
-    margin: 100px auto 20px auto;
+  .containerCard {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: 110px;
   }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 595px) {
+  .menu-toggle {
+      gap: 40px;
+  }
+
+  .containerCard {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
   .menuLateral {
     display: none;
   }
@@ -279,6 +328,7 @@ main {
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    gap: 20px;
   }
 
   .menu-toggle-img {
@@ -305,9 +355,76 @@ main {
     top: 0;
     height: 80px;
   }
-  
-  .containerCard{
-    margin: 150px -170px 80px 0px;
+
+  .containerCard {
+    margin-top: 150px;
+    margin-bottom: 60px;
+    margin-left: 18px;
+  }
+
+  footer {
+    display: flex;
+    margin-right: -50px;
+    margin-left: -110px;
+  }
+
+  #frase-impacto {
+    font-size:medium;
+  }
+
+  #rodape-conteudo {
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .menuLateral {
+    display: none;
+  }
+
+  .menuLateral.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    background: #5C7243;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    gap: 250px;
+  }
+
+  .menu-toggle-img {
+    margin-left: 40px;
+  }
+
+  #botao-abrir-menu {
+    background: #5C7243;
+    border: none;
+    color: #ffffff;
+    font-size: larger;
+    margin-left: 550px;
+  }
+
+  header {
+    display: flex;
+  }
+
+  .corMenu {
+    display: flex;
+    background-color: #5C7243;
+    position: absolute;
+    width: 750px;
+    top: 0;
+    height: 80px;
+  }
+
+  .containerCard {
+    margin-top: 150px;
+    margin-bottom: 80px;
+    margin-left: 150px;
   }
 
   footer {
