@@ -1,5 +1,5 @@
 function Cancelar() {
-    window.location = "../PáginaPrincipal/PáginaPrincipal.htm";
+    window.location = "../PaginaPrincipal/PaginaPrincipal.htm";
 }
 
 function Cadastrar() {

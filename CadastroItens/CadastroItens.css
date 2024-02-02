@@ -88,7 +88,7 @@ main {
   background-color: #CDE1B7;
   color: #466F17;
   width: 450px;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   border-radius: 20px;
   margin: auto;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -99,13 +99,12 @@ main {
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 } 
 
 .containerCard label {
   display: flex;
   flex-direction: column; 
-  margin-bottom: 5px;
 } 
 
 .containerCard input {
@@ -194,12 +193,46 @@ main {
     margin-left: 40px;
   }
 
-  #botao-abrir-menu {
+  .dropdown-menu {
     background: #5C7243;
     border: none;
-    color: #ffffff;
     font-size: larger;
-    margin-left: 300px;
+  }
+
+  .dropdown-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .dropdown-menu a:hover {
+    color: #A3C977;
+  }
+
+  .dropdown {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .dropdown .dropdown-menu .list-group-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #5C7243;
+    height: 40px;
+    border: none;
+    position: relative;
+  }
+  
+  .dropdown .dropdown-menu  {
+    position: relative;
+    font-size: large;
+    padding-left: 10px;
+  }
+
+  .dropdown:hover .dropdown-menu, .dropdown .dropdown-menu a:hover {
+    display: block;
   }
 
   header {

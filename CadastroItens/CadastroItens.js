@@ -1,9 +1,9 @@
 function Cancelar() {
-    window.location = "../PáginaPrincipal/PáginaPrincipal.htm";
+    window.location = "../PaginaPrincipal/PaginaPrincipal.html";
 }
 
 function Cadastrar() {
-  window.location = "../CadastroItens/CadastroItens.htm";
+  window.location = "../ItensCadastrados/ItensCadastrados.html";
 }
 
   
