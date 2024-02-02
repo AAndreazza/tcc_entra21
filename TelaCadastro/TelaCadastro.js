@@ -7,21 +7,21 @@ function validarCadastro() {
   var dataAgora = new Date();
 
   if (x.indexOf("@") == -1 || x.indexOf("@") == 0 || x.indexOf(".") == -1) {
-    alert("O texto digitado não condiz com um email...");
+    
     return;
   }
 
   if (senha !== senhaConfirmar) {
-    alert("As senhas não coincidem...")
+    
     return;
   }
 
   if (dataNasci > dataAgora) {
-    alert("Data informada inválida.");
+    
     return;
   }
 
-  alert("Cadastro efetuado com sucesso!");
+  window.location="../PaginaInicial/PaginaInicial.html";
 }
 
 function validarTelefone(input) {

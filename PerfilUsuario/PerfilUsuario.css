@@ -1,0 +1,322 @@
+/* AJUSTE NO MAIN PARA POSICIONAR MENU LATERAL E CARD */
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*ESTILIZAÇÃO DO MENU LATERAL*/
+.menuLateral {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  background-color: #5C7243;
+  max-width: 270px;
+  padding-top: 10px;
+  color: #ffffff;
+}
+
+.menuLateral .list-group-item {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  background-color: #5C7243;
+  max-width: 270px;
+  padding: 15px 25px 15px 0;
+}
+
+.menuLateral .list-group-item a {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menuLateral p {
+  padding-top: 30px;
+}
+
+/*ESTILIZAÇÃO DO SUBMENU*/
+.menuLateral .dropdown .list-group-item {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  background-color: #5C7243;
+  max-width: 270px;
+  padding: 15px 25px 16px 0;
+  border: none;
+}
+
+.menuLateral .dropdown .list-group-item a {
+  margin: 0;
+}
+
+.menuLateral .dropdown {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+}
+
+.menuLateral .dropdown .dropdown-menu {
+  position: relative;
+  background-color: #5C7243;
+  border: none;
+}
+
+.menuLateral .dropdown:hover .dropdown-menu {
+  display: block;
+  padding-left: 20px;
+}
+
+.menuLateral .dropdown .list-group-item:hover {
+  color: #ffffff;
+}
+
+/* Estilização para ocultar o botão de menu quando a tela for maior que 600px */
+  .menu-toggle {
+  display: none;
+}
+
+/* ESTILIZAÇÃO DO CARD */
+.containerCard {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  background-color: #CDE1B7;
+  color: #466F17;
+  width: 450px;
+  padding: 20px 20px 10px 20px;
+  border-radius: 20px;
+  margin: auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.containerCard h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+} 
+
+.containerCard label {
+  display: flex;
+  flex-direction: column; 
+} 
+
+.containerCard input {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.containerCard .botoesCadastro {
+  display: flex;
+  justify-content: center; 
+}
+
+.cancelar, .cadastrar {
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: medium;
+  padding: 10px;
+  margin: auto;
+}
+
+.cancelar {
+  background-color: #A3C977;
+} 
+
+.cadastrar {
+  background-color: #5C7243;
+}
+
+.containerCard .botoesCadastro .cadastrar:hover {
+  color: #CDE1B7;
+}
+
+.containerCard .botoesCadastro .cancelar:hover {
+  color: #5C7243;
+}
+
+.containerCard input#descricao {
+  height: 150px; 
+}
+
+.corMenu {
+  display: none;
+}
+
+/*ESTILIZAÇÃO RODAPÉ*/
+#rodape {
+    background-color: #5C7243;
+}
+
+#frase-impacto{
+    color: #FFFFFF;
+}
+
+#botao-atendimento {
+    color: #FFFFFF;
+    background-color: #A3C977;
+    font-size: smaller;
+    border-radius: 20px;
+}
+
+#botao-atendimento a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .menuLateral {
+    display: none;
+  }
+
+  .menuLateral.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    background: #5C7243;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .menu-toggle-img {
+    margin-left: 40px;
+  }
+
+  .dropdown-menu {
+    background: #5C7243;
+    border: none;
+    font-size: larger;
+  }
+
+  .dropdown-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .dropdown-menu a:hover {
+    color: #A3C977;
+  }
+
+  .dropdown {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .dropdown .dropdown-menu .list-group-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #5C7243;
+    height: 40px;
+    border: none;
+    position: relative;
+  }
+  
+  .dropdown .dropdown-menu  {
+    position: relative;
+    font-size: large;
+    padding-left: 10px;
+  }
+
+  .dropdown:hover .dropdown-menu, .dropdown .dropdown-menu a:hover {
+    display: block;
+  }
+
+  header {
+    display: flex;
+    padding-right: 100px;
+  }
+
+  .corMenu {
+    display: flex;
+    background-color: #5C7243;
+    position: absolute;
+    width: 750px;
+    top: 0;
+    height: 80px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .containerCard{
+    margin: 100px auto 20px auto;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .menuLateral {
+    display: none;
+  }
+
+  .menuLateral.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    background: #5C7243;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .menu-toggle-img {
+    margin-left: 40px;
+  }
+
+  #botao-abrir-menu {
+    background: #5C7243;
+    border: none;
+    color: #ffffff;
+    font-size: larger;
+    margin-left: 550px;
+  }
+
+  header {
+    display: flex;
+  }
+
+  .corMenu {
+    display: flex;
+    background-color: #5C7243;
+    position: absolute;
+    width: 750px;
+    top: 0;
+    height: 80px;
+  }
+  
+  .containerCard{
+    margin: 150px -170px 80px 0px;
+  }
+
+  footer {
+    display: flex;
+    margin-right: -330px;
+    margin-left: -100px;
+  }
+
+  #rodape-conteudo {
+    margin-left: 50px;
+  }
+}
