@@ -8,6 +8,8 @@
   <link rel="shortcut icon" href="../Logos/2-cortada.png" type="image/x-icon" />
   <link rel="stylesheet" href="TelaLogin.css">
   <script src="TelaLogin.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -16,27 +18,37 @@
         height="70px"></a>
   </header>
   <div class="container-card-login">
-    <form class="login">
+    <div class="login">
       <h2>FAZER LOGIN</h2>
 
-      <label for="email">E-MAIL</label>
-      <input type="email" id="email" name="email" required>
+      <form id="cadastroForm" novalidate>
+        <div>
+        <label for="email">E-MAIL</label>
+        <input type="email" id="email" class="form-control" name="email" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Preencha o campo.</div>
+      </div>
 
-      <label for="senha">SENHA</label>
-      <input type="password" id="senha" name="senha" required>
+      <div>
+        <label for="senha">SENHA</label>
+        <input type="password" id="senha" class="form-control" name="senha" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Preencha o campo.</div>
+      </div>
 
-      <button onclick="validarLogin()">ENTRAR</button>
+        <button type="button" id="botao" onclick="validarLogin()">ENTRAR</button>
 
-      <p>AINDA NÃO POSSUI CADASTRO?</p>
-      <a href="../TelaCadastro/TelaCadastro.html">
-        <p id="cadastre-se">CADASTRE-SE</p>
-      </a>
-    </form>
+        <p>AINDA NÃO POSSUI CADASTRO?</p>
+        <a href="../TelaCadastro/TelaCadastro.html">
+          <p id="cadastre-se">CADASTRE-SE</p>
+        </a>
+      </form>
+    </div>
   </div>
 
-      <footer id='rodape'>
-        <h5 id='frase-impacto'>CONQUISTE O CONTROLE FINANCEIRO QUE VOCÊ MERECE!
-      </footer>
+  <footer id='rodape'>
+    <h5 id='frase-impacto'>CONQUISTE O CONTROLE FINANCEIRO QUE VOCÊ MERECE!
+  </footer>
 </body>
 
 </html>

@@ -55,7 +55,7 @@ input {
 }
 
 /*Estilização do botão*/
-button {
+#botao {
   padding: 10px;
   background-color: #A3C977;
   color: #fff;
@@ -71,7 +71,7 @@ button {
   font-size: smaller;
 }
 
-button:hover {
+#botao:hover {
   background-color: #5C7243;
 }
 

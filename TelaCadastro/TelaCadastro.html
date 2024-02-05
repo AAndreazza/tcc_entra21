@@ -8,41 +8,78 @@
   <link rel="shortcut icon" href="../Logos/2-cortada.png" type="image/x-icon" />
   <link rel="stylesheet" href="TelaCadastro.css">
   <script src="TelaCadastro.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
   <header>
-    <a href="../PaginaInicial/PaginaInicial.html"><img src="../Imagens/1.png" alt="Logo da Cash Control" height="70px"></a>
+    <a href="../PaginaInicial/PaginaInicial.html"><img src="../Imagens/1.png" alt="Logo da Cash Control"
+        height="70px"></a>
   </header>
-  
-  <div class="container">
-    <form class="cadastro">
+
+  <div class="container1">
+    <div class="cadastro">
       <h2>FAZER CADASTRO</h2>
 
-      <label for="nome">NOME COMPLETO</label>
-      <input type="text" id="nome" name="nome" required>
+      
+      <form id="cadastroForm" novalidate>
+        <div>
+          <label for="nome">NOME COMPLETO</label>
+          <input type="text" id="nome" class="form-control" name="nome" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Preencha o campo.</div>
+        </div>
 
-      <label for="email">E-MAIL</label>
-      <input type="email" id="email" name="email" required>
+        <div>
+          <label for="email">E-MAIL</label>
+          <input type="email" id="email"class="form-control" name="email" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Preencha o campo.</div>
+        </div>
 
-      <label for="celular">TELEFONE</label>
-      <input type="tel" id="celular" name="celular" maxlength="14" oninput="validarTelefone(this)"
-        placeholder="(__) _____-____" required>
+        <div>
+          <label for="celular">TELEFONE</label>
+          <input type="tel" id="celular" class="form-control" name="celular" maxlength="14" oninput="formatarTelefone(this)"
+            placeholder="(__) _____-____" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Preencha o campo.</div>
+        </div>
 
-      <label for="cpf">CPF</label>
-      <input type="tel" id="cpf" name="cpf" maxlength="14" oninput="validarCpf(this)" required>
+        <div>
+          <label for="cpf">CPF</label>
+          <input type="tel" id="cpf" class="form-control" name="cpf" maxlength="14" oninput="formatarCpf(this)" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback" id="cpf-feedback">Preencha o campo.</div>
+        </div>
 
-      <label for="data">DATA DE NASCIMENTO</label>
-      <input type="date" id="data" name="data" required>
+        <div>
+          <label for="data">DATA DE NASCIMENTO</label>
+          <input type="date" id="data" class="form-control" name="data" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback">Preencha o campo.</div>
+        </div>
 
-      <label for="senha">SENHA</label>
-      <input type="password" id="senha" name="senha"required>
 
-      <label for="confirmar-senha">CONFIRMAÇÃO DE SENHA</label>
-      <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+        <div>
+          <label for="senha">SENHA</label>
+          <input type="password" id="senha" class="form-control" name="senha" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback" id="senha-feedback" >Preencha o campo.</div>
+        </div>
 
-      <button onclick="validarCadastro()">CADASTRAR</button>
-    </form>
+        <div>
+          <label for="confirmar-senha">CONFIRMAÇÃO DE SENHA</label>
+          <input type="password" id="confirmar-senha" class="form-control" name="confirmar-senha" required>
+          <div class="valid-feedback"></div>
+          <div class="invalid-feedback" id="confirmar-senha-feedback">As senhas nao coincidem.</div>
+        </div>
+
+        
+        <button type="button" onclick="validarCadastro()" id="botao">CADASTRAR</button>
+      </form>
+
+    </div>
   </div>
 
   <footer id='rodape'>
