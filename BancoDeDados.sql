@@ -15,8 +15,8 @@ CREATE TABLE cadastroItem (
     produto varchar(50)  NOT NULL,
     data_compra date  NOT NULL,
     valor decimal(6,4)  NOT NULL,
-    quantidade int  NOT NULL,
-    descricao varchar(300)  NOT NULL,
+    quantidade int,
+    descricao varchar(300),
     sg_setor char(2)  NOT NULL,
     TelaCadastro_usuario_cpf char(11)  NOT NULL,
     CONSTRAINT cadastroItem_pk PRIMARY KEY (cd_item)
