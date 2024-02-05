@@ -118,20 +118,57 @@ main {
     margin-bottom: 18px;
 }
 
-/*ESTILIZAÇÃO RODAPÉ*/
-#rodape {
-    background-color: #5C7243;
+/*ESTILIZAÇÃO LINHAS*/
+#valor {
+  margin-right: 15px;
 }
 
-#frase-impacto{
-    color: #FFFFFF;
+#botao-mais-descricao{
+    border: none;
+    background-color: #CDE1B7;
+    margin-top: -15px;
+}
+
+.botao-mais-descricao, #icon-mais-descricao{
+  border: none;
+  font-size: 40px; 
+  color: #466F17;
+  background-color: #CDE1B7;
+}
+
+/*ESTILIZAÇÃO CAIXA DESCRICAO*/
+#caixa-input {
+  background-color: #E6E6E6;
+    border: none;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    margin-bottom: 18px;
+    position: absolute;
+    z-index: 1;
+    left: 880px; /* Ajuste a posição horizontal conforme necessário */
+    background-color: #E6E6E6;
+}
+
+/*ESTILIZAÇÃO RODAPÉ*/
+#rodape {
+  background-color: #5C7243;
+}
+
+#frase-impacto {
+  color: #FFFFFF;
 }
 
 #botao-atendimento {
-    color: #FFFFFF;
-    background-color: #A3C977;
-    font-size: smaller;
-    border-radius: 20px;
+  color: #FFFFFF;
+  background-color: #A3C977;
+  font-size: smaller;
+  border-radius: 20px;
+}
+
+#botao-atendimento a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 750px) {
