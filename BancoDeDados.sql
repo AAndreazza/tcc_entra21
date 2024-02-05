@@ -26,3 +26,4 @@ CREATE TABLE cadastroItem (
 -- Reference: cadastroItem_TelaCadastro_usuario (table: cadastroItem)
 ALTER TABLE cadastroItem ADD CONSTRAINT cadastroItem_TelaCadastro_usuario FOREIGN KEY cadastroItem_TelaCadastro_usuario (TelaCadastro_usuario_cpf)
     REFERENCES TelaCadastro_usuario (cpf);
+ALTER TABLE cadastroItem MODIFY COLUMN sg_setor INT COMMENT '01 - Moradia, 02 - Lazer, 03 - Impostos, 04 - Financiamento, 05 - Educacao, 06 - Cuidados Pessoais, 07 - Mercado, 08 - Poupanca ou Investimentos, 09 - Saude, 10 - Transporte, 11 - Vestuario, 12 - Outros';
