@@ -25,7 +25,7 @@ CREATE TABLE Item (
 
 -- foreign keys
 -- Reference: cadastroItem_TelaCadastro_usuario (table: cadastroItem)
-ALTER TABLE item ADD CONSTRAINT cadastroItem_TelaCadastro_usuario FOREIGN KEY item (TelaCadastro_usuario_cpf)
+ALTER TABLE item ADD CONSTRAINT cadastroItem_TelaCadastro_usuario FOREIGN KEY item (usuario_cpf)
     REFERENCES Usuario (cpf);
 ALTER TABLE item
 	CHANGE COLUMN sg_setor CHAR(2) NOT NULL COMMENT '01 - Moradia, 02 - Lazer, 03 - Impostos, 04 - Financiamento, 05 - Educacao, 06 - Cuidados Pessoais, 07 - Mercado, 08 - Poupanca ou Investimentos, 09 - Saude, 10 - Transporte, 11 - Vestuario, 12 - Outros' COLLATE 'latin1_swedish_ci' AFTER descricao;
