@@ -32,3 +32,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var botoesMaisDescricao = document.querySelectorAll('.botao-mais-descricao');
+    var caixasInput = document.querySelectorAll('.caixa-input');
+
+    botoesMaisDescricao.forEach(function (botao, index) {
+        botao.addEventListener('click', function () {
+            if (getComputedStyle(caixasInput[index]).display === 'none') {
+                caixasInput[index].style.display = 'block';
+            } else {
+                caixasInput[index].style.display = 'none';
+            }
+        });
+    });
+});
