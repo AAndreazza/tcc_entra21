@@ -23,6 +23,37 @@ header {
         padding-bottom: 20px;
     }
 }
+.inner {
+    overflow: hidden;
+    
+}
+
+.inner:hover img {
+    transform: scale(1.1);
+    opacity: 80%;
+       
+}
+.inner img {
+    transition: all 1.5s ease;
+   
+} .overlay-icon {
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+       opacity: 0;
+    transition: opacity 1.0s ease;
+     }
+
+  .inner:hover .overlay-icon {
+    color: #000000;
+    opacity: 1;
+  }
+  svg {
+    color: black;
+    margin-right: 10px;
+  }
+
 
 /*ESTILIZAÇÃO MAIN INICIAL*/
 .mainStart {
@@ -104,22 +135,25 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 25px;
     margin-right: 30px;
     margin-bottom: 50px;
-    padding-bottom: 10px;
+    padding-bottom: -10px;
     border: 1px;
-    background-color: #CDE1B7;
+    background-color: #c3e49f;
     text-decoration: none;
+    
 }
+
 
 .card .cardText {
     display: flex;
     align-items: center;
     margin-top: 15px;
-    color: #000000;
+    color: #30411c;
     font-weight: 700;
 }
+
 
 .card .contactButton {
     display: flex;
