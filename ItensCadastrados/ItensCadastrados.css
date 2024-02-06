@@ -151,7 +151,6 @@ main {
     background-color: #E6E6E6;
 }
 
-
 /*ESTILIZAÇÃO RODAPÉ*/
 #rodape {
   background-color: #5C7243;
@@ -191,6 +190,10 @@ main {
     margin-left: 40px;
     width: 600PX;
   }
+
+  #caixa-input {
+    left: 300px; /* Ajuste a posição horizontal conforme necessário */
+}
 }
 
 @media only screen and (max-width: 1000px) {
@@ -199,25 +202,33 @@ main {
     width: 500PX;
   }
 
+  #coluna-produto {
+    width: 180px;
+  }
+
+  #coluna-data {
+    width: 110px;
+  }
+
+  .d-flex {
+    width: 150px;
+  }
+
   .containerCard input {
     padding: 8px;
   }
-}
 
-@media only screen and (max-width: 900px) {
-  .containerCard {
-    margin-left: 20px;
-    width: 400px;
+  .botao-mais-descricao, #icon-mais-descricao{
+    font-size: 30px; 
+  }
+
+  #caixa-input {
+      left: 460px; /* Ajuste a posição horizontal conforme necessário */
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .containerCard {
-    margin-left: auto;
-  }
-}
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 990px) {
   .menuLateral {
     display: none;
   }
@@ -301,13 +312,41 @@ main {
     overflow-x: hidden;
   }
 
+  .row {
+    flex-direction: column;
+}
+
   .containerCard {
-    margin-top: 100px;
-    margin-bottom: 20px;
-    margin-left: 110px;
+    margin-left: 20px;
+    width: 900PX;
+  }
+
+  #coluna-produto {
+    width: 80px;
+  }
+
+  #coluna-data {
+    width: 20px;
+  }
+
+  .d-flex {
+    width: 20px;
+  }
+
+  .containerCard input {
+    padding: 8px;
+  }
+
+  .botao-mais-descricao, #icon-mais-descricao{
+    font-size: 10px; 
+  }
+
+  #caixa-input {
+      left: 460px; /* Ajuste a posição horizontal conforme necessário */
   }
 }
 
+/*
 @media only screen and (max-width: 595px) {
   .menu-toggle {
       gap: 40px;
@@ -444,4 +483,4 @@ main {
   #rodape-conteudo {
     margin-left: 50px;
   }
-}
+} */
