@@ -22,7 +22,6 @@
     <div class="cadastro">
       <h2>FAZER CADASTRO</h2>
 
-      
       <form id="cadastroForm" novalidate>
         <div>
           <label for="nome">NOME COMPLETO</label>
@@ -33,22 +32,23 @@
 
         <div>
           <label for="email">E-MAIL</label>
-          <input type="email" id="email"class="form-control" name="email" required>
+          <input type="email" id="email" class="form-control" name="email" required>
           <div class="valid-feedback"></div>
           <div class="invalid-feedback">Preencha o campo.</div>
         </div>
 
         <div>
           <label for="celular">TELEFONE</label>
-          <input type="tel" id="celular" class="form-control" name="celular" maxlength="14" oninput="formatarTelefone(this)"
-            placeholder="(__) _____-____" required>
+          <input type="tel" id="celular" class="form-control" name="celular" maxlength="14"
+            oninput="formatarTelefone(this)" placeholder="(__) _____-____" required>
           <div class="valid-feedback"></div>
           <div class="invalid-feedback">Preencha o campo.</div>
         </div>
 
         <div>
           <label for="cpf">CPF</label>
-          <input type="tel" id="cpf" class="form-control" name="cpf" maxlength="14" oninput="formatarCpf(this)" required>
+          <input type="tel" id="cpf" class="form-control" name="cpf" maxlength="14" oninput="formatarCpf(this)"
+            required>
           <div class="valid-feedback"></div>
           <div class="invalid-feedback" id="cpf-feedback">Preencha o campo.</div>
         </div>
@@ -65,7 +65,7 @@
           <label for="senha">SENHA</label>
           <input type="password" id="senha" class="form-control" name="senha" required>
           <div class="valid-feedback"></div>
-          <div class="invalid-feedback" id="senha-feedback" >Preencha o campo.</div>
+          <div class="invalid-feedback" id="senha-feedback">Preencha o campo.</div>
         </div>
 
         <div>
@@ -75,7 +75,7 @@
           <div class="invalid-feedback" id="confirmar-senha-feedback">As senhas nao coincidem.</div>
         </div>
 
-        
+
         <button type="button" onclick="validarCadastro()" id="botao">CADASTRAR</button>
       </form>
 

@@ -225,7 +225,7 @@ main {
     border: none;
     cursor: pointer;
     margin-top: 10px;
-    gap: 200px
+    gap: 200px;
   }
 
   .menu-toggle-img {
