@@ -37,6 +37,15 @@ main {
     padding-top: 30px;
 }
 
+#link-usuario:hover {
+    color: #CDE1B7;
+}
+
+#link-usuario {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 /*ESTILIZAÇÃO DO SUBMENU*/
 .menuLateral .dropdown .list-group-item {
     display: flex;
@@ -77,7 +86,7 @@ main {
 }
 
 /* Estilização para ocultar o botão de menu quando a tela for maior que 600px */
-    .menu-toggle {
+.menu-toggle {
     display: none;
 }
 
@@ -98,7 +107,7 @@ main {
 }
 
 /*ESTILIZAÇÃO CARDS*/
-#container-card{
+#container-card {
     display: flex;
     justify-content: center;
     margin-left: -350px;
@@ -154,23 +163,23 @@ a {
         border: none;
         font-size: larger;
     }
-    
+
     .dropdown-menu a {
         color: #ffffff;
         text-decoration: none;
         padding-left: 10px;
         padding-right: 10px;
     }
-    
+
     .dropdown-menu a:hover {
         color: #A3C977;
     }
-    
+
     .dropdown {
         color: #ffffff;
         text-decoration: none;
     }
-    
+
     .dropdown .dropdown-menu .list-group-item {
         display: flex;
         justify-content: center;
@@ -180,14 +189,15 @@ a {
         border: none;
         position: relative;
     }
-    
-    .dropdown .dropdown-menu  {
+
+    .dropdown .dropdown-menu {
         position: relative;
         font-size: large;
         padding-left: 10px;
     }
-    
-    .dropdown:hover .dropdown-menu, .dropdown .dropdown-menu a:hover {
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown .dropdown-menu a:hover {
         display: block;
     }
 
@@ -209,14 +219,14 @@ a {
         overflow-x: hidden;
     }
 
-    #container-card{
+    #container-card {
         display: flex;
         justify-content: center;
         margin-left: -480px;
         margin-top: 85px;
         margin-bottom: 30px;
     }
-    
+
     .card {
         background-color: #A3C977;
         border-radius: 20px;
@@ -253,7 +263,7 @@ a {
     .menu-toggle-img {
         margin-left: 40px;
     }
-    
+
     #botao-abrir-menu {
         background: #5C7243;
         border: none;
@@ -280,14 +290,14 @@ a {
         overflow-x: hidden;
     }
 
-    #container-card{
+    #container-card {
         display: flex;
         justify-content: center;
         margin-left: -400px;
         margin-top: 85px;
         margin-bottom: 30px;
     }
-    
+
     .card {
         background-color: #A3C977;
         border-radius: 20px;
@@ -343,14 +353,14 @@ a {
         overflow-x: hidden;
     }
 
-    #container-card{
+    #container-card {
         display: flex;
         justify-content: center;
         margin-left: -200px;
         margin-top: 85px;
         margin-bottom: 30px;
     }
-    
+
     .card {
         background-color: #A3C977;
         border-radius: 20px;
@@ -411,7 +421,7 @@ a {
         margin-left: 50px;
     }
 
-    #container-card{
+    #container-card {
         display: flex;
         justify-content: center;
         margin-left: -200px;
@@ -419,7 +429,7 @@ a {
         margin-top: 85px;
         margin-bottom: 30px;
     }
-    
+
     .card {
         background-color: #A3C977;
         border-radius: 20px;
