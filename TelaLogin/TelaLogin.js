@@ -19,6 +19,4 @@ function validarLogin() {
   } else {
     form.classList.add("was-validated");
   }
-  
-
 }
