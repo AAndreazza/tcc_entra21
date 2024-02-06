@@ -3,6 +3,7 @@ header {
     background-color: #5C7243;
     padding-left: 100px;
     padding-right: 100px;
+    
 }
 
 #headerEntrar, #headerCadastrar {
@@ -53,6 +54,8 @@ header {
     color: black;
     margin-right: 10px;
   }
+ 
+
 
 
 /*ESTILIZAÇÃO MAIN INICIAL*/
@@ -65,6 +68,7 @@ header {
     color: #ffffff;
     padding: 0 50px 20px 50px;
     height: 630px;
+    margin-bottom: 150px;
 }
 
 .mainStart img {
