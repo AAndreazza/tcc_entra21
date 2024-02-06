@@ -1,6 +1,6 @@
 function validarCadastro() {
   let nome = document.getElementById("nome").value;
-  let x = document.getElementById("email").value;
+  let email = document.getElementById("email").value;
   let senha = document.getElementById("senha").value;
   let cpf = document.getElementById("cpf").value;
   let tel = document.getElementById("celular").value;
@@ -9,7 +9,8 @@ function validarCadastro() {
   var dataNasci = new Date(dataNasc);
   var dataAgora = new Date();
   var form = document.getElementById("cadastroForm");
-
+  const formulario = document.querySelector("form");
+  
   form.classList.remove("was-validated");
   document.getElementById("senha").classList.remove("is-invalid");
   document.getElementById("confirmar-senha").classList.remove("is-invalid");
@@ -17,11 +18,11 @@ function validarCadastro() {
 
   let validacao = true;
 
-  if (nome.trim() === "" || x.trim() === "" || tel.trim() === "" || cpf.trim() === "" || dataNasc.trim() === "" || senha.trim() === "" || senhaConfirmar.trim() === "") {
+  if (nome.trim() === "" || email.trim() === "" || tel.trim() === "" || cpf.trim() === "" || dataNasc.trim() === "" || senha.trim() === "" || senhaConfirmar.trim() === "") {
     validacao = false;
   }
 
-  if (x.indexOf("@") == -1 || x.indexOf("@") == 0 || x.indexOf(".") == -1) {
+  if (email.indexOf("@") == -1 || email.indexOf("@") == 0 || email.indexOf(".") == -1) {
 
     validacao = false;
   }
@@ -47,12 +48,35 @@ function validarCadastro() {
   }
 
   if (validacao) {
-    window.location.href = "../PaginaInicial/PaginaInicial.html";
+    
   } else {
     form.classList.add("was-validated");
   }
 
 }
+
+function cadastrar() {
+  fetch("http://localhost:8080/usuarios",
+    {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({ 
+        Inome: nome.value,
+        Iemail: email.value,
+        Isenha: senha.value,
+        Icpf: cpf.value,
+        Itel: tel.value,
+        IdataNasc: dataNasci.value
+
+      })
+    })
+    .then(function (res) { console.log(res) })
+    .catch(function (res) { console.log(res) })
+
+};
 
 function validarCPF(cpf) {
   const cpfNumeros = cpf.replace(/\D/g, '');
@@ -121,4 +145,8 @@ function formatarCpf(input) {
   input.value = numero;
 }
 
+formulario.addEventListener('submit', function(event){
+  event.preventDefault();
 
+  cadastrar();
+});
