@@ -3,16 +3,18 @@ header {
     background-color: #5C7243;
     padding-left: 100px;
     padding-right: 100px;
-    
+
 }
 
-#headerEntrar, #headerCadastrar {
+#headerEntrar,
+#headerCadastrar {
     align-items: end;
     font-weight: 600;
     color: #ffffff;
 }
 
-.headerEntrar:hover, .headerCadastrar:hover {
+.headerEntrar:hover,
+.headerCadastrar:hover {
     color: #A3C977;
 }
 
@@ -23,38 +25,52 @@ header {
         padding-right: 20px;
         padding-bottom: 20px;
     }
+
+    main .carousel-control-prev {
+        margin-top: 175px;
+    }
+
+    main .carousel-control-next {
+        margin-top: 175px;
+    }
+
 }
+
 .inner {
     overflow: hidden;
-    
+
 }
 
 .inner:hover img {
     transform: scale(1.1);
     opacity: 80%;
-       
+
 }
+
 .inner img {
     transition: all 1.5s ease;
-   
-} .overlay-icon {
-    position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-       opacity: 0;
-    transition: opacity 1.0s ease;
-     }
 
-  .inner:hover .overlay-icon {
+}
+
+.overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1.0s ease;
+}
+
+.inner:hover .overlay-icon {
     color: #000000;
     opacity: 1;
-  }
-  svg {
+}
+
+svg {
     color: black;
     margin-right: 10px;
-  }
- 
+}
+
 
 
 
@@ -63,7 +79,7 @@ header {
     background-color: #5C7243;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     align-items: center;
     color: #ffffff;
     padding: 0 50px 20px 50px;
@@ -111,23 +127,23 @@ header {
 .mainDevs {
     background-color: #ffffff;
     color: #5C7243;
-    margin: auto; 
+    margin: auto;
 }
 
 .mainDevs h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     padding-top: 50px;
-    font-weight: 700;
+
 }
 
 .cardDevs {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     padding-top: 50px;
 }
 
@@ -146,7 +162,7 @@ header {
     border: 1px;
     background-color: #c3e49f;
     text-decoration: none;
-    
+
 }
 
 
@@ -180,7 +196,7 @@ header {
 
 /* FLEX-BOX PARA A PARTE INICIAL */
 @media only screen and (max-width: 1300px) {
-    .mainDevs{
+    .mainDevs {
         margin-top: 30px;
     }
 
@@ -199,7 +215,7 @@ header {
     background-color: #5C7243;
 }
 
-#frase-impacto{
+#frase-impacto {
     color: #FFFFFF;
     text-align: center;
     font-size: small;
@@ -234,11 +250,38 @@ header {
 
 /* FLEX-BOX PARA A FRASE DE IMPACTO FICAR CENTER NO RODAPÉ */
 @media only screen and (max-width: 932px) {
-    #frase-impacto{
+    #frase-impacto {
         margin-left: 0px;
     }
 
     #frase-newsletter {
         padding-left: 0px;
     }
+
+}
+
+.service:hover {
+    transition: transform 1.0s ease;
+    transform: scale(1.1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 25px;
+    height: 25px;
+    background-color: #7c995a;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 80%;
+    width: 30px;
+    height: 30px;
+}
+
+.intro h1 {
+    color: #5C7243;
+
 }
