@@ -30,7 +30,7 @@ function validarCadastro() {
   const dataNasci = new Date(dataNasc);
   const dataAgora = new Date();
   const form = document.getElementById("cadastroForm");
-  
+
   form.classList.remove("was-validated");
   document.getElementById("senha").classList.remove("is-invalid");
   document.getElementById("confirmar-senha").classList.remove("is-invalid");
@@ -72,11 +72,10 @@ function validarCadastro() {
   } else {
     form.classList.add("was-validated");
   }
-
 }
 
 function cadastrar(nome, email, senha, cpf, tel, dataNasc) {
-  
+
   fetch("http://localhost:8080/usuarios",
     {
       headers: {
@@ -84,7 +83,7 @@ function cadastrar(nome, email, senha, cpf, tel, dataNasc) {
         "Content-Type": "application/json"
       },
       method: "POST",
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         nome: nome,
         email: email,
         senha: senha,
@@ -97,6 +96,7 @@ function cadastrar(nome, email, senha, cpf, tel, dataNasc) {
     .then(function (res) { console.log(res) })
     .catch(function (res) { console.log(res) })
 
+  window.location = "../PaginaPrincipal/PaginaPrincipal.html";
 };
 
 function validarCPF(cpf) {

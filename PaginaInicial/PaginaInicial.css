@@ -3,7 +3,6 @@ header {
     background-color: #5C7243;
     padding-left: 20px;
     padding-right: 100px;
-
 }
 
 #headerEntrar,
@@ -26,30 +25,25 @@ header {
         padding-bottom: 20px;
     }
 
-    main .carousel-control-prev {
-        margin-top: 175px;
-    }
-
+    main .carousel-control-prev,
     main .carousel-control-next {
         margin-top: 175px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
-
 }
 
 .inner {
     overflow: hidden;
-
 }
 
 .inner:hover img {
     transform: scale(1.1);
     opacity: 80%;
-
 }
 
 .inner img {
     transition: all 1.5s ease;
-
 }
 
 .overlay-icon {
@@ -70,9 +64,6 @@ svg {
     color: black;
     margin-right: 10px;
 }
-
-
-
 
 /*ESTILIZAÇÃO MAIN INICIAL*/
 .mainStart {
@@ -135,8 +126,7 @@ svg {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 50px;
-
+    padding-top: 100px;
 }
 
 .cardDevs {
@@ -148,7 +138,7 @@ svg {
 }
 
 .cardDevs img {
-    height: 400px;
+    height: 450px;
 }
 
 .card {
@@ -162,9 +152,7 @@ svg {
     border: 1px;
     background-color: #c3e49f;
     text-decoration: none;
-
 }
-
 
 .card .cardText {
     display: flex;
@@ -272,6 +260,8 @@ svg {
     background-color: #7c995a;
     border-radius: 20px;
     margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .carousel-control-prev-icon,
@@ -281,7 +271,10 @@ svg {
     height: 30px;
 }
 
+.intro {
+    margin-top: 200px;
+}
+
 .intro h1 {
     color: #5C7243;
-
 }

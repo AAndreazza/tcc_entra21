@@ -6,7 +6,7 @@ function validarLogin() {
   form.classList.remove("was-validated");
   let validacao = true;
 
-  if (x.trim() === "" || y.trim() === ""){
+  if (x.trim() === "" || y.trim() === "") {
     validacao = false;
   }
 
