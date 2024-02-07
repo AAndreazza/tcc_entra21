@@ -1,21 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   const formulario = document.querySelector("#cadastroForm");
-  const Inome = document.getElementById("nome");
-  const Iemail = document.getElementById("email");
-  const Isenha = document.getElementById("senha");
-  const Icpf = document.getElementById("cpf");
-  const Itel = document.getElementById("celular");
-  const IdataNasc = document.getElementById("data");
-
+ 
   formulario.addEventListener('submit', function (event) {
     event.preventDefault();
     validarCadastro();
   });
 
-  const seuBotao = document.getElementById("botao");
-  seuBotao.addEventListener('click', function () {
-    formulario.dispatchEvent(new Event('submit'));
-  });
 });
 
 
@@ -26,9 +16,6 @@ function validarCadastro() {
   const cpf = document.getElementById("cpf").value;
   const tel = document.getElementById("celular").value;
   const senhaConfirmar = document.getElementById("confirmar-senha").value;
-  const dataNasc = document.getElementById("data").value;
-  const dataNasci = new Date(dataNasc);
-  const dataAgora = new Date();
   const form = document.getElementById("cadastroForm");
 
   form.classList.remove("was-validated");
@@ -38,7 +25,7 @@ function validarCadastro() {
 
   let validacao = true;
 
-  if (nome.trim() === "" || email.trim() === "" || tel.trim() === "" || cpf.trim() === "" || dataNasc.trim() === "" || senha.trim() === "" || senhaConfirmar.trim() === "") {
+  if (nome.trim() === "" || email.trim() === "" || tel.trim() === "" || cpf.trim() === "" || senha.trim() === "" || senhaConfirmar.trim() === "") {
     validacao = false;
   }
 
@@ -62,21 +49,21 @@ function validarCadastro() {
     validacao = false;
   }
 
-  if (dataNasci > dataAgora) {
-
-    validacao = false;
-  }
-
   if (validacao) {
-    cadastrar(nome, email, senha, cpf, tel, dataNasc);
+    console.log(nome);
+    console.log(email);
+    console.log(senha);
+    console.log(cpf);
+    console.log(tel);
+    cadastrar(nome, email, senha, cpf, tel);
   } else {
     form.classList.add("was-validated");
   }
 }
 
-function cadastrar(nome, email, senha, cpf, tel, dataNasc) {
+function cadastrar(nome, email, senha, cpf, tel) {
 
-  fetch("http://localhost:8080/usuarios",
+  fetch("http://localhost:8080/usuario",
     {
       headers: {
         "Accept": "application/json",
@@ -89,14 +76,15 @@ function cadastrar(nome, email, senha, cpf, tel, dataNasc) {
         senha: senha,
         cpf: cpf,
         tel: tel,
-        dataNasc: dataNasc
 
       })
     })
     .then(function (res) { console.log(res) })
-    .catch(function (res) { console.log(res) })
+    .catch(function (error) {
+      console.error("Erro na requisição fetch:", error);
+  });
 
-  window.location = "../PaginaPrincipal/PaginaPrincipal.html";
+  
 };
 
 function validarCPF(cpf) {
