@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     function checkWindowSize() {
-      if (window.innerWidth <= 690) {
+      if (window.innerWidth < 715) {
         menuToggle.style.display = "block";
         menuLateral.style.display = menuLateral.classList.contains("active") ? "block" : "none";
       } else {

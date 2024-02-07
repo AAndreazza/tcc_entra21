@@ -83,40 +83,28 @@ main {
 
 /* ESTILIZAÇÃO DO CARD */
 .containerCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #CDE1B7;
-    color: #466F17;
-    width: 800px;
-    padding: 20px;
+   background-color: #CDE1B7;
+  color: #466F17;
     border-radius: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 200px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
 
 .containerCard h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.containerCard label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5px;
-}
+
 
 .containerCard input {
-    background-color: #E6E6E6;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 18px;
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  
 }
 
 /*ESTILIZAÇÃO LINHAS*/
@@ -124,31 +112,34 @@ main {
   margin-right: 15px;
 }
 
-#botao-mais-descricao{
-    border: none;
-    background-color: #CDE1B7;
-    margin-top: -15px;
-}
-
-.botao-mais-descricao, #icon-mais-descricao{
+#botao-mais-descricao {
   border: none;
-  font-size: 40px; 
-  color: #466F17;
-  background-color: #CDE1B7;
+  background-color: #ffffff;
+  margin-top: -15px;
 }
 
-/*ESTILIZAÇÃO CAIXA DESCRICAO*/
+.botao-mais-descricao,
+#icon-mais-descricao {
+   border: none;
+  font-size: 28px;
+  color: #466F17;
+  background-color: #ffffff;
+  
+}
+
+/*ESTILIZAÇÃO CAIXA DESCRICAO*/x
 #caixa-input {
   background-color: #E6E6E6;
-    border: none;
-    border-radius: 10px;
-    width: 250px;
-    height: 200px;
-    margin-bottom: 18px;
-    position: absolute;
-    z-index: 1;
-    left: 880px; /* Ajuste a posição horizontal conforme necessário */
-    background-color: #E6E6E6;
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+  margin-bottom: 18px;
+  position: absolute;
+  z-index: 1;
+  left: 880px;
+  /* Ajuste a posição horizontal conforme necessário */
+  background-color: #E6E6E6;
 }
 
 /*ESTILIZAÇÃO RODAPÉ*/
@@ -172,63 +163,15 @@ main {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 1300px) {
-  .containerCard {
-    margin-left: 100px;
-  }
-}
 
-@media only screen and (max-width: 1200px) {
-  .containerCard {
-    margin-left: 60px;
-    width: 700PX;
-  }
-}
 
-@media only screen and (max-width: 1100px) {
-  .containerCard {
-    margin-left: 40px;
-    width: 600PX;
-  }
 
-  #caixa-input {
-    left: 300px; /* Ajuste a posição horizontal conforme necessário */
-}
-}
 
 @media only screen and (max-width: 1000px) {
-  .containerCard {
-    margin-left: 20px;
-    width: 500PX;
-  }
-
-  #coluna-produto {
-    width: 180px;
-  }
-
-  #coluna-data {
-    width: 110px;
-  }
-
-  .d-flex {
-    width: 150px;
-  }
-
-  .containerCard input {
-    padding: 8px;
-  }
-
-  .botao-mais-descricao, #icon-mais-descricao{
-    font-size: 30px; 
-  }
-
-  #caixa-input {
-      left: 460px; /* Ajuste a posição horizontal conforme necessário */
-  }
 }
 
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 715px) {
   .menuLateral {
     display: none;
   }
@@ -312,175 +255,7 @@ main {
     overflow-x: hidden;
   }
 
-  .row {
-    flex-direction: column;
 }
-
-  .containerCard {
-    margin-left: 20px;
-    width: 900PX;
-  }
-
-  #coluna-produto {
-    width: 80px;
-  }
-
-  #coluna-data {
-    width: 20px;
-  }
-
-  .d-flex {
-    width: 20px;
-  }
-
-  .containerCard input {
-    padding: 8px;
-  }
-
-  .botao-mais-descricao, #icon-mais-descricao{
-    font-size: 10px; 
-  }
-
-  #caixa-input {
-      left: 460px; /* Ajuste a posição horizontal conforme necessário */
-  }
+.sem-espacamento tr{
+  line-height: 1;
 }
-
-/*
-@media only screen and (max-width: 595px) {
-  .menu-toggle {
-      gap: 40px;
-  }
-
-  .containerCard {
-    margin-top: 100px;
-    margin-bottom: 20px;
-    margin-left: 25px;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .menuLateral {
-    display: none;
-  }
-
-  .menuLateral.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-    background: #5C7243;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    gap: 20px;
-  }
-
-  .menu-toggle-img {
-    margin-left: 40px;
-  }
-
-  #botao-abrir-menu {
-    background: #5C7243;
-    border: none;
-    color: #ffffff;
-    font-size: larger;
-    margin-left: 550px;
-  }
-
-  header {
-    display: flex;
-  }
-
-  .corMenu {
-    display: flex;
-    background-color: #5C7243;
-    position: absolute;
-    width: 750px;
-    top: 0;
-    height: 80px;
-  }
-
-  .containerCard {
-    margin-top: 150px;
-    margin-bottom: 60px;
-    margin-left: 18px;
-  }
-
-  footer {
-    display: flex;
-    margin-right: -50px;
-    margin-left: -110px;
-  }
-
-  #frase-impacto {
-    font-size:medium;
-  }
-
-  #rodape-conteudo {
-    margin-left: 50px;
-  }
-}
-
-@media only screen and (max-width: 430px) {
-  .menuLateral {
-    display: none;
-  }
-
-  .menuLateral.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-    background: #5C7243;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    gap: 250px;
-  }
-
-  .menu-toggle-img {
-    margin-left: 40px;
-  }
-
-  #botao-abrir-menu {
-    background: #5C7243;
-    border: none;
-    color: #ffffff;
-    font-size: larger;
-    margin-left: 550px;
-  }
-
-  header {
-    display: flex;
-  }
-
-  .corMenu {
-    display: flex;
-    background-color: #5C7243;
-    position: absolute;
-    width: 750px;
-    top: 0;
-    height: 80px;
-  }
-
-  .containerCard {
-    margin-top: 150px;
-    margin-bottom: 80px;
-    margin-left: 150px;
-  }
-
-  footer {
-    display: flex;
-    margin-right: -330px;
-    margin-left: -100px;
-  }
-
-  #rodape-conteudo {
-    margin-left: 50px;
-  }
-} */
