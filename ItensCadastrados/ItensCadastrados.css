@@ -69,7 +69,7 @@ main {
 
 .menuLateral .dropdown:hover .dropdown-menu {
   display: block;
-  padding-left: 20px;
+  font-size: medium;
 }
 
 .menuLateral .dropdown .list-group-item:hover {
@@ -96,6 +96,7 @@ main {
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 
 
 
@@ -126,6 +127,11 @@ main {
   background-color: #ffffff;
 
 }
+.dropdown-menu {
+  background: #E6E6E6;
+  border: 0.5px solid black;
+  font-size: larger;
+}
 
 /*ESTILIZAÇÃO CAIXA DESCRICAO*/
 x #caixa-input {
@@ -145,6 +151,7 @@ x #caixa-input {
 /*ESTILIZAÇÃO RODAPÉ*/
 #rodape {
   background-color: #5C7243;
+ 
 }
 
 #frase-impacto {
@@ -173,6 +180,9 @@ x #caixa-input {
 @media only screen and (max-width: 715px) {
   .menuLateral {
     display: none;
+  }
+  .container {
+   margin-top:100px;
   }
 
   .menuLateral.active {
@@ -205,15 +215,13 @@ x #caixa-input {
     padding-left: 10px;
     padding-right: 10px;
   }
+ 
 
   .dropdown-menu a:hover {
     color: #A3C977;
   }
 
-  .dropdown {
-    color: #ffffff;
-    text-decoration: none;
-  }
+
 
   .dropdown .dropdown-menu .list-group-item {
     display: flex;
@@ -258,4 +266,20 @@ x #caixa-input {
 
 .sem-espacamento tr {
   line-height: 1;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2),
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 20%;
+  /* Define a largura da coluna de datas em 20% da largura total */
+}
+.itens-cadastrados {
+  font-size: 20px;
+  margin-left: 30px;
+  
+}
+.green-icon {
+ color: #5C7243;
 }
