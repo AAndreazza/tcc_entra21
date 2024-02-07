@@ -1,15 +1,35 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const formulario = document.querySelector("#cadastroForm");
+  const Inome = document.getElementById("nome");
+  const Iemail = document.getElementById("email");
+  const Isenha = document.getElementById("senha");
+  const Icpf = document.getElementById("cpf");
+  const Itel = document.getElementById("celular");
+  const IdataNasc = document.getElementById("data");
+
+  formulario.addEventListener('submit', function (event) {
+    event.preventDefault();
+    validarCadastro();
+  });
+
+  const seuBotao = document.getElementById("botao");
+  seuBotao.addEventListener('click', function () {
+    formulario.dispatchEvent(new Event('submit'));
+  });
+});
+
+
 function validarCadastro() {
-  let nome = document.getElementById("nome").value;
-  let email = document.getElementById("email").value;
-  let senha = document.getElementById("senha").value;
-  let cpf = document.getElementById("cpf").value;
-  let tel = document.getElementById("celular").value;
-  let senhaConfirmar = document.getElementById("confirmar-senha").value;
-  var dataNasc = document.getElementById("data").value;
-  var dataNasci = new Date(dataNasc);
-  var dataAgora = new Date();
-  var form = document.getElementById("cadastroForm");
-  const formulario = document.querySelector("form");
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
+  const cpf = document.getElementById("cpf").value;
+  const tel = document.getElementById("celular").value;
+  const senhaConfirmar = document.getElementById("confirmar-senha").value;
+  const dataNasc = document.getElementById("data").value;
+  const dataNasci = new Date(dataNasc);
+  const dataAgora = new Date();
+  const form = document.getElementById("cadastroForm");
   
   form.classList.remove("was-validated");
   document.getElementById("senha").classList.remove("is-invalid");
@@ -48,28 +68,29 @@ function validarCadastro() {
   }
 
   if (validacao) {
-    
+    cadastrar(nome, email, senha, cpf, tel, dataNasc);
   } else {
     form.classList.add("was-validated");
   }
 
 }
 
-function cadastrar() {
+function cadastrar(nome, email, senha, cpf, tel, dataNasc) {
+  
   fetch("http://localhost:8080/usuarios",
     {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
       method: "POST",
       body: JSON.stringify({ 
-        Inome: nome.value,
-        Iemail: email.value,
-        Isenha: senha.value,
-        Icpf: cpf.value,
-        Itel: tel.value,
-        IdataNasc: dataNasci.value
+        nome: nome,
+        email: email,
+        senha: senha,
+        cpf: cpf,
+        tel: tel,
+        dataNasc: dataNasc
 
       })
     })
@@ -113,6 +134,7 @@ function validarCPF(cpf) {
   return resto === parseInt(cpfNumeros.charAt(10));
 }
 
+
 function formatarTelefone(input) {
   let numero = input.value.replace(/\D/g, '');
 
@@ -145,8 +167,3 @@ function formatarCpf(input) {
   input.value = numero;
 }
 
-formulario.addEventListener('submit', function(event){
-  event.preventDefault();
-
-  cadastrar();
-});
