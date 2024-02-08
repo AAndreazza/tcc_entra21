@@ -51,6 +51,7 @@ function validarCadastro() {
 
   if (validacao) {
     cadastrar(nome, email, senha, cpf, tel);
+    window.location.href = "../TelaLogin/TelaLogin.html";
   } else {
     form.classList.add("was-validated");
   }
