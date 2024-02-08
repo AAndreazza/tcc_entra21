@@ -50,11 +50,6 @@ function validarCadastro() {
   }
 
   if (validacao) {
-    console.log(nome);
-    console.log(email);
-    console.log(senha);
-    console.log(cpf);
-    console.log(tel);
     cadastrar(nome, email, senha, cpf, tel);
   } else {
     form.classList.add("was-validated");
@@ -75,8 +70,7 @@ function cadastrar(nome, email, senha, cpf, tel) {
         email: email,
         senha: senha,
         cpf: cpf,
-        tel: tel,
-
+        telefone: tel
       })
     })
     .then(function (res) { console.log(res) })
