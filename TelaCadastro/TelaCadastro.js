@@ -51,36 +51,56 @@ function validarCadastro() {
 
   if (validacao) {
     cadastrar(nome, email, senha, cpf, tel);
-    window.location.href = "../TelaLogin/TelaLogin.html";
   } else {
     form.classList.add("was-validated");
   }
 }
 
 function cadastrar(nome, email, senha, cpf, tel) {
-
-  fetch("http://localhost:8080/usuario",
-    {
+  fetch("http://localhost:8080/usuario", {
       headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
+          "Accept": "application/json",
+          "Content-Type": "application/json"
       },
       method: "POST",
       body: JSON.stringify({
-        nome: nome,
-        email: email,
-        senha: senha,
-        cpf: cpf,
-        telefone: tel
+          nome: nome,
+          email: email,
+          senha: senha,
+          cpf: cpf,
+          telefone: tel
       })
-    })
-    .then(function (res) { console.log(res) })
-    .catch(function (error) {
+  })
+  .then(function (res) {
+      if (res.ok) {
+          // Cadastro bem-sucedido
+          window.location.href = "../TelaLogin/TelaLogin.html";
+      } else if (res.status === 409) {
+          // Exibe mensagem específica para cada tipo de conflito
+          return res.text().then(function(message) {
+            Swal.fire({
+              title: 'Cadastro inválido!',
+              text: message,
+              icon: 'error', // Ícone do alerta (success, error, warning, info, question)
+              confirmButtonText: 'Voltar'
+            });
+          });
+      } else {
+          // Outro erro no servidor
+          console.error("Erro na requisição fetch:", res.statusText);
+          Swal.fire({
+            title: 'Cadastro inválido!',
+            text: 'Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.',
+            icon: 'error', // Ícone do alerta (success, error, warning, info, question)
+            confirmButtonText: 'Voltar'
+          });
+      }
+  })
+  .catch(function (error) {
       console.error("Erro na requisição fetch:", error);
+      alert("Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.");
   });
-
-  
-};
+}
 
 function validarCPF(cpf) {
   const cpfNumeros = cpf.replace(/\D/g, '');
