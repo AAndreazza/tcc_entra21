@@ -446,3 +446,6 @@ main {
     margin-left: 50px;
   }
 }
+form input {
+  width: 100%;
+}

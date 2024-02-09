@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="CadastroItens.css">
-  <script src="CadastroItens.js"></script>
+  <script src="Alimentos.js"></script>
 </head>
 
 <body>
@@ -54,8 +54,8 @@
         </div>
 
         <div class="menuLateral" id="menuLateral">
-          <a href="../PaginaPrincipal/PaginaPrincipal.html"><img class="menu-toggle-img"
-            src="../Imagens/2-cortada.png" alt="Logo da Cash Control" style="height: 70px"></a>
+          <a href="../PaginaPrincipal/PaginaPrincipal.html"><img class="menu-toggle-img" src="../Imagens/2-cortada.png"
+              alt="Logo da Cash Control" style="height: 70px"></a>
           <p> Olá, <a href="../PerfilUsuario/PerfilUsuario.html" id="link-usuario">usuário </p></a>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="../CadastroItens/CuidadosPessoais.html"> Cuidados Pessoais </a></li>
@@ -90,30 +90,51 @@
 
       <!--CRIANDO O CARD DE CADASTRO-->
       <div class="col">
-        <div class="containerCard">
-          <p class="cadastroItens"> CADASTRO DE ITEM</p>
-          <h2>ALIMENTOS</h2>
+        
+          <div class="containerCard">
+            <p class="cadastroItens"> CADASTRO DE ITEM</p>
+            <h2>ALIMENTOS</h2>
 
-          <label> PRODUTO </label>
-          <input type="text" id="nome" name="nome" required>
+            <form id="cadastroForm" novalidate>
+            <div>
+              <label> PRODUTO </label>
+              <input type="text" id="nome" name="nome" required>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Preencha o campo.</div>
+            </div>
 
-          <label> DATA DE COMPRA </label>
-          <input type="date" id="data" name="data" required>
+            <div>
+              <label> DATA DE COMPRA </label>
+              <input type="date" id="data" name="data" required>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Preencha o campo.</div>
+            </div>
 
-          <label> VALOR UNITÁRIO </label>
-          <input type="number" id="valor" name="valor" required>
+            <div>
+              <label> VALOR UNITÁRIO </label>
+              <input type="number" id="valor" name="valor" required>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Preencha o campo.</div>
+            </div>
 
-          <label> QUANTIDADE </label>
-          <input type="number" id="qtde" name="qtde" required>
+            <div>
+              <label> QUANTIDADE </label>
+              <input type="number" id="qtde" name="qtde" required>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Preencha o campo.</div>
+            </div>
 
-          <label> DESCRIÇÃO DO PRODUTO </label>
-          <input type="text" id="descricao" name="descricao" required>
+            <div>
+              <label> DESCRIÇÃO DO PRODUTO </label>
+              <input type="text" id="descricao" name="descricao" required>
+            </div>
 
-          <div class="botoesCadastro">
-            <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
-            <button class="cadastrar" onclick="Cadastrar()">CADASTRAR</button>
+            <div class="botoesCadastro">
+              <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
+              <button type="submit" class="cadastrar" id="botao">CADASTRAR</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </main>

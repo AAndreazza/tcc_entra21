@@ -40,6 +40,7 @@ function fazerLogin(email, senha) {
         sessionStorage.setItem('cpfUsuario', usuarioAutenticado.cpf);
         sessionStorage.setItem('emailUsuario', usuarioAutenticado.email);
         sessionStorage.setItem('telefoneUsuario', usuarioAutenticado.telefone);
+        sessionStorage.setItem('usuarioId', usuarioAutenticado.usuario_id);
 
         Swal.fire({
           title: 'Login bem sucedido!',

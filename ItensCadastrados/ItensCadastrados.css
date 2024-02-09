@@ -97,7 +97,14 @@ main {
   margin-bottom: 20px;
 }
 
+#link-usuario:hover {
+  color: #CDE1B7;
+}
 
+#link-usuario {
+  text-decoration: none;
+  color: #ffffff;
+}
 
 
 .containerCard input {
