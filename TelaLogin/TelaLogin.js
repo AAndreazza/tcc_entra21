@@ -37,6 +37,9 @@ function fazerLogin(email, senha) {
 
       if (usuarioAutenticado) {
         sessionStorage.setItem('nomeUsuario', usuarioAutenticado.nome);
+        sessionStorage.setItem('cpfUsuario', usuarioAutenticado.cpf);
+        sessionStorage.setItem('emailUsuario', usuarioAutenticado.email);
+        sessionStorage.setItem('telefoneUsuario', usuarioAutenticado.telefone);
 
         Swal.fire({
           title: 'Login bem sucedido!',
