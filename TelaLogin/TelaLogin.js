@@ -16,7 +16,7 @@ function validarLogin() {
 
   if (validacao) {
     fazerLogin(x, y);
-    
+
   } else {
     form.classList.add("was-validated");
   }
@@ -25,28 +25,37 @@ function validarLogin() {
 function fazerLogin(email, senha) {
   // Faz uma solicitação HTTP GET para obter os dados dos usuários
   fetch('http://localhost:8080/usuario')
-      .then(response => {
-          if (!response.ok) {
-              throw new Error('Não foi possível obter os dados dos usuários.');
-          }
-          return response.json(); // Converte a resposta para JSON
-      })
-      .then(usuarios => {
-          // Verifica se algum usuário possui o email e a senha fornecidos
-          const usuarioAutenticado = usuarios.find(usuario => usuario.email === email && usuario.senha === senha);
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Não foi possível obter os dados dos usuários.');
+      }
+      return response.json(); // Converte a resposta para JSON
+    })
+    .then(usuarios => {
+      // Verifica se algum usuário possui o email e a senha fornecidos
+      const usuarioAutenticado = usuarios.find(usuario => usuario.email === email && usuario.senha === senha);
 
-          if (usuarioAutenticado) {
-              window.location.href = "../PaginaPrincipal/PaginaPrincipal.html"
-          } else {
-              Swal.fire({
-                title: 'Login inválido!',
-                text: 'Email ou senha incorretos...',
-                icon: 'error', // Ícone do alerta (success, error, warning, info, question)
-                confirmButtonText: 'Voltar'
-              });
-          }
-      })
-      .catch(error => {
-          console.error('Ocorreu um erro ao tentar fazer login:', error.message);
-      });
+      if (usuarioAutenticado) {
+        sessionStorage.setItem('nomeUsuario', usuarioAutenticado.nome);
+
+        Swal.fire({
+          title: 'Login bem sucedido!',
+          text: 'Login efetuado com sucesso!',
+          icon: 'success',
+          confirmButtonText: 'Avançar'
+        }).then(() => {
+          window.location.href = "../PaginaPrincipal/PaginaPrincipal.html";
+        });
+      } else {
+        Swal.fire({
+          title: 'Login inválido!',
+          text: 'Email ou senha incorretos...',
+          icon: 'error', // Ícone do alerta (success, error, warning, info, question)
+          confirmButtonText: 'Voltar'
+        });
+      }
+    })
+    .catch(error => {
+      console.error('Ocorreu um erro ao tentar fazer login:', error.message);
+    });
 }

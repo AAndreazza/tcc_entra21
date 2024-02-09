@@ -73,10 +73,16 @@ function cadastrar(nome, email, senha, cpf, tel) {
   })
   .then(function (res) {
       if (res.ok) {
-          // Cadastro bem-sucedido
+        Swal.fire({
+          title: 'Cadastro bem sucedido!',
+          text: 'Usuario cadastrado com sucesso!',
+          icon: 'success',
+          confirmButtonText: 'Avançar'
+        }).then(() => {
           window.location.href = "../TelaLogin/TelaLogin.html";
+        });
+          
       } else if (res.status === 409) {
-          // Exibe mensagem específica para cada tipo de conflito
           return res.text().then(function(message) {
             Swal.fire({
               title: 'Cadastro inválido!',
