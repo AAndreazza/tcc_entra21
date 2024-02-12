@@ -193,6 +193,8 @@ table th:nth-child(4) {
   color: #466F17;
   border-radius: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 
