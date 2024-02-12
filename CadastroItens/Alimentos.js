@@ -24,10 +24,9 @@ function validarCadastro() {
   const quantidade = document.getElementById("qtde").value;
   const descricao = document.getElementById("descricao").value;
   const form = document.getElementById("cadastroForm");
+  const usuarioId = sessionStorage.getItem('usuarioId');
 
   form.classList.remove("was-validated");
-
-  const usuarioId = sessionStorage.getItem('usuarioId');
 
   let validacao = true;
 
@@ -69,10 +68,10 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
           icon: 'success',
           confirmButtonText: 'Avançar'
         }).then(() => {
-          window.location.href = "../TelaLogin/TelaLogin.html";
+          window.location.href = "../ItensCadastrados/Itenscadastro2.html";
         });
 
-      } else if (res.status === 409) {
+      } else if (res.status === 500) {
         return res.text().then(function (message) {
           Swal.fire({
             title: 'Cadastro inválido!',
@@ -94,7 +93,6 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
     })
     .catch(function (error) {
       console.error("Erro na requisição fetch:", error);
-      alert("Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.");
     });
 }
 
