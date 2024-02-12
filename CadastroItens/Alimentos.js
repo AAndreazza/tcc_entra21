@@ -20,6 +20,10 @@ function validarCadastro() {
   const produto = document.getElementById("nome").value;
   const dataCompra = document.getElementById("data").value;
   const dataCompraDate = new Date(dataCompra);
+  const ano = dataCompraDate.getFullYear();
+  const mes = (dataCompraDate.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se for necessário
+  const dia = dataCompraDate.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se for necessário
+  const formatoData = `${ano}-${mes}-${dia}`;
   const valorUnitario = document.getElementById("valor").value;
   const quantidade = document.getElementById("qtde").value;
   const descricao = document.getElementById("descricao").value;
@@ -30,21 +34,21 @@ function validarCadastro() {
 
   let validacao = true;
 
-  if (produto.trim() === "" || dataCompraDate.trim() === "" || valorUnitario.trim() === "" || quantidade.trim() === "") {
+  if (produto.trim() === "" || formatoData.trim() === "" || valorUnitario === "" || quantidade === "") {
     validacao = false;
   }
 
   if (validacao) {
 
-    console.log(dataCompraDate)
-    cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao, usuarioId)
+    console.log(formatoData)
+    cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, usuarioId)
     
   } else {
     form.classList.add("was-validated");
   }
 }
 
-function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao, usuarioId) {
+function cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, usuarioId) {
   fetch("http://localhost:8080/item", {
     headers: {
       "Accept": "application/json",
@@ -53,18 +57,18 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
     method: "POST",
     body: JSON.stringify({
       produto: produto,
-      data_compra: dataCompraDate,
+      data_compra: formatoData,
       valor: valorUnitario,
       descricao: descricao,
       usuario_id: usuarioId,
-      sg_setor: '07'
+      sg_setor: 10
     })
   })
     .then(function (res) {
       if (res.ok) {
         Swal.fire({
           title: 'Cadastro bem sucedido!',
-          text: 'Usuario cadastrado com sucesso!',
+          text: 'Item cadastrado com sucesso!',
           icon: 'success',
           confirmButtonText: 'Avançar'
         }).then(() => {
@@ -75,7 +79,7 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
         return res.text().then(function (message) {
           Swal.fire({
             title: 'Cadastro inválido!',
-            text: message,
+            text: 'Cadastro do item nao foi efetuado!',
             icon: 'error', // Ícone do alerta (success, error, warning, info, question)
             confirmButtonText: 'Voltar'
           });
@@ -85,7 +89,7 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
         console.error("Erro na requisição fetch:", res.statusText);
         Swal.fire({
           title: 'Cadastro inválido!',
-          text: 'Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.',
+          text: 'Erro ao cadastrar esse item. Por favor, tente novamente mais tarde.',
           icon: 'error', // Ícone do alerta (success, error, warning, info, question)
           confirmButtonText: 'Voltar'
         });

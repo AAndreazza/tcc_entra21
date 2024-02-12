@@ -36,11 +36,12 @@ function fazerLogin(email, senha) {
       const usuarioAutenticado = usuarios.find(usuario => usuario.email === email && usuario.senha === senha);
 
       if (usuarioAutenticado) {
+        console.log(usuarioAutenticado)
         sessionStorage.setItem('nomeUsuario', usuarioAutenticado.nome);
         sessionStorage.setItem('cpfUsuario', usuarioAutenticado.cpf);
         sessionStorage.setItem('emailUsuario', usuarioAutenticado.email);
         sessionStorage.setItem('telefoneUsuario', usuarioAutenticado.telefone);
-        sessionStorage.setItem('usuarioId', usuarioAutenticado.usuario_id);
+        sessionStorage.setItem('usuarioId', String(usuarioAutenticado.usuarioId));
 
         Swal.fire({
           title: 'Login bem sucedido!',
