@@ -96,22 +96,40 @@
           <p class="cadastroItens"> CADASTRO DE ITEM</p>
           <h2>OUTROS</h2>
 
-          <label> PRODUTO </label>
-          <input type="text" id="nome" name="nome" required>
+          <form id="cadastroForm" novalidate>
+            <div>
+              <label for="nome"> PRODUTO </label>
+              <input type="text" id="nome" name="nome" required>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Preencha o campo.</div>
+            </div>
 
-          <label> DATA DE COMPRA </label>
-          <input type="date" id="data" name="data" required>
+            <div>
+              <label for="data"> DATA DE COMPRA </label>
+              <input type="date" id="data" name="data" required>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Preencha o campo.</div>
+            </div>
 
-          <label> VALOR </label>
-          <input type="number" id="valor" name="valor" required>
+            <div>
+              <label for="valor"> VALOR </label>
+              <input type="number" id="valor" name="valor" required>
+              <div class="valid-feedback"></div>
+              <div class="invalid-feedback">Preencha o campo.</div>
+            </div>
 
-          <label> DESCRIÇÃO DO PRODUTO </label>
-          <input type="text" id="descricao" name="descricao" required>
+            <div>
+              <label for="descricao"> DESCRIÇÃO DO PRODUTO </label>
+              <input type="text" id="descricao" name="descricao" required>
+            </div>
 
-          <div class="botoesCadastro">
-            <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
-            <button class="cadastrar" onclick="Cadastrar()">CADASTRAR</button>
-          </div>
+            <div class="botoesCadastro">
+              <button class="cancelar" onclick="limparCampos()">CANCELAR</button>
+              <button type="submit" class="cadastrar">CADASTRAR</button>
+            </div>
+
+          </form>
+          
         </div>
 
       </div>

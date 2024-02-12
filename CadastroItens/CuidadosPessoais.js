@@ -39,11 +39,6 @@ function validarCadastro() {
 
   if (validacao) {
 
-    console.log(produto)
-    console.log(valor)
-    console.log(descricao)
-    console.log(formatoData)
-    console.log(usuarioId)
     cadastrar(produto, formatoData, valor, descricao, usuarioId)
     
   } else {
@@ -75,6 +70,7 @@ function cadastrar(produto, formatoData, valor, descricao, usuarioId) {
           icon: 'success',
           confirmButtonText: 'Avançar'
         }).then(() => {
+          limparCampos();
           window.location.href = "../ItensCadastrados/ItensCadastrados.html";
         });
 
@@ -103,4 +99,9 @@ function cadastrar(produto, formatoData, valor, descricao, usuarioId) {
     });
 }
 
-
+function limparCampos() {
+  document.getElementById("nome").value = "";
+  document.getElementById("data").value = "";
+  document.getElementById("valor").value = "";
+  document.getElementById("descricao").value = "";
+}

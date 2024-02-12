@@ -40,7 +40,6 @@ function validarCadastro() {
 
   if (validacao) {
 
-    console.log(formatoData)
     cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, usuarioId)
     
   } else {
@@ -57,11 +56,12 @@ function cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, u
     method: "POST",
     body: JSON.stringify({
       produto: produto,
-      data_compra: formatoData,
+      dataCompra: formatoData,
       valor: valorUnitario,
       descricao: descricao,
-      usuario_id: usuarioId,
-      sg_setor: 10
+      usuarioId: usuarioId,
+      quantidade: quantidade,
+      sgSetor: 6
     })
   })
     .then(function (res) {
@@ -72,7 +72,8 @@ function cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, u
           icon: 'success',
           confirmButtonText: 'Avançar'
         }).then(() => {
-          window.location.href = "../ItensCadastrados/Itenscadastro2.html";
+          limparCampos();
+          window.location.href = "../ItensCadastrados/ItensCadastrados.html";
         });
 
       } else if (res.status === 500) {
@@ -98,6 +99,14 @@ function cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, u
     .catch(function (error) {
       console.error("Erro na requisição fetch:", error);
     });
+}
+
+function limparCampos() {
+  document.getElementById("nome").value = "";
+  document.getElementById("data").value = "";
+  document.getElementById("valor").value = "";
+  document.getElementById("qtde").value = "";
+  document.getElementById("descricao").value = "";
 }
 
 
