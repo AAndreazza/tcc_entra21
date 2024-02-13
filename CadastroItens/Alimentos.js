@@ -1,11 +1,43 @@
+function hideMenuOnSmallScreens() {
+  var screenWidth = window.innerWidth;
+  var menuLateral = document.getElementById('menuLateral');
+  var menuSUPERIOR = document.getElementById('menuSUPERIOR');
+    var porColunas = document.getElementById('porColunas');
+
+  if (screenWidth <= 460) { // Se a largura da tela for 460 pixels ou menos
+      menuLateral.style.display = 'none'; // Oculta o menu lateral
+      menuSUPERIOR.style.display = 'block';    
+      porColunas.style.display = 'none';
+      
+  } else {
+      menuLateral.style.display = 'block'; // Exibe o menu lateral
+      menuSUPERIOR.style.display = 'none'; 
+      porColunas.style.display = 'block';
+      
+  }
+}
+
+window.onload = hideMenuOnSmallScreens;
+window.onresize = hideMenuOnSmallScreens;
+
+function stopPropagation(event) {
+event.stopPropagation();
+}
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // Este bloco de código será executado após o carregamento do DOM
   const nomeUsuario = sessionStorage.getItem('nomeUsuario');
   const elementoNomeUsuario = document.getElementById('link-usuario');
+  const elementoNomeUsuario2 = document.getElementById('link-usuario2');
 
-  if (elementoNomeUsuario) {
+  
     elementoNomeUsuario.innerText = nomeUsuario;
-  }
+    elementoNomeUsuario2.innerText = nomeUsuario;
+  
 
   const formulario = document.querySelector("#cadastroForm");
 
@@ -95,5 +127,8 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
       console.error("Erro na requisição fetch:", error);
     });
 }
+
+
+
 
 

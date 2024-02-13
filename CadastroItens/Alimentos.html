@@ -11,148 +11,210 @@
   <link rel="stylesheet" href="CadastroItens.css">
   <script src="Alimentos.js"></script>
 
-  
+
 </head>
 
 <body>
-  <main>
-    <div class="row">
-      <!--CRIANDO O MENU LATERAL (ADICIONAR NOME DO USUÁRIO)-->
-      <nav class="col">
-        <div class="corMenu">
-          <div class="menu-toggle">
-            <a href="../PaginaPrincipal/PaginaPrincipal.html"><img class="menu-toggle-img"
-                src="../Imagens/2-cortada.png" alt="Logo da Cash Control" style="height: 60px"></a>
-            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-              style="margin-left: 250px; color: #ffffff; border: none;"> MENU </button>
-            <ul class="dropdown-menu">
-              <li class="list-group-item"><a href="../CadastroItens/CuidadosPessoais.html"> Cuidados Pessoais </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Educacao.html"> Educação </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Financiamento.html"> Financiamento </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Imposto.html"> Imposto </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Lazer.html"> Lazer </a></li>
 
-              <!-- dropdown / submenu -->
-              <div class="dropdown">
-                <li class="list-group-item"><a> Mercado </a></li>
-                <ul class="dropdown-menu">
-                  <li class="list-group-item"><a href="Alimentos.html"> Alimentos </a></li>
-                  <li class="list-group-item"><a href="../CadastroItens/Bebidas.html"> Bebidas </a></li>
-                  <li class="list-group-item"><a href="../CadastroItens/Higiene.html"> Higiene </a></li>
-                  <li class="list-group-item"><a href="../CadastroItens/Limpeza.html"> Limpeza </a></li>
-                  <li class="list-group-item"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal </a></li>
-                </ul>
-              </div>
 
-              <li class="list-group-item"><a href="../CadastroItens/Moradia.html"> Moradia </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e Investimento
-                </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Saude.html"> Saúde </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Transporte.html"> Transporte </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Vestuario.html"> Vestuário </a></li>
-              <li class="list-group-item"><a href="../CadastroItens/Outros.html"> + </a></li>
-            </ul>
-          </div>
+  <div class="MenuSUPERIOR" id="menuSUPERIOR">
+    <div class="container ">
+      <div class="d-flex ">
+        <div class="d-flex align-items-center">
+          <img src="../Imagens/2-cortada.png" alt="Logo da Cash Control" style="height: 70px" class="mr-3">
+
+          <p id="nome-usuario" class="text-center m-0">Olá, <a href="../PerfilUsuario/PerfilUsuario.html"
+              id="link-usuario"> usuário</a></p>
         </div>
 
-        <div class="menuLateral" id="menuLateral">
-          <a href="../PaginaPrincipal/PaginaPrincipal.html"><img class="menu-toggle-img" src="../Imagens/2-cortada.png"
-              alt="Logo da Cash Control" style="height: 70px"></a>
-          <p> Olá, <a href="../PerfilUsuario/PerfilUsuario.html" id="link-usuario">usuário </p></a>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="../CadastroItens/CuidadosPessoais.html"> Cuidados Pessoais </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Educacao.html"> Educação </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Financiamento.html"> Financiamento </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Imposto.html"> Imposto </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Lazer.html"> Lazer </a></li>
 
-            <!-- dropdown / submenu -->
-            <div class="dropdown">
-              <li class="list-group-item"><a> Mercado </a></li>
-              <ul class="dropdown-menu">
-                <li class="list-group-item"><a href="Alimentos.html"> Alimentos </a></li>
-                <li class="list-group-item"><a href="../CadastroItens/Bebidas.html"> Bebidas </a></li>
-                <li class="list-group-item"><a href="../CadastroItens/Higiene.html"> Higiene </a></li>
-                <li class="list-group-item"><a href="../CadastroItens/Limpeza.html"> Limpeza </a></li>
-                <li class="list-group-item"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal </a></li>
+        <div class="dropdown ms-auto mt-3 " style="border-bottom: 0px;">
+          <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Cadastrar Item
+          </button>
+          <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+
+            <li class="mt-2">
+              <a href="../CadastroItens/CuidadosPessoais.html"> Cuidados Pessoais</a>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/Educacao.html"> Educação </a>
+            </li>
+            </li class="mt-2">
+            <li class="mt-2">
+              <a href="../CadastroItens/Financiamento.html"> Financiamento</a>
+            </li>
+            <li class="mt-2"> <a href="../CadastroItens/Imposto.html"> Imposto </a></li>
+            <li class="mt-2"> <a href="../CadastroItens/Lazer.html"> Lazer </a></li>
+
+            <li class="dropdown" onclick="stopPropagation(event)">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Mercado
+              </button>
+              <ul class="dropdown-menu text-center aria-labelledby=" dropdownMenuButton2">
+                <li class="mt-2"><a href="../CadastroItens/Alimentos.html"> Alimentos </a>
+                </li>
+                <li class="mt-2"><a href="../CadastroItens/Bebidas.html"> Bebidas </a>
+                </li>
+                <li class="mt-2"><a href="../CadastroItens/Higiene.html"> Higiene </a>
+                </li>
+                <li class="mt-2"><a href="../CadastroItens/Limpeza.html"> Limpeza </a>
+                </li>
+                <li class="mt-2"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal
+                  </a>
+                </li>
               </ul>
-            </div>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/Moradia.html"> Moradia </a>
 
-            <li class="list-group-item separator" style="margin-top: -22px;"></li>
-            <li class="list-group-item"><a href="../CadastroItens/Moradia.html"> Moradia </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e Investimento
-              </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Saude.html"> Saúde </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Transporte.html"> Transporte </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Vestuario.html"> Vestuário </a></li>
-            <li class="list-group-item"><a href="../CadastroItens/Outros.html"> + </a></li>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e
+                Investimento
+              </a>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/Saude.html"> Saúde </a>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/Transporte.html"> Transporte </a>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/Moradia.html"> Moradia </a>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/Vestuario.html"> Vestuário </a>
+            </li>
+            <li class="mt-2">
+              <a href="../CadastroItens/Outros.html"> Outros</a>
+            </li>
           </ul>
         </div>
-      </nav>
 
-      <!--CRIANDO O CARD DE CADASTRO-->
-      <div class="col">
-        
-          <div class="containerCard">
-            <p class="cadastroItens"> CADASTRO DE ITEM</p>
-            <h2>ALIMENTOS</h2>
 
-            <form id="cadastroForm" novalidate>
-            <div>
-              <label> PRODUTO </label>
-              <input type="text" id="nome" name="nome" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
 
-            <div>
-              <label> DATA DE COMPRA </label>
-              <input type="date" id="data" name="data" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
-
-            <div>
-              <label> VALOR UNITÁRIO </label>
-              <input type="number" id="valor" name="valor" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
-
-            <div>
-              <label> QUANTIDADE </label>
-              <input type="number" id="qtde" name="qtde" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
-
-            <div>
-              <label> DESCRIÇÃO DO PRODUTO </label>
-              <input type="text" id="descricao" name="descricao" required>
-            </div>
-
-            <div class="botoesCadastro">
-              <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
-              <button type="submit" class="cadastrar" id="botao">CADASTRAR</button>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
-  </main>
+  </div>
 
-  <!--RODAPÉ-->
+
+  <div class="row" >
+    <div class="col-3" id="porColunas">
+      <div class="MenuLATERAL " id="menuLateral">
+        <div class="container">
+          <img class="mx-auto d-block" src="../Imagens/2-cortada.png" alt="Logo da Cash Control" style="height: 70px">
+          <p class="text-center"> Olá, <a class="tex" href="../PerfilUsuario/PerfilUsuario.html"
+              id="link-usuario2">usuário</p>
+          <div class="row">
+            <div class="col">
+              <div class="mt-3"><a href="../CadastroItens/CuidadosPessoais.html"> Cuidados
+                  Pessoais</a>
+              </div>
+              <div class="mt-3 "><a href="../CadastroItens/Educacao.html"> Educação </a></div>
+              <div class="mt-3 "><a href="../CadastroItens/Financiamento.html"> Financiamento</a>
+              </div>
+              <div class="mt-3 "><a href="../CadastroItens/Imposto.html"> Imposto </a></div>
+              <div class="mt-3 "><a href="../CadastroItens/Lazer.html"> Lazer </a></div>
+              <div class="mt-3 dropdown" data-bs-toggle="dropdown">Mercado</div>
+              <ul class="dropdown-menu text-center">
+                <li class="dropdown-item"><a href="../CadastroItens/Alimentos.html"> Alimentos </a>
+                </li>
+                <li class="dropdown-item"><a href="../CadastroItens/Bebidas.html"> Bebidas </a>
+                </li>
+                <li class="dropdown-item"><a href="../CadastroItens/Higiene.html"> Higiene </a>
+                </li>
+                <li class="dropdown-item"><a href="../CadastroItens/Limpeza.html"> Limpeza </a>
+                </li>
+                <li class="dropdown-item"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal
+                  </a>
+                </li>
+              </ul>
+              <div class="mt-3"><a href="../CadastroItens/Moradia.html"> Moradia </a>
+              </div>
+              <div class="mt-3"><a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e
+                  Investimento
+                </a></div>
+              <div class="mt-3"><a href="../CadastroItens/Saude.html"> Saúde </a></div>
+              <div class=" mt-3"><a href="../CadastroItens/Transporte.html"> Transporte </a></div>
+              <div class=" mt-3"><a href="../CadastroItens/Moradia.html"> Moradia </a></div>
+              <div class=" mt-3"><a href="../CadastroItens/Vestuario.html"> Vestuário </a></div>
+              <div class=" mt-3" style="border-bottom: none;"><a href="../CadastroItens/Outros.html">
+                  Outros </a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-9">
+      <div class="container">
+        <div class="row ">
+          <div class="col d-flex justify-content-center ">
+            <div class="containerCard  ">
+              <p class="cadastroItens"> CADASTRO DE ITEM</p>
+              <h2>ALIMENTOS</h2>
+              <form id="cadastroForm" novalidate>
+                <div>
+                  <label> PRODUTO </label>
+                  <input type="text" id="nome" name="nome" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> DATA DE COMPRA </label>
+                  <input type="date" id="data" name="data" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> VALOR UNITÁRIO </label>
+                  <input type="number" id="valor" name="valor" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> QUANTIDADE </label>
+                  <input type="number" id="qtde" name="qtde" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> DESCRIÇÃO DO PRODUTO </label>
+                  <input type="text" id="descricao" name="descricao" required>
+                </div>
+                <div class="botoesCadastro">
+                  <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
+                  <button type="submit" class="cadastrar" id="botao">CADASTRAR</button>
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
   <footer id='rodape' class="text-center text-lg-start">
     <div class="container p-1">
       <div id='rodape-conteudo' class="row align-items-center">
-        <div class="col-lg-4 mb-md-0">
+        <div class="col-lg-4 mb-md-0 justify-content-center align-items-center">
           <a href="../PaginaPrincipal/PaginaPrincipal.html"><img src="../Imagens/1.png" alt="logo Cash Control"
-              style="height: 100px; margin-left: -40px;"></a>
+              style="height: 100px;"></a>
         </div>
         <div class="col-lg-8 col-md-12 mb-md-0 text-center">
-          <h5 id='frase-impacto' class="text-uppercase mb-1 mt-3">CONQUISTE O CONTROLE FINANCEIRO QUE VOCÊ MERECE!</h5>
+          <h5 id='frase-impacto' class="text-uppercase mb-1 mt-3">CONQUISTE O CONTROLE FINANCEIRO QUE VOCÊ
+            MERECE!</h5>
           <button id='botao-atendimento' type="button" class="btn mt-3 mb-3">
-            <a href="mailto:atendimentocashcontrol@outlook.com.br" target="_blank"> CENTRAL DE ATENDIMENTO </a></button>
+            <a href="mailto:atendimentocashcontrol@outlook.com.br" target="_blank"> CENTRAL DE ATENDIMENTO
+            </a></button>
         </div>
       </div>
     </div>
