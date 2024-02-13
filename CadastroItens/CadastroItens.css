@@ -1,41 +1,3 @@
-/* AJUSTE NO MAIN PARA POSICIONAR MENU LATERAL E CARD */
-main {
-  display: flex;
-  justify-content: space-between;
-}
-
-/*ESTILIZAÇÃO DO MENU LATERAL*/
-.menuLateral {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: #5C7243;
-  max-width: 270px;
-  padding-top: 10px;
-  color: #ffffff;
-}
-
-.menuLateral .list-group-item {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  background-color: #5C7243;
-  max-width: 270px;
-  padding: 15px 25px 15px 0;
-}
-
-.menuLateral .list-group-item a {
-  margin-left: 20px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.menuLateral p {
-  padding-top: 30px;
-}
-
 #link-usuario:hover {
   color: #CDE1B7;
 }
@@ -52,9 +14,9 @@ main {
   padding: 20px 20px 10px 20px;
   border-radius: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-left: 300px;
-  margin-top: 50px;
+  
 }
+
 .containerCard h2 {
   display: flex;
   justify-content: center;
@@ -66,7 +28,6 @@ main {
 .containerCard label {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
 }
 
 .containerCard input {
@@ -74,12 +35,12 @@ main {
   border: none;
   border-radius: 10px;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 .containerCard .botoesCadastro {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .cancelar,

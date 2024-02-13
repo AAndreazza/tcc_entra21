@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="CadastroItens.css">
   <script src="Alimentos.js"></script>
 
-  
+
 </head>
 
 <body>
@@ -146,60 +146,62 @@
             </div>
           </div>
         </div>
-      </nav>
-
-      <!--CRIANDO O CARD DE CADASTRO-->
-      <div class="col">
-        
-          <div class="containerCard">
-            <p class="cadastroItens"> CADASTRO DE ITEM</p>
-            <h2>ALIMENTOS</h2>
-
-            <form id="cadastroForm" novalidate>
-            <div>
-              <label> PRODUTO </label>
-              <input type="text" id="nome" name="nome" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
-
-            <div>
-              <label> DATA DE COMPRA </label>
-              <input type="date" id="data" name="data" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
-
-            <div>
-              <label> VALOR UNITÁRIO </label>
-              <input type="number" id="valor" name="valor" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
-
-            <div>
-              <label> QUANTIDADE </label>
-              <input type="number" id="qtde" name="qtde" class="form-control" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">Preencha o campo.</div>
-            </div>
-
-            <div>
-              <label> DESCRIÇÃO DO PRODUTO </label>
-              <input type="text" id="descricao" name="descricao" required>
-            </div>
-
-            <div class="botoesCadastro">
-              <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
-              <button type="submit" class="cadastrar" id="botao">CADASTRAR</button>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
-  </main>
 
-  <!--RODAPÉ-->
+
+    <div class="col-9">
+      <div class="container">
+        <div class="row ">
+          <div class="col d-flex justify-content-center ">
+            <div class="containerCard  ">
+              <p class="cadastroItens"> CADASTRO DE ITEM</p>
+              <h2>ALIMENTOS</h2>
+              <form id="cadastroForm" novalidate>
+                <div>
+                  <label> PRODUTO </label>
+                  <input type="text" id="nome" name="nome" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> DATA DE COMPRA </label>
+                  <input type="date" id="data" name="data" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> VALOR UNITÁRIO </label>
+                  <input type="number" id="valor" name="valor" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> QUANTIDADE </label>
+                  <input type="number" id="qtde" name="qtde" class="form-control" required>
+                  <div class="valid-feedback"></div>
+                  <div class="invalid-feedback">Preencha o campo.</div>
+                </div>
+                <div>
+                  <label> DESCRIÇÃO DO PRODUTO </label>
+                  <input type="text" id="descricao" name="descricao" required>
+                </div>
+                <div class="botoesCadastro">
+                  <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
+                  <button type="submit" class="cadastrar" id="botao">CADASTRAR</button>
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
   <footer id='rodape' class="text-center text-lg-start">
     <div class="container p-1">
       <div id='rodape-conteudo' class="row align-items-center">
