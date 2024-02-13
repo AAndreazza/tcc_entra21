@@ -52,6 +52,10 @@ function validarCadastro() {
   const produto = document.getElementById("nome").value;
   const dataCompra = document.getElementById("data").value;
   const dataCompraDate = new Date(dataCompra);
+  const ano = dataCompraDate.getFullYear();
+  const mes = (dataCompraDate.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se for necessário
+  const dia = dataCompraDate.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se for necessário
+  const formatoData = `${ano}-${mes}-${dia}`;
   const valorUnitario = document.getElementById("valor").value;
   const quantidade = document.getElementById("qtde").value;
   const descricao = document.getElementById("descricao").value;
@@ -62,21 +66,20 @@ function validarCadastro() {
 
   let validacao = true;
 
-  if (produto.trim() === "" || dataCompraDate.trim() === "" || valorUnitario.trim() === "" || quantidade.trim() === "") {
+  if (produto.trim() === "" || formatoData.trim() === "" || valorUnitario === "" || quantidade === "") {
     validacao = false;
   }
 
   if (validacao) {
 
-    console.log(dataCompraDate)
-    cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao, usuarioId)
+    cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, usuarioId)
     
   } else {
     form.classList.add("was-validated");
   }
 }
 
-function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao, usuarioId) {
+function cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, usuarioId) {
   fetch("http://localhost:8080/item", {
     headers: {
       "Accept": "application/json",
@@ -85,29 +88,31 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
     method: "POST",
     body: JSON.stringify({
       produto: produto,
-      data_compra: dataCompraDate,
+      dataCompra: formatoData,
       valor: valorUnitario,
       descricao: descricao,
-      usuario_id: usuarioId,
-      sg_setor: '07'
+      usuarioId: usuarioId,
+      quantidade: quantidade,
+      sgSetor: 6
     })
   })
     .then(function (res) {
       if (res.ok) {
         Swal.fire({
           title: 'Cadastro bem sucedido!',
-          text: 'Usuario cadastrado com sucesso!',
+          text: 'Item cadastrado com sucesso!',
           icon: 'success',
           confirmButtonText: 'Avançar'
         }).then(() => {
-          window.location.href = "../ItensCadastrados/Itenscadastro2.html";
+          limparCampos();
+          window.location.href = "../ItensCadastrados/ItensCadastrados.html";
         });
 
       } else if (res.status === 500) {
         return res.text().then(function (message) {
           Swal.fire({
             title: 'Cadastro inválido!',
-            text: message,
+            text: 'Cadastro do item nao foi efetuado!',
             icon: 'error', // Ícone do alerta (success, error, warning, info, question)
             confirmButtonText: 'Voltar'
           });
@@ -117,7 +122,7 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
         console.error("Erro na requisição fetch:", res.statusText);
         Swal.fire({
           title: 'Cadastro inválido!',
-          text: 'Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.',
+          text: 'Erro ao cadastrar esse item. Por favor, tente novamente mais tarde.',
           icon: 'error', // Ícone do alerta (success, error, warning, info, question)
           confirmButtonText: 'Voltar'
         });
@@ -126,6 +131,14 @@ function cadastrar(produto, dataCompraDate, valorUnitario, quantidade, descricao
     .catch(function (error) {
       console.error("Erro na requisição fetch:", error);
     });
+}
+
+function limparCampos() {
+  document.getElementById("nome").value = "";
+  document.getElementById("data").value = "";
+  document.getElementById("valor").value = "";
+  document.getElementById("qtde").value = "";
+  document.getElementById("descricao").value = "";
 }
 
 
