@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Este bloco de código será executado após o carregamento do DOM
     const nomeUsuario = sessionStorage.getItem('nomeUsuario');
     const elementoNomeUsuario = document.getElementById('link-usuario');
-  
+    const elementoNomeUsuario2 = document.getElementById('link-usuario2');
     
 
     elementoNomeUsuario.innerText = nomeUsuario;
-    console.log(elementoNomeUsuario);
+    elementoNomeUsuario2.innerText = nomeUsuario;
 
   });
 // Função para verificar e ocultar o menu lateral em telas menores
