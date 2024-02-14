@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+
 function validarCadastro() {
   const produto = document.getElementById("nome").value;
   const dataCompra = document.getElementById("data").value;
@@ -66,8 +68,11 @@ function validarCadastro() {
 
   let validacao = true;
 
+  
+
   if (produto.trim() === "" || formatoData.trim() === "" || valorUnitario === "" || quantidade === "") {
     validacao = false;
+ 
   }
 
   if (validacao) {
@@ -140,6 +145,54 @@ function limparCampos() {
   document.getElementById("qtde").value = "";
   document.getElementById("descricao").value = "";
 }
+
+
+function validarcampos() {
+  const produto = document.getElementById("nome");
+  const dataCompra = document.getElementById("data");
+  const valorUnitario = document.getElementById("valor");
+  const quantidade = document.getElementById("qtde");
+      
+  let validacao = true;
+
+  if (produto.value.trim() === "" || dataCompra.value.trim() === "" || valorUnitario.value === "" || quantidade.value === "") {
+    validacao = false;
+    produto.classList.add('input-invalido');
+    dataCompra.classList.add('input-invalido');
+    valorUnitario.classList.add('input-invalido');
+    quantidade.classList.add('input-invalido');
+  } else {
+    produto.classList.remove('input-invalido');
+    dataCompra.classList.remove('input-invalido');
+    valorUnitario.classList.remove('input-invalido');
+    quantidade.classList.remove('input-invalido');
+  }
+
+
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const formulario = document.querySelector("#cadastroForm");
+
+  formulario.addEventListener('submit', function (event) {
+    event.preventDefault();
+    validarcampos();
+  });
+
+  // Adicionando a validação em tempo real
+  formulario.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        this.classList.remove('input-invalido');
+        this.classList.add('input-valido');
+      } else {
+        this.classList.remove('input-valido');
+        this.classList.add('input-invalido');
+      }
+    });
+  });
+});
+
 
 
 

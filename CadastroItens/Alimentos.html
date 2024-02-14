@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="CadastroItens.css">
   <script src="Alimentos.js"></script>
 
+  
+
 
 </head>
 
@@ -53,7 +55,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Mercado
               </button>
-              <ul class="dropdown-menu text-center aria-labelledby=" dropdownMenuButton2">
+              <ul class="dropdown-menu text-center" aria-labelledby=" dropdownMenuButton2">
                 <li class="mt-2"><a href="../CadastroItens/Alimentos.html"> Alimentos </a>
                 </li>
                 <li class="mt-2"><a href="../CadastroItens/Bebidas.html"> Bebidas </a>
@@ -162,7 +164,7 @@
                   <label> PRODUTO </label>
                   <input type="text" id="nome" name="nome" class="form-control" required>
                   <div class="valid-feedback"></div>
-                  <div class="invalid-feedback">Preencha o campo.</div>
+                  <div class="invalid-feedback ">Preencha o campo.</div>
                 </div>
                 <div>
                   <label> DATA DE COMPRA </label>
@@ -188,7 +190,7 @@
                 </div>
                 <div class="botoesCadastro">
                   <button class="cancelar" onclick="Cancelar()">CANCELAR</button>
-                  <button type="submit" class="cadastrar" id="botao">CADASTRAR</button>
+                  <button type="submit" class="cadastrar" id="botao" onclick="validarcampos">CADASTRAR</button>
                 </div>
             </div>
             </form>
