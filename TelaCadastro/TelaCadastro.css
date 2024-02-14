@@ -4,8 +4,7 @@ header {
   padding: 15px;
 }
 
-header a,
-header img {
+header a, header img {
   margin-left: 25px;
 }
 
@@ -14,6 +13,7 @@ body {
   margin: 0;
 }
 
+/*ESTILIZAÇÃO DO CARD*/
 .container1 {
   width: 550px;
   margin: 30px auto;

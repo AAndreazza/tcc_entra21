@@ -1,158 +1,111 @@
+/*ESTILIZAÇÃO DO MENU LATERAL*/
 .MenuLATERAL {
   background-color: #5C7243;
   width: 80%;
   height: 100%;
   color: white;
+  padding: 20px 0 20px 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-
-.MenuLATERAL .row {
-  width: 110%;
-
-}
-.iconesPagination {
-  font-size: 20px;
-}
-@media only screen and (max-width: 600px) {
-  .iconesPagination  {
-    font-size: 15px;
-  }
-  #inputGroupSelect01 {
-    width: 80px;
-    font-size: xx-small;
-   
-  }
-  
-  #inputGroupSelect02 {
-    width: 80px;
-    font-size: xx-small;
-   
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .mt-3 {
-    font-size: small;
-    border-bottom: 0px;
-  }
-
-  .MenuLATERAL {
-    min-width: 90px;
-  }
-
-
-
-
-}
-
-
-@media only screen and (max-width: 460px) {
-  .col-9 {
-    width: 100%;
-    
-  }
-  .table{
-    width: 100%;
-  }
-  .containerCard {
-    width: 100%;
-    margin-left: 25px;
-  }
-  .MenuSUPERIOR {
-    color: white;
-  }
- 
-  
-
-  
-  #inputGroupSelect01 {
-    width: 80px;
-    background-color: #CDE1B7;
-    border: none;
-    font-size: x-small;
-    height: 30px;
-    text-align: center;
-    margin-left: -20%;
-  }
-  
-  #inputGroupSelect02 {
-    width: 80px;
-    font-size: x-small;
-    height: 30px;
-    text-align: center;
-  }
-  .iconesPagination  {
-  font-size: 15px;
-}
- 
-
-}
-
-
-@media only screen and (min-width: 461px) {
-
-  .containerCard {
-    margin-left: -8%;
-  }
-
-}
-
-.container a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-
-.dropdown-menu {
-  width: 13%;
-}
-
-.dropdown-menu,
-.dropdown-item:hover {
-  background-color: #5C7243;
-
+  font-size: large;
 }
 
 .mt-3 {
-  border-bottom: 1px solid #dee2e6;
-
+  border-bottom: 1px solid white;
+  padding: 5px 0 5px 10px;
 }
 
+#menuLateral ul {
+  background-color: #5C7243;
+}
+
+.MenuLATERAL .mt-3:hover, .MenuLATERAL a:hover {
+  color: #97b871;
+}
+
+#menuLateral li:hover {
+  background-color: #5C7243;
+  color: #97b871;
+}
+
+/*ESTILIZAÇÃO DO MENU COM FLEX*/
 .MenuSUPERIOR {
   background-color: #5C7243;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   position: relative;
+  font-size: large;
+  background-color: #5C7243;
+  color: white;
+}
+
+.MenuSUPERIOR .dropdown {
+  color: white;
+}
+
+.MenuSUPERIOR ul {
+  padding-left: 20px;
 }
 
 .MenuSUPERIOR button {
-  background-color: #5C7243;
   border: none;
 }
 
 .MenuSUPERIOR button:hover {
   background-color: #97b871;
-  transition: 1.0s;
 }
 
-.container span {
-  border: none;
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  background-color: #97b871;
+}
+
+a {
+  text-decoration: none;
   color: white;
+}
+
+#menuSUPERIOR ul {
   background-color: #5C7243;
 }
 
-.MenuSUPERIOR .dropdown-menu {
-  width: 20%;
-  position: absolute;
-  background-color: #5C7243;
-
+.MenuSUPERIOR .mt-2:hover {
+  color: #97b871;
 }
 
-.MenuSUPERIOR .navbar {
-  width: 40%;
+#menuSUPERIOR li:hover {
   background-color: #5C7243;
-  text-align: center;
+  color: #97b871;
+}
+
+.MenuSUPERIOR a:hover {
+  color: #97b871;
+}
+
+/*ESTILIZAÇÃO DO CARD*/
+.containerCard {
+  background-color: #CDE1B7;
+  color: #466F17;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.containerCard input {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 10px;
+}
+
+td input {
+  height: 29px;
+}
+
+.botao-mais-descricao {
+  border: none;
+  background-color: white;
+}
+
+.iconesPagination {
+  font-size: 20px;
 }
 
 table th:nth-child(2),
@@ -160,8 +113,6 @@ table td:nth-child(2),
 table th:nth-child(3),
 table td:nth-child(3) {
   width: 20%;
-
-
 }
 
 table td:nth-child(4),
@@ -173,45 +124,12 @@ table th:nth-child(4) {
   font-size: 20px;
   text-align: center;
   padding-top: 10px;
-
-
-
 }
 
 .green-icon {
   color: #5C7243;
 }
-
-.container .row {
-  display: flex;
-  margin-top: 10px;
-
-}
-
-.containerCard {
-  background-color: #CDE1B7;
-  color: #466F17;
-  border-radius: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-
-
-.containerCard input {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 10px;
-
-
-}
-
-td input {
-  height: 29px;
-
-}
-
+/*FILTRO*/
 .formMeses {
   width: 80px;
   background-color: #CDE1B7;
@@ -227,11 +145,8 @@ td input {
   font-size: small;
 }
 
-.botao-mais-descricao {
-  border: none;
-  background-color: white;
-}
 
+/*ESTILIZAÇÃO DO RODPÉ*/
 #rodape {
   background-color: #5C7243;
 
@@ -253,6 +168,80 @@ td input {
 .row {
   width: 100%;
 }
+
 .footer {
   bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .iconesPagination {
+    font-size: 15px;
+  }
+
+  #inputGroupSelect01 {
+    width: 80px;
+    font-size: xx-small;
+  }
+
+  #inputGroupSelect02 {
+    width: 80px;
+    font-size: xx-small;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .mt-3 {
+    font-size: small;
+    border-bottom: 0px;
+  }
+
+  .MenuLATERAL {
+    min-width: 90px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .col-9 {
+    width: 100%;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .containerCard {
+    width: 100%;
+    margin-left: 25px;
+  }
+
+  .MenuSUPERIOR {
+    color: white;
+  }
+
+  #inputGroupSelect01 {
+    width: 80px;
+    background-color: #CDE1B7;
+    border: none;
+    font-size: x-small;
+    height: 30px;
+    text-align: center;
+    margin-left: -20%;
+  }
+
+  #inputGroupSelect02 {
+    width: 80px;
+    font-size: x-small;
+    height: 30px;
+    text-align: center;
+  }
+
+  .iconesPagination {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 461px) {
+  .containerCard {
+    margin-left: -8%;
+  }
 }

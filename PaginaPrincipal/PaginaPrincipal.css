@@ -4,19 +4,16 @@
     height: 100%;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
 .MenuLATERAL .row {
     width: 110%;
-
 }
 
 .card {
     background-color: #A3C977;
     border-radius: 20px;
     height: 200px;
-
 }
 
 .card-title {
@@ -39,7 +36,6 @@
     .MenuLATERAL {
         min-width: 90px;
     }
-
 }
 
 
@@ -47,7 +43,6 @@
     .col-9 {
         width: 100%;
         margin-left: 30px;
-
     }
 
     .table {
@@ -62,44 +57,30 @@
     .MenuSUPERIOR {
         color: white;
     }
-
-
-
-
-
-
-
 }
 
-
 @media only screen and (min-width: 461px) {
-
     .containerCard {
         margin-left: -8%;
     }
-
 }
 
 .container a {
     color: white;
     text-decoration: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
 .dropdown-menu {
     width: 13%;
 }
 
-.dropdown-menu,
-.dropdown-item:hover {
+.dropdown-menu, .dropdown-item:hover {
     background-color: #5C7243;
-
 }
 
 .mt-3 {
     border-bottom: 1px solid #dee2e6;
-
 }
 
 .MenuSUPERIOR {
@@ -137,9 +118,6 @@
     text-align: center;
 }
 
-
-
-
 .container .row {
     display: flex;
     margin-top: 10px;
@@ -152,7 +130,6 @@
     border-radius: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 
 #rodape {
     background-color: #5C7243;
