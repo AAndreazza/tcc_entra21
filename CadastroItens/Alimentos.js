@@ -1,3 +1,4 @@
+
 function hideMenuOnSmallScreens() {
   var screenWidth = window.innerWidth;
   var menuLateral = document.getElementById('menuLateral');
@@ -191,6 +192,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+
 
 
 

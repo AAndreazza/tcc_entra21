@@ -4,18 +4,16 @@ header {
   padding: 15px;
 }
 
-header a,
-header img {
+header a, header img {
   margin-left: 25px;
 }
 
-/*Estilização do body*/
 body {
   background-color: white;
   margin: 0;
 }
 
-/*Estilização do container*/
+/*ESTILIZAÇÃO DO CARD*/
 .container-card-login {
   width: 350px;
   margin: 40px auto;
@@ -25,23 +23,19 @@ body {
   background-color: #CDE1B7;
   color: #5C7243;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
-/*Estilização do titulo*/
 h2 {
   padding-top: 20px;
   text-align: center;
   color: #5C7243;
 }
 
-/*Estilização do card*/
 .login {
   display: flex;
   flex-direction: column;
 }
 
-/*Estilização dos inputs*/
 label {
   margin-bottom: 8px;
   margin-top: 15px;
@@ -56,7 +50,6 @@ input {
   border: none;
 }
 
-/*Estilização do botão*/
 #botao {
   padding: 10px;
   background-color: #A3C977;
@@ -104,7 +97,7 @@ a {
 /*ESTILIZAÇÃO RODAPÉ*/
 #rodape {
   background-color: #5C7243;
-  padding: 50px;
+  padding: 40px;
 }
 
 #frase-impacto {

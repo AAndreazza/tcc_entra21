@@ -5,15 +5,13 @@ header {
     padding-right: 100px;
 }
 
-#headerEntrar,
-#headerCadastrar {
+#headerEntrar,#headerCadastrar {
     align-items: end;
     font-weight: 600;
     color: #ffffff;
 }
 
-.headerEntrar:hover,
-.headerCadastrar:hover {
+.headerEntrar:hover, .headerCadastrar:hover {
     color: #A3C977;
 }
 
@@ -162,7 +160,6 @@ svg {
     font-weight: 700;
 }
 
-
 .card .contactButton {
     display: flex;
     justify-content: center;
@@ -245,7 +242,6 @@ svg {
     #frase-newsletter {
         padding-left: 0px;
     }
-
 }
 
 .service:hover {
@@ -253,8 +249,7 @@ svg {
     transform: scale(1.1);
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.carousel-control-prev, .carousel-control-next {
     width: 25px;
     height: 25px;
     background-color: #7c995a;
@@ -264,8 +259,7 @@ svg {
     margin-right: 50px;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+.carousel-control-prev-icon, .carousel-control-next-icon {
     background-size: 80%;
     width: 30px;
     height: 30px;
@@ -278,12 +272,3 @@ svg {
 .intro h1 {
     color: #5C7243;
 }
-.mt-3 {
-    border-bottom: 1px solid #dee2e6;
-    }
-  .mt-3 a:hover,
-  .mt-3:hover,
-  .dropdown-item a:hover {
-   color: #97b871;
-   
-  }

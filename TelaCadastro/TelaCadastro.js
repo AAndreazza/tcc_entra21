@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   const formulario = document.querySelector("#cadastroForm");
- 
+
   formulario.addEventListener('submit', function (event) {
     event.preventDefault();
     validarCadastro();
   });
-
 });
-
 
 function validarCadastro() {
   const nome = document.getElementById("nome").value;
@@ -30,12 +28,10 @@ function validarCadastro() {
   }
 
   if (email.indexOf("@") == -1 || email.indexOf("@") == 0 || email.indexOf(".") == -1) {
-
     validacao = false;
   }
 
   if (senha !== senhaConfirmar) {
-
     document.getElementById("senha").classList.add("is-invalid");
     document.getElementById("senha-feedback").innerText = "As senhas não coincidem.";
     document.getElementById("confirmar-senha").classList.add("is-invalid");
@@ -58,20 +54,20 @@ function validarCadastro() {
 
 function cadastrar(nome, email, senha, cpf, tel) {
   fetch("http://localhost:8080/usuario", {
-      headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-          nome: nome,
-          email: email,
-          senha: senha,
-          cpf: cpf,
-          telefone: tel
-      })
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    method: "POST",
+    body: JSON.stringify({
+      nome: nome,
+      email: email,
+      senha: senha,
+      cpf: cpf,
+      telefone: tel
+    })
   })
-  .then(function (res) {
+    .then(function (res) {
       if (res.ok) {
         Swal.fire({
           title: 'Cadastro bem sucedido!',
@@ -81,31 +77,32 @@ function cadastrar(nome, email, senha, cpf, tel) {
         }).then(() => {
           window.location.href = "../TelaLogin/TelaLogin.html";
         });
-          
+
       } else if (res.status === 409) {
-          return res.text().then(function(message) {
-            Swal.fire({
-              title: 'Cadastro inválido!',
-              text: message,
-              icon: 'error', // Ícone do alerta (success, error, warning, info, question)
-              confirmButtonText: 'Voltar'
-            });
-          });
-      } else {
-          // Outro erro no servidor
-          console.error("Erro na requisição fetch:", res.statusText);
+        return res.text().then(function (message) {
           Swal.fire({
             title: 'Cadastro inválido!',
-            text: 'Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.',
+            text: message,
             icon: 'error', // Ícone do alerta (success, error, warning, info, question)
             confirmButtonText: 'Voltar'
           });
+        });
+
+      } else {
+        // Outro erro no servidor
+        console.error("Erro na requisição fetch:", res.statusText);
+        Swal.fire({
+          title: 'Cadastro inválido!',
+          text: 'Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.',
+          icon: 'error', // Ícone do alerta (success, error, warning, info, question)
+          confirmButtonText: 'Voltar'
+        });
       }
-  })
-  .catch(function (error) {
+    })
+    .catch(function (error) {
       console.error("Erro na requisição fetch:", error);
       alert("Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.");
-  });
+    });
 }
 
 function validarCPF(cpf) {
@@ -143,7 +140,6 @@ function validarCPF(cpf) {
   return resto === parseInt(cpfNumeros.charAt(10));
 }
 
-
 function formatarTelefone(input) {
   let numero = input.value.replace(/\D/g, '');
 
@@ -175,4 +171,3 @@ function formatarCpf(input) {
 
   input.value = numero;
 }
-

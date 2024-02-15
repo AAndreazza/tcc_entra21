@@ -4,12 +4,10 @@ header {
   padding: 15px;
 }
 
-header a,
-header img {
+header a, header img {
   margin-left: 25px;
 }
 
-/*Estilização do body*/
 body {
   background-color: white;
   margin: 0;
@@ -54,7 +52,7 @@ body {
 /*ESTILIZAÇÃO RODAPÉ*/
 #rodape {
   background-color: #5C7243;
-  padding: 30px;
+  padding: 50px;
 }
 
 #frase-impacto {
