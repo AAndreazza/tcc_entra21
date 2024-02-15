@@ -11,61 +11,32 @@
   width: 110%;
 
 }
+
 .iconesPagination {
   font-size: 20px;
 }
-@media only screen and (max-width: 600px) {
-  .iconesPagination  {
-    font-size: 15px;
-  }
-  #inputGroupSelect01 {
-    width: 80px;
-    font-size: xx-small;
-   
-  }
-  
-  #inputGroupSelect02 {
-    width: 80px;
-    font-size: xx-small;
-   
-  }
-}
 
-@media only screen and (max-width: 800px) {
-  .mt-3 {
-    font-size: small;
-    border-bottom: 0px;
-  }
-
-  .MenuLATERAL {
-    min-width: 90px;
-  }
-
-
-
-
-}
 
 
 @media only screen and (max-width: 460px) {
   .col-9 {
     width: 100%;
-    
+
   }
-  .table{
+
+  .table {
     width: 100%;
   }
+
   .containerCard {
     width: 100%;
     margin-left: 25px;
   }
+
   .MenuSUPERIOR {
     color: white;
   }
- 
-  
 
-  
   #inputGroupSelect01 {
     width: 80px;
     background-color: #CDE1B7;
@@ -73,29 +44,29 @@
     font-size: x-small;
     height: 30px;
     text-align: center;
-    
+
   }
-  
+
   #inputGroupSelect02 {
     width: 80px;
     font-size: x-small;
     height: 30px;
     text-align: center;
   }
-  .iconesPagination  {
-  font-size: 15px;
-}
- 
 
-}
-
-
-@media only screen and (min-width: 461px) {
-
-  .containerCard {
-    margin-left: -8%;
+  .iconesPagination {
+    font-size: 15px;
   }
 
+  #frase-impacto {
+    font-size: small;
+    margin-left: 30px;
+    padding-bottom: -20px;
+  }
+
+  #rodape button {
+    font-size: smaller;
+  }
 }
 
 .container a {
@@ -119,12 +90,13 @@
   border-bottom: 1px solid #dee2e6;
 
 }
+
 .mt-3 a:hover,
-  .mt-3:hover,
-  .dropdown-item a:hover {
-   color: #97b871;
-   
-  }
+.mt-3:hover,
+.dropdown-item a:hover {
+  color: #97b871;
+
+}
 
 .MenuSUPERIOR {
   background-color: #5C7243;
@@ -209,8 +181,6 @@ table th:nth-child(4) {
   background-color: #E6E6E6;
   border: none;
   border-radius: 10px;
-
-
 }
 
 td input {
@@ -259,12 +229,19 @@ td input {
 .row {
   width: 100%;
 }
+
 .footer {
   bottom: 0;
 }
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-   background-color: #97b871;
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  background-color: #97b871;
 }
+
 .btn-secondary:hover {
   background-color: #97b871;
 }

@@ -106,3 +106,11 @@ a {
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
 }
+
+/* FLEX-BOX PARA O RODAPÉ */
+@media only screen and (max-width: 1300px) {
+
+  .container-card-login {
+    margin: 140px auto;
+  }
+}

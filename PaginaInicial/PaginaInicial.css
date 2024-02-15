@@ -20,7 +20,6 @@ header {
     header {
         padding-left: 20px;
         padding-right: 20px;
-        padding-bottom: 20px;
     }
 
     main .carousel-control-prev,
@@ -186,13 +185,17 @@ svg {
     }
 
     .mainStart {
-        max-height: 800px;
+        height: 850px;
         min-height: 700px;
     }
 
     .mainStart img {
         height: 400px;
     }
+}
+
+.col-12 {
+    margin-top: -70px;
 }
 
 /*ESTILIZAÇÃO RODAPÉ DA PAGINA PRINCIPAL*/

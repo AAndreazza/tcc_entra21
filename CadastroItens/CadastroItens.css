@@ -143,12 +143,22 @@ form input {
   }
    .containerCard {
     width: 100%;
-    margin-left: 40px;
+    margin: 20px 0px 20px 50px;
     justify-content: center;
   }
   .MenuSUPERIOR {
       color: white;
       
+  }
+
+  #frase-impacto {
+    font-size: small;
+    margin-left: 30px;
+    padding-bottom: -20px;
+  }
+
+  #rodape button {
+    font-size: smaller;
   }
 }
 
