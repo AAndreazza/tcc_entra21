@@ -25,10 +25,6 @@ function stopPropagation(event) {
 event.stopPropagation();
 }
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
   // Este bloco de código será executado após o carregamento do DOM
   const nomeUsuario = sessionStorage.getItem('nomeUsuario');
@@ -48,9 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-
-
 function validarCadastro() {
   const produto = document.getElementById("nome").value;
   const dataCompra = document.getElementById("data").value;
@@ -69,11 +62,13 @@ function validarCadastro() {
 
   let validacao = true;
 
-  
-
   if (produto.trim() === "" || formatoData.trim() === "" || valorUnitario === "" || quantidade === "") {
     validacao = false;
  
+  }
+
+  if(!validarCampos()){
+    validacao = false;
   }
 
   if (validacao) {
@@ -148,7 +143,7 @@ function limparCampos() {
 }
 
 
-function validarcampos() {
+function validarCampos() {
   const produto = document.getElementById("nome");
   const dataCompra = document.getElementById("data");
   const valorUnitario = document.getElementById("valor");
@@ -156,19 +151,18 @@ function validarcampos() {
        
 
   if (produto.value.trim() === "" || dataCompra.value.trim() === "" || valorUnitario.value === "" || quantidade.value === "") {
-    validacao = false;
     produto.classList.add('input-invalido');
     dataCompra.classList.add('input-invalido');
     valorUnitario.classList.add('input-invalido');
     quantidade.classList.add('input-invalido');
+    return false;
   } else {
     produto.classList.remove('input-invalido');
     dataCompra.classList.remove('input-invalido');
     valorUnitario.classList.remove('input-invalido');
     quantidade.classList.remove('input-invalido');
+    return true;
   }
-
-
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -176,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   formulario.addEventListener('submit', function (event) {
     event.preventDefault();
-    validarcampos();
+    validarCampos();
   });
 
   // Adicionando a validação em tempo real
