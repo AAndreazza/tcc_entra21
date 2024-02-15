@@ -50,35 +50,13 @@
 
     }
 
-    .table {
-        width: 100%;
-    }
-
-    .containerCard {
-        width: 100%;
-        margin-left: 25px;
-    }
 
     .MenuSUPERIOR {
         color: white;
     }
 
-
-
-
-
-
-
 }
 
-
-@media only screen and (min-width: 461px) {
-
-    .containerCard {
-        margin-left: -8%;
-    }
-
-}
 
 .container a {
     color: white;
@@ -97,10 +75,6 @@
 
 }
 
-.mt-3 {
-    border-bottom: 1px solid #dee2e6;
-
-}
 
 .MenuSUPERIOR {
     background-color: #5C7243;
@@ -146,12 +120,7 @@
 
 }
 
-.containerCard {
-    background-color: #CDE1B7;
-    color: #466F17;
-    border-radius: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+
 
 
 #rodape {
@@ -188,3 +157,12 @@
 a {
     text-decoration: none;
 }
+.mt-3 {
+    border-bottom: 1px solid #dee2e6;
+    }
+  .mt-3 a:hover,
+  .mt-3:hover,
+  .dropdown-item a:hover {
+   color: #97b871;
+   
+  }

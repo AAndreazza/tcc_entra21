@@ -152,8 +152,7 @@ function validarcampos() {
   const dataCompra = document.getElementById("data");
   const valorUnitario = document.getElementById("valor");
   const quantidade = document.getElementById("qtde");
-      
-  let validacao = true;
+       
 
   if (produto.value.trim() === "" || dataCompra.value.trim() === "" || valorUnitario.value === "" || quantidade.value === "") {
     validacao = false;

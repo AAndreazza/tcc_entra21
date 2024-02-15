@@ -73,7 +73,7 @@
     font-size: x-small;
     height: 30px;
     text-align: center;
-    margin-left: -20%;
+    
   }
   
   #inputGroupSelect02 {
@@ -117,7 +117,12 @@
 
 .mt-3 {
   border-bottom: 1px solid #dee2e6;
-
+  }
+.mt-3 a:hover,
+.mt-3:hover,
+.dropdown-item a:hover {
+ color: #97b871;
+ 
 }
 
 .MenuSUPERIOR {
@@ -255,4 +260,10 @@ td input {
 }
 .footer {
   bottom: 0;
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+   background-color: #97b871;
+}
+.btn-secondary:hover {
+  background-color: #97b871;
 }
