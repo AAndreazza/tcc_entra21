@@ -119,6 +119,12 @@
   border-bottom: 1px solid #dee2e6;
 
 }
+.mt-3 a:hover,
+  .mt-3:hover,
+  .dropdown-item a:hover {
+   color: #97b871;
+   
+  }
 
 .MenuSUPERIOR {
   background-color: #5C7243;
