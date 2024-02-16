@@ -26,7 +26,27 @@ event.stopPropagation();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  const formulario = document.querySelector("#cadastroForm");
+
+  formulario.addEventListener('submit', function (event) {
+    event.preventDefault();
+    validarCampos();
+  });
+
+  // Adicionando a validação em tempo real
+  formulario.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        this.classList.remove('input-invalido');
+        this.classList.add('input-valido');
+      } else {
+        this.classList.remove('input-valido');
+        this.classList.add('input-invalido');
+      }
+    });
+  });
   // Este bloco de código será executado após o carregamento do DOM
+
   const nomeUsuario = sessionStorage.getItem('nomeUsuario');
   const elementoNomeUsuario = document.getElementById('link-usuario');
   const elementoNomeUsuario2 = document.getElementById('link-usuario2');
@@ -36,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     elementoNomeUsuario2.innerText = nomeUsuario;
   
 
-  const formulario = document.querySelector("#cadastroForm");
+ 
 
   formulario.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -165,27 +185,7 @@ function validarCampos() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const formulario = document.querySelector("#cadastroForm");
 
-  formulario.addEventListener('submit', function (event) {
-    event.preventDefault();
-    validarCampos();
-  });
-
-  // Adicionando a validação em tempo real
-  formulario.querySelectorAll('input').forEach(input => {
-    input.addEventListener('input', function() {
-      if (this.value.trim() !== '') {
-        this.classList.remove('input-invalido');
-        this.classList.add('input-valido');
-      } else {
-        this.classList.remove('input-valido');
-        this.classList.add('input-invalido');
-      }
-    });
-  });
-});
 
 
 

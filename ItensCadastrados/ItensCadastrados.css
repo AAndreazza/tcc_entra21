@@ -24,6 +24,7 @@
 
   }
 
+
   .table {
     width: 100%;
   }
@@ -76,13 +77,11 @@
 
 }
 
-.dropdown-menu {
-  width: 13%;
-}
+
 
 .dropdown-menu,
 .dropdown-item:hover {
-  background-color: #5C7243;
+  background-color: #CDE1B7;
 
 }
 
@@ -134,7 +133,10 @@
 }
 
 table th:nth-child(2),
-table td:nth-child(2),
+table td:nth-child(2) {
+  width: 30%;
+}
+
 table th:nth-child(3),
 table td:nth-child(3) {
   width: 20%;
@@ -181,10 +183,12 @@ table th:nth-child(4) {
   background-color: #E6E6E6;
   border: none;
   border-radius: 10px;
+  word-wrap: break-word;
 }
 
 td input {
   height: 29px;
+  
 
 }
 
@@ -244,4 +248,11 @@ td input {
 
 .btn-secondary:hover {
   background-color: #97b871;
+}
+#teste-botao {
+   word-wrap: break-word;
+   z-index: 1000;
+   width: 50px;
+   position: absolute;
+  
 }
