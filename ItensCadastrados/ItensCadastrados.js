@@ -7,64 +7,103 @@ document.addEventListener('DOMContentLoaded', function () {
     elementoNomeUsuario2.innerText = nomeUsuario;
 
     const usuarioId = sessionStorage.getItem('usuarioId');
-    carregarItens(usuarioId);
-
+    carregarItens(usuarioId, 1);
 });
+
+let totalPages = 0;
+let currentPage = 1;
+const itemsPerPage = 10; // Número de itens por página
 
 
 // Função para carregar os itens na tabela
-function carregarItens(usuarioId) {
+function carregarItens(usuarioId, page) {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
+    tabelaCorpo.innerHTML = '';
+    const endpoint = `http://localhost:8080/item/usuario/${usuarioId}?page=${page - 1}&size=${itemsPerPage}`;
 
-    // Substitua 'SEU_ENDPOINT_AQUI' pelo seu endpoint real
-    const endpoint = `http://localhost:8080/item/usuario/${usuarioId}`;
-
-    // Faz uma solicitação HTTP GET para obter os itens do usuário
     fetch(endpoint)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Não foi possível obter os dados dos itens.');
             }
-            return response.json(); // Converte a resposta para JSON
+            return response.json();
         })
-        .then(itens => {
-            // Limpa a tabela
-            tabelaCorpo.innerHTML = '';
 
-            // Preenche a tabela com os dados dos itens
-            itens.forEach(item => {
-                const novaLinha = document.createElement('tr');
-                novaLinha.innerHTML = `
-                    <td><input type="text" class="form-control" value="${item.produto}" disabled></td>
-                    <td><input type="text" class="form-control" value="${formatarData(item.dataCompra)}" disabled></td>
-                    <td><input type="text" class="form-control" value="${item.valor}" disabled></td>
-                   
-                    <td>
-                      <div class="dropdown" >
-                                         
-                         <div class="d-flex justify-content-center align-items-center">
-                            <button class="botao-mais-descricao"
-                                data-bs-toggle="dropdown"><i id="icon-mais-descricao"
-                                    class="bi bi-plus-circle"></i>
-                            </button>
-                            <ul class="dropdown-menu" id="teste-botao">
-                                <li>
-                                    ${item.descricao || ''}
-                                </li>
-                            </ul>
-                        </div> 
-                     </div> 
-                    </td>
-                            
-                    
-                `;
+        .then(data => {
+            // Verifique se o objeto data possui uma propriedade chamada 'content'
+            if (data.hasOwnProperty('content')) {
+                const itens = data.content;
 
-                tabelaCorpo.appendChild(novaLinha);
-            });
+                // Agora você pode iterar sobre os itens
+                itens.forEach(item => {
+                    tabelaCorpo.appendChild(adicionarLinha(item.produto, item.dataCompra, item.valor, item.descricao));
+                });
+
+                totalPages = data.totalPages;
+                currentPage = page;
+                document.getElementById('page-number').innerText = currentPage;
+
+
+            } else {
+                console.error("Resposta da API não possui a propriedade 'content'.");
+            }
         })
         .catch(error => {
             console.error('Ocorreu um erro ao tentar obter os itens:', error.message);
         });
+}
+
+function adicionarLinha(produto, data, valor, descricao) {
+    const novaLinha = document.createElement('tr');
+    novaLinha.innerHTML = `
+                        <td><input type="text" class="form-control" value="${produto}" disabled></td>
+                        <td><input type="text" class="form-control" value="${formatarData(data)}" disabled></td>
+                        <td><input type="text" class="form-control" value="${valor}" disabled></td>
+                        <td>
+                          <div class="dropdown" >
+                             <div class="d-flex justify-content-center align-items-center">
+                                <button class="botao-mais-descricao"
+                                    data-bs-toggle="dropdown"><i id="icon-mais-descricao"
+                                        class="bi bi-plus-circle"></i>
+                                </button>
+                                <ul class="dropdown-menu" id="teste-botao">
+                                    <li>
+                                        ${descricao || 'Não possui descrição'}
+                                    </li>
+                                </ul>
+                            </div> 
+                         </div> 
+                        </td> 
+                    `;
+    return novaLinha;
+}
+
+const nextPageButton = document.getElementById('next-page');
+if (nextPageButton) {
+    nextPageButton.disabled = currentPage === totalPages;
+    nextPageButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (currentPage < totalPages) { // Verifica se há uma próxima página
+            carregarItens(sessionStorage.getItem('usuarioId'), currentPage + 1);
+        }
+
+    });
+}
+
+
+const prevPageButton = document.getElementById('prev-page');
+if (prevPageButton) {
+
+    prevPageButton.disabled = currentPage === 1;
+    prevPageButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (currentPage > 1) { // Verifica se há uma página anterior
+            carregarItens(sessionStorage.getItem('usuarioId'), currentPage - 1);
+        }
+
+    });
 }
 
 function formatarData(dataArray) {
@@ -74,6 +113,7 @@ function formatarData(dataArray) {
     const diaFormatado = dia.toString().padStart(2, '0');
     return `${diaFormatado}/${mesFormatado}/${ano}`;
 }
+
 
 // Função para verificar e ocultar o menu lateral em telas menores
 function hideMenuOnSmallScreens() {
