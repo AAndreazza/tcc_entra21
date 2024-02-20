@@ -7,20 +7,81 @@ document.addEventListener('DOMContentLoaded', function () {
     elementoNomeUsuario2.innerText = nomeUsuario;
 
     const usuarioId = sessionStorage.getItem('usuarioId');
-    carregarItens(usuarioId, 1);
+    carregarItens(usuarioId, 1, 0, 0); // Adicione os parâmetros para mês e setor
+    mostrarSaldoTotal(usuarioId, 0, 0);
+
+    // Adicione o código para lidar com os filtros
+    const filtroMes = document.getElementById('filtro-mes');
+    const filtroSetor = document.getElementById('filtro-setor');
+
+    filtroMes.addEventListener('change', function () {
+        filtroMesSelecionado = parseInt(filtroMes.value);
+        carregarItens(sessionStorage.getItem('usuarioId'), 1, filtroMesSelecionado, parseInt(filtroSetor.value));
+        mostrarSaldoTotal(usuarioId, filtroMesSelecionado, parseInt(filtroSetor.value));
+    });
+
+    filtroSetor.addEventListener('change', function () {
+        filtroSetorSelecionado = parseInt(filtroSetor.value);
+        carregarItens(sessionStorage.getItem('usuarioId'), 1, parseInt(filtroMes.value), filtroSetorSelecionado);
+        mostrarSaldoTotal(usuarioId, parseInt(filtroMes.value), filtroSetorSelecionado);
+    });
 });
 
+let filtroMesSelecionado;
+let filtroSetorSelecionado;
 let totalPages = 0;
 let currentPage = 1;
 const itemsPerPage = 10; // Número de itens por página
 
 
+function mostrarSaldoTotal(usuarioId, mes, setor) {
+    const endpoint = `http://localhost:8080/item/saldo/${usuarioId}`;
+    let queryParams = '';
+
+    if (mes !== undefined && mes !== 0) {
+        filtroMesSelecionado = mes;
+        queryParams += `?mes=${mes}`;
+    }
+    if (setor !== undefined && setor !== 0) {
+        filtroSetorSelecionado = setor;
+        queryParams += `${queryParams ? '&' : '?'}setor=${setor}`;
+    }
+
+    const urlCompleta = `${endpoint}${queryParams}`;
+
+    fetch(urlCompleta)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro ao obter saldo total: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data !== undefined) {
+                const saldoTotalFormatted = parseFloat(data).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                document.getElementById('input-valor-total').value = `R$ ${saldoTotalFormatted}`;
+            } else {
+                throw new Error('Resposta do servidor não contém um valor definido.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error.message);
+        });
+}
+
+
 // Função para carregar os itens na tabela
-function carregarItens(usuarioId, page) {
+function carregarItens(usuarioId, page, mes, setor) {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
     tabelaCorpo.innerHTML = '';
-    const endpoint = `http://localhost:8080/item/usuario/${usuarioId}?page=${page - 1}&size=${itemsPerPage}`;
+    let endpoint = `http://localhost:8080/item/usuario/${usuarioId}?page=${page - 1}&size=${itemsPerPage}`;
 
+    if (mes !== undefined && mes !== 0) {
+        endpoint += `&mes=${mes}`;
+    }
+    if (setor !== undefined && setor !== 0) {
+        endpoint += `&setor=${setor}`;
+    }
     fetch(endpoint)
         .then(response => {
             if (!response.ok) {
@@ -43,7 +104,6 @@ function carregarItens(usuarioId, page) {
                 currentPage = page;
                 document.getElementById('page-number').innerText = currentPage;
 
-
             } else {
                 console.error("Resposta da API não possui a propriedade 'content'.");
             }
@@ -55,10 +115,11 @@ function carregarItens(usuarioId, page) {
 
 function adicionarLinha(produto, data, valor, descricao) {
     const novaLinha = document.createElement('tr');
+    const valorFormatted = parseFloat(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     novaLinha.innerHTML = `
                         <td><input type="text" class="form-control" value="${produto}" disabled></td>
                         <td><input type="text" class="form-control" value="${formatarData(data)}" disabled></td>
-                        <td><input type="text" class="form-control" value="${valor}" disabled></td>
+                        <td><input type="text" class="form-control" value="R$ ${valorFormatted}" disabled></td>
                         <td>
                           <div class="dropdown" >
                              <div class="d-flex justify-content-center align-items-center">
@@ -66,7 +127,7 @@ function adicionarLinha(produto, data, valor, descricao) {
                                     data-bs-toggle="dropdown"><i id="icon-mais-descricao"
                                         class="bi bi-plus-circle"></i>
                                 </button>
-                                <ul class="dropdown-menu" id="teste-botao">
+                                <ul class="dropdown-menu">
                                     <li>
                                         ${descricao || 'Não possui descrição'}
                                     </li>
@@ -81,29 +142,50 @@ function adicionarLinha(produto, data, valor, descricao) {
 const nextPageButton = document.getElementById('next-page');
 if (nextPageButton) {
     nextPageButton.disabled = currentPage === totalPages;
+    nextPageButton.style.cursor = currentPage === totalPages ? 'default' : 'pointer';
+
     nextPageButton.addEventListener('click', function (event) {
         event.preventDefault();
 
-        if (currentPage < totalPages) { // Verifica se há uma próxima página
-            carregarItens(sessionStorage.getItem('usuarioId'), currentPage + 1);
+        if (currentPage < totalPages) {
+            carregarItens(sessionStorage.getItem('usuarioId'), currentPage + 1, filtroMesSelecionado, filtroSetorSelecionado);
+            currentPage += 1; // Atualiza a variável currentPage
+            updateCursorStyle(); // Atualiza o estilo do cursor após mudar de página
         }
-
     });
 }
 
-
 const prevPageButton = document.getElementById('prev-page');
 if (prevPageButton) {
-
     prevPageButton.disabled = currentPage === 1;
+    prevPageButton.style.cursor = currentPage === 1 ? 'default' : 'pointer';
+
     prevPageButton.addEventListener('click', function (event) {
         event.preventDefault();
 
-        if (currentPage > 1) { // Verifica se há uma página anterior
-            carregarItens(sessionStorage.getItem('usuarioId'), currentPage - 1);
+        if (currentPage > 1) {
+            carregarItens(sessionStorage.getItem('usuarioId'), currentPage - 1, filtroMesSelecionado, filtroSetorSelecionado);
+            currentPage -= 1; // Atualiza a variável currentPage
+            updateCursorStyle(); // Atualiza o estilo do cursor após mudar de página
         }
-
     });
+}
+
+function updateCursorStyle() {
+    const nextPageButton = document.getElementById('next-page');
+    const prevPageButton = document.getElementById('prev-page');
+
+    if (nextPageButton) {
+        nextPageButton.disabled = currentPage === totalPages;
+        nextPageButton.style.cursor = currentPage === totalPages ? 'default' : 'pointer';
+
+
+    }
+
+    if (prevPageButton) {
+        prevPageButton.disabled = currentPage === 1;
+        prevPageButton.style.cursor = currentPage === 1 ? 'default' : 'pointer';
+    }
 }
 
 function formatarData(dataArray) {
@@ -139,4 +221,3 @@ window.onresize = hideMenuOnSmallScreens;
 function stopPropagation(event) {
     event.stopPropagation();
 }
-
