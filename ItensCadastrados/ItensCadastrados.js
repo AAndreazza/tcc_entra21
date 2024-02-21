@@ -135,6 +135,13 @@ function adicionarLinha(produto, data, valor, descricao) {
                                     <li>
                                         ${descricao || 'Não possui descrição'}
                                     </li>
+                                    <li><button> Alterar Item</button>
+                                   
+                                    </li>
+                                    <li>
+                                    <button> Deletar Item</button>
+                                    </li>
+                                    
                                 </ul>
                             </div> 
                          </div> 

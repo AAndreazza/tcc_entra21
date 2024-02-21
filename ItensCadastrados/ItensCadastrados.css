@@ -21,6 +21,7 @@
   width: 100%;
 }
 
+
 /*ESTILIZAÇAO DO MENU SUPERIOR*/
 .container a {
   color: white;
@@ -268,6 +269,12 @@ td input {
 #dropdown-desc {
   background-color: #CDE1B7;
   padding: 8px 8px 8px 8px;
+}
+#borda-itens-cadastrados{
+background-color: #97b871;
+padding: 5px 5px 0px 5px;
+
+
 }
 
 
