@@ -64,6 +64,7 @@
 
 .dropdown-menu {
   width: 13%;
+  word-wrap: break-word;
 }
 
 .dropdown-menu,
@@ -140,7 +141,7 @@ td input {
   font-size: 20px;
 }
 
-/*filtro de meses*/
+
 
 /*filtro de categoria*/
 
@@ -184,6 +185,24 @@ td input {
   background-color: #97b871;
 }
 
+#filtro-mes {
+  width: 110px;
+  background-color: #CDE1B7;
+  border: none;
+  font-size: 16px;
+  height: 30px;
+  text-align: center;
+}
+
+#filtro-setor {
+  background-color: #CDE1B7;
+  width: 150px;
+  border: none;
+  font-size: 16px;
+  height: 30px;
+  text-align: center;
+}
+
 /*FLEX PARA MOBILE*/
 @media only screen and (max-width: 460px) {
   .col-9 {
@@ -202,25 +221,26 @@ td input {
   .MenuSUPERIOR {
     color: white;
   }
-
-  #inputGroupSelect01 {
-    width: 80px;
-    background-color: #CDE1B7;
-    border: none;
-    font-size: x-small;
-    height: 30px;
-    text-align: center;
+  #td-produto {
+    width: 30%;    
   }
-
-  #inputGroupSelect02 {
-    width: 80px;
-    font-size: x-small;
-    height: 30px;
-    text-align: center;
+  #td-data {
+    width: 20px;
   }
-
-  .iconesPagination {
-    font-size: 15px;
+  #td-valor {
+    width: 40%;
+  }
+  #input-produto {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #input-data {
+    font-size: 12px;
+  }
+  #input-valor {
+    font-size: 12px;
   }
 
   #frase-impacto {
@@ -237,3 +257,20 @@ td input {
     font-size: smaller;
   }
 }
+#input-valor-total {
+    width: 120px;
+}
+#row-setores-input-pagination {
+  height: 100%;
+  width: 100%;
+  background-color: #CDE1B7;
+}
+#dropdown-desc {
+  background-color: #CDE1B7;
+  padding: 8px 8px 8px 8px;
+}
+
+
+
+
+

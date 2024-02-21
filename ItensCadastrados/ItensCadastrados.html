@@ -177,7 +177,7 @@
                                             <th style="font-size: large;" scope="col">Produto</th>
                                             <th style="font-size: large;" scope="col">Data</th>
                                             <th style="font-size: large;" scope="col">Valor</th>
-                                            <th style="font-size: large;" scope="col">Descrição</th>
+                                            <th id="reduzir-descricao-para-desc" style="font-size: large;" scope="col">Descrição</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tabelaCorpo">
@@ -186,13 +186,13 @@
                                 </table>
                             </div>
 
-                            <div class="pagination-controls d-flex justify-content-center align-items-center">
+                            <div class="pagination-controls" id="row-setores-input-pagination">
 
                                 <!-- FILTRO POR MÊS -->
-                                <div class="row mt-3">
-                                    <div class="col-md-3">
+                                <div class="row ">
+                                    <div class="col text-center">
                                         <label for="filtro-mes" class="form-label">Filtrar por Mês:</label>
-                                        <select id="filtro-mes" class="form-select">
+                                        <select id="filtro-mes" class="form-select mx-auto">
                                             <option value="0">Todos</option>
                                             <option value="01">Janeiro</option>
                                             <option value="02">Fevereiro</option>
@@ -210,9 +210,9 @@
                                     </div>
 
                                     <!-- FILTRO POR CATEGORIA -->
-                                    <div class="col-md-3">
+                                    <div class="col text-center">
                                         <label for="filtro-setor" class="form-label">Filtrar por Setor:</label>
-                                        <select id="filtro-setor" class="form-select">
+                                        <select id="filtro-setor" class="form-select mx-auto">
                                             <option value="0">Todos</option>
                                             <option value="01">Cuidados Pessoais</option>
                                             <option value="02">Educação</option>
@@ -232,24 +232,37 @@
                                             <option value="16">Outros</option>
                                         </select>
                                     </div>
-                                </div>
 
-                                <!-- TOTAL -->
-                                <label for="input-valor-total" class="form-label">Total de Gastos:</label>
-                                <input id="input-valor-total" type="text" class="form-control me-2"
-                                    placeholder="Valor Total" disabled
-                                    style="height: 25px; width: 20%; background-color: #E6E6E6;">
-
-                                <div class="pagination-controls d-flex justify-content-center align-items-center ">
-                                    <div class="d-flex align-items-center iconesPagination">
-                                        <a href="#" id="prev-page" class="prev-page disabled">
-                                            <i class="bi bi-dash-circle green-icon" style="margin-right: 5px;"></i>
-                                        </a>
-                                        <p id="page-number" class="page-number" style="padding-top: 12px;">1</p>
-                                        <a href="#" id="next-page" class="next-page">
-                                            <i class="bi bi-plus-circle green-icon" style="margin-left: 5px;"></i>
-                                        </a>
+                                    <div class="col text-center">
+                                        <!-- TOTAL -->
+                                        <label for="input-valor-total" class="form-label">Total de Gastos:</label>
+                                        <input id="input-valor-total" type="text" class="form-control mx-auto"
+                                            placeholder="Valor Total" disabled style="background-color: #E6E6E6;">
                                     </div>
+                                    <div class="col d-flex justify-content-center">
+                                        <div class="pagination-controls">
+                                            <label for="input-valor-total" class="form-label">Paginação:</label>
+                                            <div class="d-flex  iconesPagination">
+                                                <div>
+                                                    <a href="#" id="prev-page" class="prev-page disabled">
+                                                        <i class="bi bi-arrow-left green-icon"
+                                                            style="margin-right: 8px;"></i>
+                                                    </a>
+                                                    <p style="font-size: 13px; color: #5C7243;">Prev</p>
+                                                </div>
+
+                                                <p id="page-number" class="page-number">1</p>
+                                                <div>
+                                                    <a href="#" id="next-page" class="next-page">
+                                                        <i class="bi bi-arrow-right green-icon"
+                                                            style="margin-left: 8px;"></i>
+                                                    </a>
+                                                    <p style="font-size: 13px; color: #5C7243; ">Next</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -271,7 +284,8 @@
                     <h5 id='frase-impacto' class="text-uppercase mb-1 mt-3">CONQUISTE O CONTROLE FINANCEIRO QUE VOCÊ
                         MERECE!</h5>
                     <button id='botao-atendimento' type="button" class="btn mt-3 mb-3">
-                        <a href="mailto:atendimentocashcontrol@outlook.com.br" target="_blank"> CENTRAL DE ATENDIMENTO
+                        <a href="mailto:atendimentocashcontrol@outlook.com.br" target="_blank"> CENTRAL DE
+                            ATENDIMENTO
                         </a></button>
                 </div>
             </div>

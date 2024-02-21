@@ -25,7 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
         carregarItens(sessionStorage.getItem('usuarioId'), 1, parseInt(filtroMes.value), filtroSetorSelecionado);
         mostrarSaldoTotal(usuarioId, parseInt(filtroMes.value), filtroSetorSelecionado);
     });
+
+  
 });
+
+
 
 let filtroMesSelecionado;
 let filtroSetorSelecionado;
@@ -117,17 +121,17 @@ function adicionarLinha(produto, data, valor, descricao) {
     const novaLinha = document.createElement('tr');
     const valorFormatted = parseFloat(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     novaLinha.innerHTML = `
-                        <td><input type="text" class="form-control" value="${produto}" disabled></td>
-                        <td><input type="text" class="form-control" value="${formatarData(data)}" disabled></td>
-                        <td><input type="text" class="form-control" value="R$ ${valorFormatted}" disabled></td>
+                        <td id="td-produto"><input id="input-produto" type="text" class="form-control" value="${produto}" disabled></td>
+                        <td id="td-data"><input id="input-data" type="text" class="form-control" value="${formatarData(data)}" disabled></td>
+                        <td id="td-valor"><input id="input-valor" type="text" class="form-control" value="R$ ${valorFormatted}" disabled></td>
                         <td>
-                          <div class="dropdown" >
+                          <div class="dropdown">
                              <div class="d-flex justify-content-center align-items-center">
                                 <button class="botao-mais-descricao"
                                     data-bs-toggle="dropdown"><i id="icon-mais-descricao"
                                         class="bi bi-plus-circle"></i>
                                 </button>
-                                <ul class="dropdown-menu">
+                                <ul id="dropdown-desc" class="dropdown-menu">
                                     <li>
                                         ${descricao || 'Não possui descrição'}
                                     </li>
@@ -178,23 +182,35 @@ function updateCursorStyle() {
     if (nextPageButton) {
         nextPageButton.disabled = currentPage === totalPages;
         nextPageButton.style.cursor = currentPage === totalPages ? 'default' : 'pointer';
-
+    
 
     }
 
     if (prevPageButton) {
         prevPageButton.disabled = currentPage === 1;
         prevPageButton.style.cursor = currentPage === 1 ? 'default' : 'pointer';
+       
     }
 }
 
+// FORMATA A DATA PARA APARECER CONFORME O EXEMPLO : 02/02/2024, COM "0" EM NÚMEROS UNITÁRIOS.
 function formatarData(dataArray) {
     const [ano, mes, dia] = dataArray;
-    // Adiciona zeros à esquerda para garantir dois dígitos para mês e dia
     const mesFormatado = mes.toString().padStart(2, '0');
     const diaFormatado = dia.toString().padStart(2, '0');
-    return `${diaFormatado}/${mesFormatado}/${ano}`;
+
+    // FORMATA A DATA PARA APARECER CONFORME O EXEMPLO: 02/02/24, SEM O "20" DO ANO.
+    if (window.innerWidth <= 460) {
+        // Formata a data para "DD/MM/YY"
+        return `${diaFormatado}/${mesFormatado}/${ano.toString().slice(-2)}`;
+        
+    } else {
+        return `${diaFormatado}/${mesFormatado}/${ano}`;
+    }
+       
 }
+
+
 
 
 // Função para verificar e ocultar o menu lateral em telas menores
@@ -202,15 +218,19 @@ function hideMenuOnSmallScreens() {
     var screenWidth = window.innerWidth;
     var menuLateral = document.getElementById('menuLateral');
     var menuSUPERIOR = document.getElementById('menuSUPERIOR');
+    var reduzirDescricaoParaDesc = document.getElementById('reduzir-descricao-para-desc');
 
 
     if (screenWidth <= 460) { // Se a largura da tela for 460 pixels ou menos
         menuLateral.style.display = 'none'; // Oculta o menu lateral
         menuSUPERIOR.style.display = 'block';
+        reduzirDescricaoParaDesc.innerText = 'Desc';
+
 
     } else {
         menuLateral.style.display = 'block'; // Exibe o menu lateral
         menuSUPERIOR.style.display = 'none';
+        reduzirDescricaoParaDesc.innerText = 'Descrição';
     }
 }
 

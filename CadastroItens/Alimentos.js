@@ -3,17 +3,17 @@ function hideMenuOnSmallScreens() {
   var screenWidth = window.innerWidth;
   var menuLateral = document.getElementById('menuLateral');
   var menuSUPERIOR = document.getElementById('menuSUPERIOR');
-    var porColunas = document.getElementById('porColunas');
+    
 
   if (screenWidth <= 460) { // Se a largura da tela for 460 pixels ou menos
       menuLateral.style.display = 'none'; // Oculta o menu lateral
       menuSUPERIOR.style.display = 'block';    
-      porColunas.style.display = 'none';
+      
       
   } else {
       menuLateral.style.display = 'block'; // Exibe o menu lateral
       menuSUPERIOR.style.display = 'none'; 
-      porColunas.style.display = 'block';
+      
       
   }
 }

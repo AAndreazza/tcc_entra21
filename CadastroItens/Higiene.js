@@ -1,20 +1,68 @@
+
+function hideMenuOnSmallScreens() {
+  var screenWidth = window.innerWidth;
+  var menuLateral = document.getElementById('menuLateral');
+  var menuSUPERIOR = document.getElementById('menuSUPERIOR');
+    
+
+  if (screenWidth <= 460) { // Se a largura da tela for 460 pixels ou menos
+      menuLateral.style.display = 'none'; // Oculta o menu lateral
+      menuSUPERIOR.style.display = 'block';    
+      
+      
+  } else {
+      menuLateral.style.display = 'block'; // Exibe o menu lateral
+      menuSUPERIOR.style.display = 'none'; 
+      
+      
+  }
+}
+
+window.onload = hideMenuOnSmallScreens;
+window.onresize = hideMenuOnSmallScreens;
+
+function stopPropagation(event) {
+event.stopPropagation();
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+  const formulario = document.querySelector("#cadastroForm");
+
+  formulario.addEventListener('submit', function (event) {
+    event.preventDefault();
+    validarCampos();
+  });
+
+  // Adicionando a validação em tempo real
+  formulario.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        this.classList.remove('input-invalido');
+        this.classList.add('input-valido');
+      } else {
+        this.classList.remove('input-valido');
+        this.classList.add('input-invalido');
+      }
+    });
+  });
   // Este bloco de código será executado após o carregamento do DOM
+
   const nomeUsuario = sessionStorage.getItem('nomeUsuario');
   const elementoNomeUsuario = document.getElementById('link-usuario');
+  const elementoNomeUsuario2 = document.getElementById('link-usuario2');
 
-  if (elementoNomeUsuario) {
+  
     elementoNomeUsuario.innerText = nomeUsuario;
-  }
+    elementoNomeUsuario2.innerText = nomeUsuario;
+  
 
-  const formulario = document.querySelector("#cadastroForm");
+ 
 
   formulario.addEventListener('submit', function (event) {
     event.preventDefault();
     validarCadastro();
   });
 });
-
 
 function validarCadastro() {
   const produto = document.getElementById("nome").value;
@@ -35,6 +83,11 @@ function validarCadastro() {
   let validacao = true;
 
   if (produto.trim() === "" || formatoData.trim() === "" || valorUnitario === "" || quantidade === "") {
+    validacao = false;
+ 
+  }
+
+  if(!validarCampos()){
     validacao = false;
   }
 
@@ -101,7 +154,6 @@ function cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, u
     });
 }
 
-
 function limparCampos() {
   document.getElementById("nome").value = "";
   document.getElementById("data").value = "";
@@ -109,3 +161,37 @@ function limparCampos() {
   document.getElementById("qtde").value = "";
   document.getElementById("descricao").value = "";
 }
+
+
+function validarCampos() {
+  const produto = document.getElementById("nome");
+  const dataCompra = document.getElementById("data");
+  const valorUnitario = document.getElementById("valor");
+  const quantidade = document.getElementById("qtde");
+       
+
+  if (produto.value.trim() === "" || dataCompra.value.trim() === "" || valorUnitario.value === "" || quantidade.value === "") {
+    produto.classList.add('input-invalido');
+    dataCompra.classList.add('input-invalido');
+    valorUnitario.classList.add('input-invalido');
+    quantidade.classList.add('input-invalido');
+    return false;
+  } else {
+    produto.classList.remove('input-invalido');
+    dataCompra.classList.remove('input-invalido');
+    valorUnitario.classList.remove('input-invalido');
+    quantidade.classList.remove('input-invalido');
+    return true;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
