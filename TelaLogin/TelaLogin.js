@@ -55,7 +55,7 @@ function fazerLogin(email, senha) {
         Swal.fire({
           title: 'Login inválido!',
           text: 'Email ou senha incorretos...',
-          icon: 'error', // Ícone do alerta (success, error, warning, info, question)
+          icon: 'error',
           confirmButtonText: 'Voltar'
         });
       }

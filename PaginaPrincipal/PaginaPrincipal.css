@@ -1,80 +1,36 @@
+a {
+    text-decoration: none;
+}
+
+/*ESTILIZAÇÃO DO MENU LATERAL*/
 .MenuLATERAL {
     background-color: #5C7243;
     width: 80%;
     height: 100%;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
 .MenuLATERAL .row {
     width: 110%;
+}
+
+.container .row {
+    display: flex;
+    margin-top: 10px;
 
 }
 
-.card {
-    background-color: #A3C977;
-    border-radius: 20px;
-    height: 200px;
-
+.row {
+    width: 100%;
 }
 
-.card-title {
-    text-align: center;
-    color: #354129;
-    text-decoration: none;
-}
-
-.col-9 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-@media only screen and (max-width: 800px) {
-    .mt-3 {
-        font-size: small;
-        border-bottom: 0px;
-    }
-
-    .MenuLATERAL {
-        min-width: 90px;
-    }
-
-}
-
-
-@media only screen and (max-width: 460px) {
-    .col-9 {
-        width: 100%;
-        margin-left: 30px;
-
-    }
-
-
-    .MenuSUPERIOR {
-        color: white;
-    }
-
-}
-
-
+/*ESTILIZAÇAO DO MENU SUPERIOR*/
 .container a {
     color: white;
     text-decoration: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
-
-.dropdown-menu {
-    width: 13%;
-}
-
-.dropdown-menu,
-.dropdown-item:hover {
-    background-color: #5C7243;
-
-}
-
 
 .MenuSUPERIOR {
     background-color: #5C7243;
@@ -102,7 +58,6 @@
     width: 20%;
     position: absolute;
     background-color: #5C7243;
-
 }
 
 .MenuSUPERIOR .navbar {
@@ -111,21 +66,32 @@
     text-align: center;
 }
 
-
-
-
-.container .row {
-    display: flex;
-    margin-top: 10px;
-
+.dropdown-menu {
+    width: 13%;
 }
 
+.dropdown-menu,
+.dropdown-item:hover {
+    background-color: #5C7243;
+}
 
+.mt-3 {
+    border-bottom: 1px solid #dee2e6;
+}
 
+.mt-3 a:hover,
+.mt-3:hover,
+.dropdown-item a:hover {
+    color: #97b871;
+}
+
+/*ESTILIZAÇÃO DO RODAPÉ*/
+.footer {
+    bottom: 0;
+}
 
 #rodape {
     background-color: #5C7243;
-
 }
 
 #botao-atendimento {
@@ -139,30 +105,41 @@
 #frase-impacto {
     color: #FFFFFF;
     border: none;
+    font-size: large;
 }
 
-.row {
-    width: 100%;
+/*ESTILIZAÇÃO DOS CARDS*/
+.col-9 {
+    margin: 50px auto;
 }
 
-.footer {
-    bottom: 0;
+.card {
+    border: none;
+    border-radius: 10px;
+    width: 330px;
+    height: 200px;
+    background-color: #97b871;
+    justify-content: center;
 }
 
-.card-text {
-    text-align: center;
-    text-decoration: none;
-}
+/*FLEZ PARA MOBILE*/
+@media only screen and (max-width: 460px) {
 
-a {
-    text-decoration: none;
-}
-.mt-3 {
-    border-bottom: 1px solid #dee2e6;
+    .MenuSUPERIOR {
+        width: 450px;
+        color: white;
     }
-  .mt-3 a:hover,
-  .mt-3:hover,
-  .dropdown-item a:hover {
-   color: #97b871;
-   
-  }
+
+    .col-9 {
+        width: 100%;
+        margin-left: 30px;
+    }
+
+    footer {
+        width: 450px;
+    }
+
+    #frase-impacto {
+        font-size: small;
+    }
+}

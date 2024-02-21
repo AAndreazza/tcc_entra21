@@ -1,3 +1,4 @@
+/*ESTILIZAÇÃO DO MENU LATERAL*/
 .MenuLATERAL {
   background-color: #5C7243;
   width: 80%;
@@ -10,72 +11,27 @@
   width: 110%;
 }
 
-@media only screen and (max-width: 800px) {
-  .mt-3 {
-    font-size: small;
-    border-bottom: 0px;
-  }
-
-  .MenuLATERAL {
-    min-width: 90px;
-  }
-}
-
-@media only screen and (min-width: 461px) {
-
-  .containerCard {
-    margin-left: -8%;
-  }
+.container .row {
+  display: flex;
+  margin-top: 10px;
 
 }
-@media only screen and (max-width: 460px) {
- 
-  
-  .col-9 {
-    width: 100%;
-    justify-content: center;
-  }
-   .containerCard {
-    width: 100%;
-    margin-left: 30px;
-    justify-content: center;
-  }
-  .MenuSUPERIOR {
-      color: white;
-      
-  }
+
+.row {
+  width: 100%;
 }
 
+/*ESTILIZAÇAO DO MENU SUPERIOR*/
 .container a {
   color: white;
   text-decoration: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.dropdown-menu {
-  width: 13%;
-}
-
-.dropdown-menu,
-.dropdown-item:hover {
-  background-color: #5C7243;
-}
-
-.mt-3 {
-  border-bottom: 1px solid #dee2e6;
-  }
-.mt-3 a:hover,
-.mt-3:hover,
-.dropdown-item a:hover {
- color: #97b871;
- 
-}
-
 .MenuSUPERIOR {
   background-color: #5C7243;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   position: relative;
-  color: white;
 }
 
 .MenuSUPERIOR button {
@@ -88,7 +44,11 @@
   transition: 1.0s;
 }
 
-
+.container span {
+  border: none;
+  color: white;
+  background-color: #5C7243;
+}
 
 .MenuSUPERIOR .dropdown-menu {
   width: 20%;
@@ -102,11 +62,140 @@
   text-align: center;
 }
 
+.dropdown-menu {
+  width: 13%;
+}
+
+.dropdown-menu,
+.dropdown-item:hover {
+  background-color: #5C7243;
+}
+
+.mt-3 {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.mt-3 a:hover,
+.mt-3:hover,
+.dropdown-item a:hover {
+  color: #97b871;
+}
+
+.container a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
 .container .row {
   display: flex;
   margin-top: 10px;
 }
 
+/*ESTILIZAÇÃO DO CARD*/
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  background-color: #97b871;
+}
+
+.btn-secondary:hover {
+  background-color: #97b871;
+}
+
+.input-invalido {
+  border: 2px solid rgb(230, 35, 35) !important;
+  /*!important para a borda vermelha*/
+}
+
+.input-valido {
+  border: 2px solid rgb(23, 177, 23) !important;
+  /*!important para a borda verde*/
+}
+
+.containerCard {
+  background-color: #CDE1B7;
+  color: #466F17;
+  width: 650px;
+  padding: 20px 20px 10px 20px;
+  border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.containerCard h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.containerCard label {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerCard input {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.containerCard .botoesCadastro {
+  display: flex;
+  justify-content: center;
+}
+
+.cancelar,
+.cadastrar {
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: medium;
+  padding: 10px;
+  margin: auto;
+}
+
+.cadastrar {
+  background-color: #5C7243;
+}
+
+.cancelar {
+  background-color: #A3C977;
+}
+
+.containerCard .botoesCadastro .cadastrar:hover {
+  color: #CDE1B7;
+}
+
+.containerCard .botoesCadastro .cancelar:hover {
+  color: #5C7243;
+}
+
+.containerCard input#descricao {
+  height: 150px;
+}
+
+.container span {
+  border: none;
+  color: white;
+  background-color: #5C7243;
+}
+
+form input {
+  width: 100%;
+}
+
+/*ESTILIZAÇÃO DO RODAPÉ*/
 #rodape {
   background-color: #5C7243;
 }
@@ -127,101 +216,35 @@
 #frase-impacto {
   color: #FFFFFF;
   border: none;
-}
-
-.row {
-  width: 100%;
+  font-size: large;
 }
 
 .footer {
   bottom: 0;
 }
 
-.btn-check:checked+.btn,
-.btn.active,
-.btn.show,
-.btn:first-child:active,
-:not(.btn-check)+.btn:active {
-  background-color: #97b871;
-}
+@media only screen and (max-width: 460px) {
 
-.btn-secondary:hover {
-  background-color: #97b871;
-}
+  .col-9 {
+    width: 100%;
+    justify-content: center;
+  }
 
-.input-invalido {
-  border: 2px solid rgb(230, 35, 35) !important; /* Use !important para garantir que a borda vermelha seja aplicada */
-}   
-.input-valido {
-  border: 2px solid rgb(23, 177, 23) !important; /* Use !important para garantir que a borda verde seja aplicada */
-}
-.containerCard {
-  background-color: #CDE1B7;
-  color: #466F17;
-  width: 650px;
-  padding: 20px 20px 10px 20px;
-  border-radius: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.containerCard h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
+  .containerCard {
+    width: 100%;
+    margin: 20px 5px 20px 30px;
+    justify-content: center;
+  }
 
-.containerCard label {
-  display: flex;
-  flex-direction: column;
-}
-.containerCard input {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 20px;
-}
+  .MenuSUPERIOR {
+    color: white;
+  }
 
-.containerCard .botoesCadastro {
-  display: flex;
-  justify-content: center;
-}
-.cancelar,
-.cadastrar {
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  justify-content: center;
-  font-weight: bold;
-  font-size: medium;
-  padding: 10px;
-  margin: auto;
-}
-.cadastrar {
-  background-color: #5C7243;
-}
-.cancelar {
-  background-color: #A3C977;
-}
+  #rodape {
+    padding-left: 20px;
+  }
 
-.containerCard .botoesCadastro .cadastrar:hover {
-  color: #CDE1B7;
-}
-
-.containerCard .botoesCadastro .cancelar:hover {
-  color: #5C7243;
-}
-.containerCard input#descricao {
-  height: 150px;
-}
-.container span {
-  border: none;
-  color: white;
-  background-color: #5C7243;
-}
-form input {
-  width: 100%;
+  #frase-impacto {
+    font-size: small;
+  }
 }

@@ -16,3 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     elementoTelefoneUsuario.value = telefoneUsuario;
   }
 });
+
+function Sair() {
+  window.location.href = "../PaginaInicial/PaginaInicial.html";
+}

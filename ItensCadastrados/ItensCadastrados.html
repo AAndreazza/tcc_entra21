@@ -15,21 +15,28 @@
 
 <body>
 
+    <!-- MENU SUPERIOR -->
     <div class="MenuSUPERIOR" id="menuSUPERIOR">
-        <div class="container">
-            <div class="d-flex">
+        <div class="container ">
+            <div class="d-flex ">
                 <div class="d-flex align-items-center">
-                    <a href="../PaginaPrincipal/PaginaPrincipal.html">
-                        <img src="../Imagens/2-cortada.png" alt="Logo da Cash Control" style="height: 70px" class="mr-3">
+                    <a href="../PaginaPrincipal/PaginaPrincipal.html"><img src="../Imagens/2-cortada.png"
+                            alt="Logo da Cash Control" style="height: 70px" class="mr-3">
                     </a>
-                    <p id="nome-usuario" class="text-center m-0">Olá, <a href="../PerfilUsuario/PerfilUsuario.html" id="link-usuario">usuário</a></p>
+
+                    <!-- NOME DO USUÁRIO -->
+                    <p id="nome-usuario" class="text-center m-0"> Olá, <a href="../PerfilUsuario/PerfilUsuario.html"
+                            id="link-usuario">usuário</a></p>
                 </div>
 
-                <div class="dropdown ms-auto mt-3" style="border-bottom: 0px;">
-                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                <!-- DROPDOWN SUPERIOR -->
+                <div class="dropdown ms-auto mt-3 " style="border-bottom: 0px;">
+                    <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Cadastrar Item
                     </button>
+
+                    <!-- LISTA DE SETORES -->
                     <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
                         <li class="mt-2">
                             <a href="../ItensCadastrados/ItensCadastrados.html"> Itens Cadastrados</a>
@@ -40,33 +47,41 @@
                         <li class="mt-2">
                             <a href="../CadastroItens/Educacao.html"> Educação </a>
                         </li>
+                        </li class="mt-2">
                         <li class="mt-2">
                             <a href="../CadastroItens/Financiamento.html"> Financiamento</a>
                         </li>
-                        <li class="mt-2">
-                            <a href="../CadastroItens/Imposto.html"> Imposto </a>
-                        </li>
-                        <li class="mt-2">
-                            <a href="../CadastroItens/Lazer.html"> Lazer </a>
-                        </li>
+                        <li class="mt-2"> <a href="../CadastroItens/Imposto.html"> Imposto </a></li>
+                        <li class="mt-2"> <a href="../CadastroItens/Lazer.html"> Lazer </a></li>
+
                         <li class="dropdown" onclick="stopPropagation(event)">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Mercado
                             </button>
-                            <ul class="dropdown-menu text-center " aria-labelledby="dropdownMenuButton2">
-                                <li class="mt-2"><a href="../CadastroItens/Alimentos.html"> Alimentos </a></li>
-                                <li class="mt-2"><a href="../CadastroItens/Bebidas.html"> Bebidas </a></li>
-                                <li class="mt-2"><a href="../CadastroItens/Higiene.html"> Higiene </a></li>
-                                <li class="mt-2"><a href="../CadastroItens/Limpeza.html"> Limpeza </a></li>
-                                <li class="mt-2"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal</a></li>
+
+                            <!-- DROWPDOWN DO MENU -->
+                            <ul class="dropdown-menu text-center aria-labelledby=" dropdownMenuButton2">
+                                <li class="mt-2"><a href="../CadastroItens/Alimentos.html"> Alimentos </a>
+                                </li>
+                                <li class="mt-2"><a href="../CadastroItens/Bebidas.html"> Bebidas </a>
+                                </li>
+                                <li class="mt-2"><a href="../CadastroItens/Higiene.html"> Higiene </a>
+                                </li>
+                                <li class="mt-2"><a href="../CadastroItens/Limpeza.html"> Limpeza </a>
+                                </li>
+                                <li class="mt-2"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="mt-2">
                             <a href="../CadastroItens/Moradia.html"> Moradia </a>
                         </li>
                         <li class="mt-2">
-                            <a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e Investimento</a>
+                            <a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e
+                                Investimento
+                            </a>
                         </li>
                         <li class="mt-2">
                             <a href="../CadastroItens/Saude.html"> Saúde </a>
@@ -89,44 +104,66 @@
         </div>
     </div>
 
+
+    <!-- MENU LATERAL -->
     <div class="row" id="porColunas">
         <div class="col-3">
-            <div class="MenuLATERAL" id="menuLateral">
+            <div class="MenuLATERAL " id="menuLateral">
                 <div class="container">
-                    <a href="../PaginaPrincipal/PaginaPrincipal.html">
-                        <img class="mx-auto d-block" src="../Imagens/2-cortada.png" alt="Logo da Cash Control"
-                            style="height: 70px">
-                    </a>
-                    <p class="text-center" id="nome-usuario"> Olá, <a class="tex" href="../PerfilUsuario/PerfilUsuario.html" id="link-usuario2">usuário</a></p>
+
+                    <!-- NOME DO USUÁRIO -->
+                    <a href="../PaginaPrincipal/PaginaPrincipal.html"> <img class="mx-auto d-block"
+                            src="../Imagens/2-cortada.png" alt="Logo da Cash Control" style="height: 70px"></a>
+                    <p class="text-center" id="nome-usuario"> Olá, <a class="tex"
+                            href="../PerfilUsuario/PerfilUsuario.html" id="link-usuario2">usuário</p>
                     <div class="row">
                         <div class="col">
-                            <div class="mt-3"><a href="../ItensCadastrados/ItensCadastrados.html"> Itens Cadastrados</a></div>
-                            <div class="mt-3"><a href="../CadastroItens/CuidadosPessoais.html"> Cuidados Pessoais</a></div>
-                            <div class="mt-3"><a href="../CadastroItens/Educacao.html"> Educação </a></div>
-                            <div class="mt-3"><a href="../CadastroItens/Financiamento.html"> Financiamento</a></div>
-                            <div class="mt-3"><a href="../CadastroItens/Imposto.html"> Imposto </a></div>
-                            <div class="mt-3"><a href="../CadastroItens/Lazer.html"> Lazer </a></div>
+
+                            <!-- LISTA DE SETORES -->
+                            <div class="mt-3"><a href="../ItensCadastrados/ItensCadastrados.html"> Itens Cadastrados</a>
+                            </div>
+                            <div class="mt-3"><a href="../CadastroItens/CuidadosPessoais.html"> Cuidados
+                                    Pessoais</a>
+                            </div>
+                            <div class="mt-3 "><a href="../CadastroItens/Educacao.html"> Educação </a></div>
+                            <div class="mt-3 "><a href="../CadastroItens/Financiamento.html"> Financiamento</a>
+                            </div>
+                            <div class="mt-3 "><a href="../CadastroItens/Imposto.html"> Imposto </a></div>
+                            <div class="mt-3 "><a href="../CadastroItens/Lazer.html"> Lazer </a></div>
                             <div class="mt-3 dropdown" style="cursor: pointer;" data-bs-toggle="dropdown">Mercado</div>
                             <ul class="dropdown-menu text-center">
-                                <li class="dropdown-item"><a href="../CadastroItens/Alimentos.html"> Alimentos </a></li>
-                                <li class="dropdown-item"><a href="../CadastroItens/Bebidas.html"> Bebidas </a></li>
-                                <li class="dropdown-item"><a href="../CadastroItens/Higiene.html"> Higiene </a></li>
-                                <li class="dropdown-item"><a href="../CadastroItens/Limpeza.html"> Limpeza </a></li>
-                                <li class="dropdown-item"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal</a></li>
+
+                                <!-- DROPDOWN DE MERCADO -->
+                                <li class="dropdown-item"><a href="../CadastroItens/Alimentos.html"> Alimentos </a>
+                                </li>
+                                <li class="dropdown-item"><a href="../CadastroItens/Bebidas.html"> Bebidas </a>
+                                </li>
+                                <li class="dropdown-item"><a href="../CadastroItens/Higiene.html"> Higiene </a>
+                                </li>
+                                <li class="dropdown-item"><a href="../CadastroItens/Limpeza.html"> Limpeza </a>
+                                </li>
+                                <li class="dropdown-item"><a href="../CadastroItens/NotaFiscal.html"> Nota Fiscal
+                                    </a>
+                                </li>
                             </ul>
-                            <div class="mt-3"><a href="../CadastroItens/Moradia.html"> Moradia </a></div>
-                            <div class="mt-3"><a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e Investimento</a></div>
+                            <div class="mt-3"><a href="../CadastroItens/Moradia.html"> Moradia </a>
+                            </div>
+                            <div class="mt-3"><a href="../CadastroItens/PoupançaInvestimento.html"> Poupança e
+                                    Investimento
+                                </a></div>
                             <div class="mt-3"><a href="../CadastroItens/Saude.html"> Saúde </a></div>
-                            <div class="mt-3"><a href="../CadastroItens/Transporte.html"> Transporte </a></div>
-                            <div class="mt-3"><a href="../CadastroItens/Moradia.html"> Moradia </a></div>
-                            <div class="mt-3"><a href="../CadastroItens/Vestuario.html"> Vestuário </a></div>
-                            <div class="mt-3" style="border-bottom: none;"><a href="../CadastroItens/Outros.html"> Outros </a></div>
+                            <div class=" mt-3"><a href="../CadastroItens/Transporte.html"> Transporte </a></div>
+                            <div class=" mt-3"><a href="../CadastroItens/Moradia.html"> Moradia </a></div>
+                            <div class=" mt-3"><a href="../CadastroItens/Vestuario.html"> Vestuário </a></div>
+                            <div class=" mt-3" style="border-bottom: none;"><a href="../CadastroItens/Outros.html">
+                                    Outros </a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- CARD -->
         <div class="col-9">
             <div class="container">
                 <div class="row">
@@ -151,6 +188,7 @@
 
                             <div class="pagination-controls d-flex justify-content-center align-items-center">
 
+                                <!-- FILTRO POR MÊS -->
                                 <div class="row mt-3">
                                     <div class="col-md-3">
                                         <label for="filtro-mes" class="form-label">Filtrar por Mês:</label>
@@ -170,6 +208,8 @@
                                             <option value="12">Dezembro</option>
                                         </select>
                                     </div>
+
+                                    <!-- FILTRO POR CATEGORIA -->
                                     <div class="col-md-3">
                                         <label for="filtro-setor" class="form-label">Filtrar por Setor:</label>
                                         <select id="filtro-setor" class="form-select">
@@ -194,8 +234,10 @@
                                     </div>
                                 </div>
 
+                                <!-- TOTAL -->
                                 <label for="input-valor-total" class="form-label">Total de Gastos:</label>
-                                <input id="input-valor-total" type="text" class="form-control me-2" placeholder="Valor Total" disabled
+                                <input id="input-valor-total" type="text" class="form-control me-2"
+                                    placeholder="Valor Total" disabled
                                     style="height: 25px; width: 20%; background-color: #E6E6E6;">
 
                                 <div class="pagination-controls d-flex justify-content-center align-items-center ">
@@ -209,7 +251,6 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -218,6 +259,7 @@
         </div>
     </div>
 
+    <!-- RODAPÉ -->
     <footer id='rodape' class="text-center text-lg-start">
         <div class="container p-1">
             <div id='rodape-conteudo' class="row align-items-center">

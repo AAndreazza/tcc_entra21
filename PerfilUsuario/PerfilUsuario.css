@@ -4,7 +4,8 @@ header {
   padding: 15px;
 }
 
-header a, header img {
+header a,
+header img {
   margin-left: 25px;
 }
 
@@ -20,7 +21,7 @@ body {
   justify-content: center;
   background-color: #CDE1B7;
   color: #466F17;
-  margin: 60px auto;
+  margin: 35px auto;
   width: 500px;
   padding: 20px;
   border-radius: 20px;
@@ -49,6 +50,20 @@ body {
   margin-bottom: 18px;
 }
 
+.botaoSair button {
+  background-color: #466F17;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin-left: 140px;
+  margin-top: 20px;
+}
+
+.botaoSair button:hover {
+  color: #CDE1B7;
+}
+
 /*ESTILIZAÇÃO RODAPÉ*/
 #rodape {
   background-color: #5C7243;
@@ -59,9 +74,10 @@ body {
   color: #FFFFFF;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: larger;
+  font-size: large;
 }
 
+/*FLEX PARA O CARD*/
 @media only screen and (max-width: 932px) {
   .containerCard {
     margin: 30px auto;
@@ -73,5 +89,17 @@ body {
 
   .containerCard {
     margin: 130px auto;
+  }
+
+  #rodape {
+    margin-top: 120px;
+  }
+
+  #frase-impacto {
+    font-size: small;
+  }
+
+  .botaoSair button {
+    margin-left: 100px;
   }
 }
