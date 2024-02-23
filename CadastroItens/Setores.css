@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 /*ESTILIZAÇÃO DO MENU LATERAL*/
 .MenuLATERAL {
   background-color: #5C7243;
@@ -5,6 +10,8 @@
   height: 100%;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  padding: 5px 20px;
 }
 
 .MenuLATERAL .row {
@@ -14,12 +21,50 @@
 .container .row {
   display: flex;
   margin-top: 10px;
-
 }
 
 .row {
   width: 100%;
 }
+
+.mt-3 {
+  border-bottom: 1px solid #dee2e6;
+  padding: 0 5px 2px 5px;
+}
+
+.dropdown-menu {
+  width: 5%;
+}
+
+.dropdown-item {
+  font-size: large;
+}
+
+.dropdown-menu,
+.dropdown-item:hover {
+  background-color: #5C7243
+}
+
+.mt-3 a:hover,
+.mt-3:hover,
+.dropdown-item a:hover {
+  color: #A3C977;
+}
+
+#botao-itens {
+  color: #FFFFFF;
+  background-color: #A3C977;
+  font-size: smaller;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 15px;
+  margin: 30px 0 0 20px;
+}
+
+#link-itens:hover {
+  color: #5C7243;
+}
+
 
 /*ESTILIZAÇAO DO MENU SUPERIOR*/
 .container a {
@@ -62,35 +107,26 @@
   text-align: center;
 }
 
-.dropdown-menu {
-  width: 13%;
+#dropdownMenuButton:active {
+  background-color: #A3C977;
 }
 
-.dropdown-menu,
-.dropdown-item:hover {
+#dropdownMenuButton2:active {
   background-color: #5C7243;
 }
 
-.mt-3 {
-  border-bottom: 1px solid #dee2e6;
+#botao-itens-flex {
+  color: #FFFFFF;
+  background-color: #A3C977;
+  font-size: smaller;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 15px;
+  margin-top: -20px;
 }
 
-.mt-3 a:hover,
-.mt-3:hover,
-.dropdown-item a:hover {
-  color: #97b871;
-}
-
-.container a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-
-.container .row {
-  display: flex;
-  margin-top: 10px;
+#link-itens-flex:hover, #link-itens:hover {
+  color: #5C7243;
 }
 
 /*ESTILIZAÇÃO DO CARD*/
@@ -123,7 +159,7 @@
   padding: 20px 20px 10px 20px;
   border-radius: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-top: 20px;
+  margin-top: 100px;
   margin-bottom: 20px;
 }
 
@@ -196,8 +232,13 @@ form input {
 }
 
 /*ESTILIZAÇÃO DO RODAPÉ*/
+.footer {
+  bottom: 0;
+}
+
 #rodape {
   background-color: #5C7243;
+  margin-left: -100px;
 }
 
 #botao-atendimento {
@@ -206,21 +247,17 @@ form input {
   font-size: smaller;
   border-radius: 20px;
   border: none;
+  padding: 5px 15px;
 }
 
-#botao-atendimento a {
-  color: white;
-  text-decoration: none;
+#link-atendimento:hover {
+  color: #5C7243;
 }
 
 #frase-impacto {
   color: #FFFFFF;
   border: none;
   font-size: large;
-}
-
-.footer {
-  bottom: 0;
 }
 
 @media only screen and (max-width: 460px) {
@@ -242,6 +279,7 @@ form input {
 
   #rodape {
     padding-left: 20px;
+    margin-left: 0;
   }
 
   #frase-impacto {

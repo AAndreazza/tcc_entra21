@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adicione o código para lidar com os filtros
     const filtroMes = document.getElementById('filtro-mes');
-    const filtroSetor = document.getElementById('filtro-setor');
+    const filtroSetor = document.getElementById('filtro-categoria');
 
     filtroMes.addEventListener('change', function () {
         filtroMesSelecionado = parseInt(filtroMes.value);
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarSaldoTotal(usuarioId, parseInt(filtroMes.value), filtroSetorSelecionado);
     });
 
-  
+
 });
 
 
@@ -101,7 +101,7 @@ function carregarItens(usuarioId, page, mes, setor) {
 
                 // Agora você pode iterar sobre os itens
                 itens.forEach(item => {
-                    tabelaCorpo.appendChild(adicionarLinha(item.produto, item.dataCompra, item.valor, item.descricao));
+                    tabelaCorpo.appendChild(adicionarLinha(item.produto, item.dataCompra, item.valor, item.descricao, item.cdItem));
                 });
 
                 totalPages = data.totalPages;
@@ -117,7 +117,7 @@ function carregarItens(usuarioId, page, mes, setor) {
         });
 }
 
-function adicionarLinha(produto, data, valor, descricao) {
+function adicionarLinha(produto, data, valor, descricao, id) {
     const novaLinha = document.createElement('tr');
     const valorFormatted = parseFloat(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     novaLinha.innerHTML = `
@@ -126,28 +126,61 @@ function adicionarLinha(produto, data, valor, descricao) {
                         <td id="td-valor"><input id="input-valor" type="text" class="form-control" value="R$ ${valorFormatted}" disabled></td>
                         <td>
                           <div class="dropdown">
-                             <div class="d-flex justify-content-center align-items-center">
-                                <button class="botao-mais-descricao"
-                                    data-bs-toggle="dropdown"><i id="icon-mais-descricao"
-                                        class="bi bi-plus-circle"></i>
+                             <div class="d-flex justify-content-center align-items-center" id="caixa-desc">
+                                <button class="botao-mais-descricao" data-bs-toggle="dropdown">
+                                    <i id="icon-mais-descricao" class="bi bi-plus-circle"></i>
                                 </button>
                                 <ul id="dropdown-desc" class="dropdown-menu">
                                     <li>
                                         ${descricao || 'Não possui descrição'}
-                                    </li>
-                                    <li><button> Alterar Item</button>
-                                   
-                                    </li>
-                                    <li>
-                                    <button> Deletar Item</button>
-                                    </li>
-                                    
+                                    </li>                                    
                                 </ul>
                             </div> 
                          </div> 
                         </td> 
+                        <td>
+                              <div class="d-flex justify-content-center align-items-center">
+                                 <button class="botao-alterar-item" data-item-id="${id}"><i id="icon-mais-descricao"
+                                     class="bi bi-pencil"></i>
+                                 </button>
+                          </div> 
+                          </td>
+                         <td>
+                              <div class="d-flex justify-content-center align-items-center">
+                                 <button class="botao-deletar-item" data-item-id="${id}"><i id="icon-mais-descricao"
+                                     class="bi bi-trash3"></i>
+                                 </button>
+                          </div> 
+                          </td>
                     `;
+
+
+    const botaoDeletarItem = novaLinha.querySelector('.botao-deletar-item');
+    botaoDeletarItem.addEventListener('click', () => deletarItem(botaoDeletarItem.dataset.itemId));
+
     return novaLinha;
+}
+
+function deletarItem(itemId) {
+    // Aqui você faz o fetch para deletar o item com a ID específica
+    fetch(`http://localhost:8080/item/deletar/${itemId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            // Aqui você pode incluir cabeçalhos adicionais, se necessário
+        },
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao deletar item');
+            }
+            carregarItens(sessionStorage.getItem('usuarioId'), 1, filtroMesSelecionado, filtroSetorSelecionado);
+            mostrarSaldoTotal(sessionStorage.getItem('usuarioId'), filtroMesSelecionado, filtroSetorSelecionado);
+            // Se necessário, faça algo após a deleção bem-sucedida
+        })
+        .catch(error => {
+            console.error('Erro ao deletar item:', error);
+        });
 }
 
 const nextPageButton = document.getElementById('next-page');
@@ -189,14 +222,14 @@ function updateCursorStyle() {
     if (nextPageButton) {
         nextPageButton.disabled = currentPage === totalPages;
         nextPageButton.style.cursor = currentPage === totalPages ? 'default' : 'pointer';
-    
+
 
     }
 
     if (prevPageButton) {
         prevPageButton.disabled = currentPage === 1;
         prevPageButton.style.cursor = currentPage === 1 ? 'default' : 'pointer';
-       
+
     }
 }
 
@@ -210,11 +243,11 @@ function formatarData(dataArray) {
     if (window.innerWidth <= 460) {
         // Formata a data para "DD/MM/YY"
         return `${diaFormatado}/${mesFormatado}/${ano.toString().slice(-2)}`;
-        
+
     } else {
         return `${diaFormatado}/${mesFormatado}/${ano}`;
     }
-       
+
 }
 
 
@@ -226,18 +259,23 @@ function hideMenuOnSmallScreens() {
     var menuLateral = document.getElementById('menuLateral');
     var menuSUPERIOR = document.getElementById('menuSUPERIOR');
     var reduzirDescricaoParaDesc = document.getElementById('reduzir-descricao-para-desc');
+    var reduzirEditar = document.getElementById('reduzir-editar');
+    var reduzirDeletar = document.getElementById('reduzir-deletar');
 
 
     if (screenWidth <= 460) { // Se a largura da tela for 460 pixels ou menos
         menuLateral.style.display = 'none'; // Oculta o menu lateral
         menuSUPERIOR.style.display = 'block';
-        reduzirDescricaoParaDesc.innerText = 'Desc';
-
+        reduzirDescricaoParaDesc.innerText = '';
+        reduzirDeletar.innerText = '';
+        reduzirEditar.innerText = '';
 
     } else {
         menuLateral.style.display = 'block'; // Exibe o menu lateral
         menuSUPERIOR.style.display = 'none';
         reduzirDescricaoParaDesc.innerText = 'Descrição';
+        reduzirDeletar.innerText = 'Deletar';
+        reduzirEditar.innerText = 'Editar';
     }
 }
 

@@ -64,6 +64,10 @@ body {
   color: #CDE1B7;
 }
 
+#botaoSair {
+  background-color: #5C7243
+}
+
 /*ESTILIZAÇÃO RODAPÉ*/
 #rodape {
   background-color: #5C7243;
@@ -102,7 +106,4 @@ body {
   .botaoSair button {
     margin-left: 100px;
   }
-}
-#botaoSair {
-  background-color: #5C7243
 }

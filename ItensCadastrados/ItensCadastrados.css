@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 /*ESTILIZAÇÃO DO MENU LATERAL*/
 .MenuLATERAL {
   background-color: #5C7243;
@@ -5,6 +10,8 @@
   height: 100%;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  padding: 5px 20px;
 }
 
 .MenuLATERAL .row {
@@ -14,11 +21,48 @@
 .container .row {
   display: flex;
   margin-top: 10px;
-
 }
 
 .row {
   width: 100%;
+}
+
+.mt-3 {
+  border-bottom: 1px solid #dee2e6;
+  padding: 0 5px 2px 5px;
+}
+
+.dropdown-menu {
+  width: 5%;
+}
+
+.dropdown-item {
+  font-size: large;
+}
+
+.dropdown-menu,
+.dropdown-item:hover {
+  background-color: #5C7243
+}
+
+.mt-3 a:hover,
+.mt-3:hover,
+.dropdown-item a:hover {
+  color: #A3C977;
+}
+
+#botao-itens {
+  color: #FFFFFF;
+  background-color: #A3C977;
+  font-size: smaller;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 15px;
+  margin: 50px 0 0 20px;
+}
+
+#link-itens:hover {
+  color: #5C7243;
 }
 
 
@@ -63,25 +107,26 @@
   text-align: center;
 }
 
-.dropdown-menu {
-  width: 13%;
-  word-wrap: break-word;
+#dropdownMenuButton:active {
+  background-color: #A3C977;
 }
 
-.dropdown-menu,
-.dropdown-item:hover {
+#dropdownMenuButton2:active {
   background-color: #5C7243;
 }
 
-.mt-3 {
-  border-bottom: 1px solid #dee2e6;
+#botao-itens-flex {
+  color: #FFFFFF;
+  background-color: #A3C977;
+  font-size: smaller;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 15px;
+  margin-top: -20px;
 }
 
-.mt-3 a:hover,
-.mt-3:hover,
-.dropdown-item a:hover {
-  color: #97b871;
-
+#link-itens-flex:hover {
+  color: #5C7243;
 }
 
 /*ESTILIZAÇÃO DO CARD*/
@@ -108,6 +153,16 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.botao-mais-descricao {
+  border: none;
+  background-color: white;
+}
+
+#dropdown-desc {
+  background-color: #A3C977;
+  padding: 10px;
+}
+
 table th:nth-child(2),
 table td:nth-child(2) {
   width: 30%;
@@ -129,26 +184,78 @@ table th:nth-child(4) {
   padding-top: 10px;
 }
 
-.green-icon {
-  color: #5C7243;
-}
-
 td input {
   height: 29px;
 }
 
-/*paginação*/
-.iconesPagination {
-  font-size: 20px;
+#input-produto {
+  margin-left: 10px;
+  width: 400px;
 }
 
+#input-data {
+  width: 100px;
+  margin-left: 5px;
+}
 
+#input-valor {
+  width: 130px;
+}
 
-/*filtro de categoria*/
+.bi {
+  font-size: large;
+  color: #000000;
+  margin-right: 7px;
+  margin-left: 7px;
+}
 
-.botao-mais-descricao {
+/*ULTIMOS ITENS DO CARD */
+#div-ultimos-itens {
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* FILTRO DE MESES E CATEGORIA */
+#div-filtro-mes {
+  margin-left: 3px;
+}
+
+#filtro-mes,
+#filtro-categoria {
+  width: 120px;
+  background-color: #CDE1B7;
   border: none;
-  background-color: white;
+  font-size: medium;
+  color: #000000;
+  margin: 0 0 20px 0;
+  justify-content: center;
+}
+
+/* VALOR TOTAL */
+#input-valor-total {
+  width: 120px;
+}
+
+#label-valor-total {
+  margin-right: 15px;
+  font-size: large;
+}
+
+#card-valor-total {
+  align-items: center;
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+/* PAGINAÇÃO */
+#iconesPagination {
+  font-size: 20px;
+  align-items: center;
+}
+
+.green-icon {
+  color: #5C7243;
 }
 
 /*ESTILIZAÇÃO DO RODAPÉ*/
@@ -158,6 +265,7 @@ td input {
 
 #rodape {
   background-color: #5C7243;
+  margin-left: -100px;
 }
 
 #botao-atendimento {
@@ -166,42 +274,17 @@ td input {
   font-size: smaller;
   border-radius: 20px;
   border: none;
+  padding: 5px 15px;
+}
+
+#link-atendimento:hover {
+  color: #5C7243;
 }
 
 #frase-impacto {
   color: #FFFFFF;
   border: none;
   font-size: large;
-}
-
-.btn-check:checked+.btn,
-.btn.active,
-.btn.show,
-.btn:first-child:active,
-:not(.btn-check)+.btn:active {
-  background-color: #97b871;
-}
-
-.btn-secondary:hover {
-  background-color: #97b871;
-}
-
-#filtro-mes {
-  width: 110px;
-  background-color: #CDE1B7;
-  border: none;
-  font-size: 16px;
-  height: 30px;
-  text-align: center;
-}
-
-#filtro-setor {
-  background-color: #CDE1B7;
-  width: 150px;
-  border: none;
-  font-size: 16px;
-  height: 30px;
-  text-align: center;
 }
 
 /*FLEX PARA MOBILE*/
@@ -215,69 +298,98 @@ td input {
   }
 
   .containerCard {
-    width: 100%;
-    margin-left: 25px;
+    width: 112%;
+    margin-left: 5px;
   }
 
   .MenuSUPERIOR {
     color: white;
   }
+
   #td-produto {
-    width: 30%;    
+    width: 30%;
   }
+
   #td-data {
     width: 20px;
   }
-  #td-valor {
-    width: 40%;
-  }
+
   #input-produto {
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 100px;
+    margin-left: 0;
   }
+
   #input-data {
     font-size: 12px;
+    width: 68px;
+    margin-left: 0;
   }
+
   #input-valor {
     font-size: 12px;
+    width: 90px;
+    margin-left: 0;
+  }
+  
+  .bi {
+    font-size: small;
+    color: #000000;
+    margin-right: 3px;
+    margin-left: -3px;
+  }
+
+
+  /*ULTIMOS ITENS DO CARD */
+  #div-ultimos-itens {
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px;
+  }
+
+  /* FILTRO DE MESES E CATEGORIA */
+  #div-filtro-mes {
+    margin-left: 3px;
+  }
+
+  #filtro-mes,
+  #filtro-categoria {
+    width: 85px;
+    margin: 0 0 10px 0;
+  }
+
+  /* VALOR TOTAL */
+  #label-valor-total {
+    margin-right: 15px;
+    font-size: large;
+  }
+
+  #card-valor-total {
+    margin-right: 20px;
+    margin-left: 0px;
+  }
+
+  /* PAGINAÇÃO */
+  #iconesPagination {
+    font-size: 20px;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  /* RODAPÉ */
+  #rodape {
+    padding-left: 20px;
+    margin-left: 0px;
+  }
+
+  #rodape-conteudo img {
+    margin-left: 100px;
   }
 
   #frase-impacto {
     font-size: small;
-    margin-left: 30px;
-    padding-bottom: -20px;
-  }
-
-  #rodape {
-    margin-top: 350px;
-  }
-
-  #rodape button {
-    font-size: smaller;
   }
 }
-#input-valor-total {
-    width: 120px;
-}
-#row-setores-input-pagination {
-  height: 100%;
-  width: 100%;
-  background-color: #CDE1B7;
-}
-#dropdown-desc {
-  background-color: #CDE1B7;
-  padding: 8px 8px 8px 8px;
-}
-#borda-itens-cadastrados{
-background-color: #97b871;
-padding: 5px 5px 0px 5px;
-
-
-}
-
-
-
-
-

@@ -11,7 +11,7 @@
     <script src="PaginaPrincipal.js"></script>
 </head>
 
-<body>
+<body background="../Imagens/Fundo.png">
 
     <!-- MENU SUPERIOR -->
     <div class="MenuSUPERIOR" id="menuSUPERIOR">
@@ -31,14 +31,11 @@
                 <div class="dropdown ms-auto mt-3 " style="border-bottom: 0px;">
                     <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Cadastrar Item
+                        MENU
                     </button>
 
                     <!-- LISTA DE SETORES -->
                     <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
-                        <li class="mt-2">
-                            <a href="../ItensCadastrados/ItensCadastrados.html"> Itens Cadastrados</a>
-                        </li>
                         <li class="mt-2">
                             <a href="../CadastroItens/CuidadosPessoais.html"> Cuidados Pessoais</a>
                         </li>
@@ -53,13 +50,13 @@
                         <li class="mt-2"> <a href="../CadastroItens/Lazer.html"> Lazer </a></li>
 
                         <li class="dropdown" onclick="stopPropagation(event)">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                            <button class="btn btn-secondary" type="button" id="dropdownMenuButton2"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Mercado
                             </button>
 
                             <!-- DROWPDOWN DO MERCADO -->
-                            <ul class="dropdown-menu text-center aria-labelledby=" dropdownMenuButton2">
+                            <ul class="dropdown-menu text-center aria-labelledby">
                                 <li class="mt-2"><a href="../CadastroItens/Alimentos.html"> Alimentos </a>
                                 </li>
                                 <li class="mt-2"><a href="../CadastroItens/Bebidas.html"> Bebidas </a>
@@ -96,6 +93,11 @@
                         <li class="mt-2">
                             <a href="../CadastroItens/Outros.html"> Outros</a>
                         </li>
+                        <li class="mt-4">
+                            <button id='botao-itens-flex' type="button" class="btn">
+                                <a id="link-itens-flex" href="../ItensCadastrados/ItensCadastrados.html"> Cadastrados
+                                </a></button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -118,8 +120,6 @@
                         <div class="col">
 
                             <!-- LISTA DE SETORES -->
-                            <div class="mt-3"><a href="../ItensCadastrados/ItensCadastrados.html"> Itens Cadastrados</a>
-                            </div>
                             <div class="mt-3"><a href="../CadastroItens/CuidadosPessoais.html"> Cuidados
                                     Pessoais</a>
                             </div>
@@ -128,8 +128,9 @@
                             </div>
                             <div class="mt-3 "><a href="../CadastroItens/Imposto.html"> Imposto </a></div>
                             <div class="mt-3 "><a href="../CadastroItens/Lazer.html"> Lazer </a></div>
-                            <div class="mt-3 dropdown" style="cursor: pointer;" data-bs-toggle="dropdown">Mercado</div>
-                            <ul class="dropdown-menu text-center">
+                            <div class="mt-3 dropdown" style="cursor: pointer;" data-bs-toggle="dropdown"
+                                id="dropdownMenuButton2">Mercado</div>
+                            <ul class="dropdown-menu">
 
                                 <!-- DROPDOWN DE MERCADO -->
                                 <li class="dropdown-item"><a href="../CadastroItens/Alimentos.html"> Alimentos </a>
@@ -157,6 +158,10 @@
                                     Outros </a></div>
                         </div>
                     </div>
+
+                    <button id='botao-itens' type="button" class="btn">
+                        <a id="link-itens" href="../ItensCadastrados/ItensCadastrados.html"> ITENS CADASTRADOS
+                        </a></button>
                 </div>
             </div>
         </div>
@@ -424,7 +429,8 @@
                     <h5 id='frase-impacto' class="text-uppercase mb-1 mt-3">CONQUISTE O CONTROLE FINANCEIRO QUE VOCÊ
                         MERECE!</h5>
                     <button id='botao-atendimento' type="button" class="btn mt-3 mb-3">
-                        <a href="mailto:atendimentocashcontrol@outlook.com.br" target="_blank"> CENTRAL DE ATENDIMENTO
+                        <a id="link-atendimento" href="mailto:atendimentocashcontrol@outlook.com.br" target="_blank">
+                            CENTRAL DE ATENDIMENTO
                         </a></button>
                 </div>
             </div>

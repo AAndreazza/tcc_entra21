@@ -1,5 +1,6 @@
 a {
     text-decoration: none;
+    color: #FFFFFF;
 }
 
 /*ESTILIZAÇÃO DO MENU LATERAL*/
@@ -9,6 +10,8 @@ a {
     height: 100%;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    padding: 5px 20px;
 }
 
 .MenuLATERAL .row {
@@ -18,11 +21,48 @@ a {
 .container .row {
     display: flex;
     margin-top: 10px;
-
 }
 
 .row {
     width: 100%;
+}
+
+.mt-3 {
+    border-bottom: 1px solid #dee2e6;
+    padding: 0 5px 2px 5px;
+}
+
+.dropdown-menu {
+    width: 5%;
+}
+
+.dropdown-item{
+    font-size: large;
+}
+
+.dropdown-menu,
+.dropdown-item:hover {
+    background-color: #5C7243
+}
+
+.mt-3 a:hover,
+.mt-3:hover,
+.dropdown-item a:hover {
+    color: #A3C977;
+}
+
+#botao-itens {
+    color: #FFFFFF;
+    background-color: #A3C977;
+    font-size: smaller;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 15px;
+    margin: 50px 0 0 20px;
+}
+
+#link-itens:hover {
+    color: #5C7243;
 }
 
 /*ESTILIZAÇAO DO MENU SUPERIOR*/
@@ -66,46 +106,26 @@ a {
     text-align: center;
 }
 
-.dropdown-menu {
-    width: 13%;
+#dropdownMenuButton:active {
+    background-color: #A3C977;
 }
 
-.dropdown-menu,
-.dropdown-item:hover {
+#dropdownMenuButton2:active {
     background-color: #5C7243;
 }
 
-.mt-3 {
-    border-bottom: 1px solid #dee2e6;
-}
-
-.mt-3 a:hover,
-.mt-3:hover,
-.dropdown-item a:hover {
-    color: #97b871;
-}
-
-/*ESTILIZAÇÃO DO RODAPÉ*/
-.footer {
-    bottom: 0;
-}
-
-#rodape {
-    background-color: #5C7243;
-}
-
-#botao-atendimento {
+#botao-itens-flex {
     color: #FFFFFF;
     background-color: #A3C977;
     font-size: smaller;
     border-radius: 20px;
     border: none;
+    padding: 5px 15px;
+    margin-top: -20px;
 }
 
-#frase-impacto {
-    color: #FFFFFF;
-    border: none;
-    font-size: large;
+#link-itens-flex:hover {
+    color: #5C7243;
 }
 
 /*ESTILIZAÇÃO DOS CARDS*/
@@ -117,12 +137,46 @@ a {
     border: none;
     border-radius: 10px;
     width: 330px;
-    height: 200px;
-    background-color: #97b871;
+    height: 180px;
+    background-color: #A3C977;
     justify-content: center;
 }
 
-/*FLEZ PARA MOBILE*/
+.card-title, .card-text {
+    text-align: center;
+}
+
+/*ESTILIZAÇÃO DO RODAPÉ*/
+.footer {
+    bottom: 0;
+}
+
+#rodape {
+    background-color: #5C7243;
+    margin-left: -100px;
+}
+
+#botao-atendimento {
+    color: #FFFFFF;
+    background-color: #A3C977;
+    font-size: smaller;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 15px;
+}
+
+#link-atendimento:hover {
+    color: #5C7243;
+}
+
+#frase-impacto {
+    color: #FFFFFF;
+    border: none;
+    font-size: large;
+}
+
+
+/*FLEX PARA MOBILE*/
 @media only screen and (max-width: 460px) {
 
     .MenuSUPERIOR {
@@ -131,12 +185,16 @@ a {
     }
 
     .col-9 {
-        width: 100%;
-        margin-left: 30px;
+        margin: 20px 0 20px 60px;
     }
 
     footer {
         width: 450px;
+        align-items: center;
+    }
+
+    #rodape {
+        margin-left: 0;
     }
 
     #frase-impacto {
