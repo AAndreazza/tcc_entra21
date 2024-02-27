@@ -1,305 +1,225 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const nomeUsuario = sessionStorage.getItem('nomeUsuario');
-    const elementoNomeUsuario = document.getElementById('link-usuario');
-    const elementoNomeUsuario2 = document.getElementById('link-usuario2');
-  
-    elementoNomeUsuario.innerText = nomeUsuario;
-    elementoNomeUsuario2.innerText = nomeUsuario;
-  
-    const usuarioId = sessionStorage.getItem('usuarioId');
-    carregarItens(usuarioId, 1, 0, 0); // Adicione os parâmetros para mês e setor
-    mostrarSaldoTotal(usuarioId, 0, 0);
-  
-    // Adicione o código para lidar com os filtros
-    const filtroMes = document.getElementById('filtro-mes');
-    const filtroSetor = document.getElementById('filtro-categoria');
-  
-    filtroMes.addEventListener('change', function () {
-        filtroMesSelecionado = parseInt(filtroMes.value);
-        carregarItens(sessionStorage.getItem('usuarioId'), 1, filtroMesSelecionado, parseInt(filtroSetor.value));
-        mostrarSaldoTotal(usuarioId, filtroMesSelecionado, parseInt(filtroSetor.value));
-    });
-  
-    filtroSetor.addEventListener('change', function () {
-        filtroSetorSelecionado = parseInt(filtroSetor.value);
-        carregarItens(sessionStorage.getItem('usuarioId'), 1, parseInt(filtroMes.value), filtroSetorSelecionado);
-        mostrarSaldoTotal(usuarioId, parseInt(filtroMes.value), filtroSetorSelecionado);
-    });
-  
-  
-  });
-  
-  
-  
-  let filtroMesSelecionado;
-  let filtroSetorSelecionado;
-  let totalPages = 0;
-  let currentPage = 1;
-  const itemsPerPage = 10; // Número de itens por página
-  
-  
-  function mostrarSaldoTotal(usuarioId, mes, setor) {
-    const endpoint = `http://localhost:8080/item/saldo/${usuarioId}`;
-    let queryParams = '';
-  
-    if (mes !== undefined && mes !== 0) {
-        filtroMesSelecionado = mes;
-        queryParams += `?mes=${mes}`;
-    }
-    if (setor !== undefined && setor !== 0) {
-        filtroSetorSelecionado = setor;
-        queryParams += `${queryParams ? '&' : '?'}setor=${setor}`;
-    }
-  
-    const urlCompleta = `${endpoint}${queryParams}`;
-  
-    fetch(urlCompleta)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro ao obter saldo total: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data !== undefined) {
-                const saldoTotalFormatted = parseFloat(data).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                document.getElementById('input-valor-total').value = `R$ ${saldoTotalFormatted}`;
-            } else {
-                throw new Error('Resposta do servidor não contém um valor definido.');
-            }
-        })
-        .catch(error => {
-            console.error('Erro:', error.message);
-        });
-  }
-  
-  
-  // Função para carregar os itens na tabela
-  function carregarItens(usuarioId, page, mes, setor) {
-    const tabelaCorpo = document.getElementById('tabelaCorpo');
-    tabelaCorpo.innerHTML = '';
-    let endpoint = `http://localhost:8080/item/usuario/${usuarioId}?page=${page - 1}&size=${itemsPerPage}`;
-  
-    if (mes !== undefined && mes !== 0) {
-        endpoint += `&mes=${mes}`;
-    }
-    if (setor !== undefined && setor !== 0) {
-        endpoint += `&setor=${setor}`;
-    }
-    fetch(endpoint)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Não foi possível obter os dados dos itens.');
-            }
-            return response.json();
-        })
-  
-        .then(data => {
-            // Verifique se o objeto data possui uma propriedade chamada 'content'
-            if (data.hasOwnProperty('content')) {
-                const itens = data.content;
-  
-                // Agora você pode iterar sobre os itens
-                itens.forEach(item => {
-                    tabelaCorpo.appendChild(adicionarLinha(item.produto, item.dataCompra, item.valor, item.descricao, item.cdItem));
-                });
-  
-                totalPages = data.totalPages;
-                currentPage = page;
-                document.getElementById('page-number').innerText = currentPage;
-  
-            } else {
-                console.error("Resposta da API não possui a propriedade 'content'.");
-            }
-        })
-        .catch(error => {
-            console.error('Ocorreu um erro ao tentar obter os itens:', error.message);
-        });
-  }
-  
-  function adicionarLinha(produto, data, valor, descricao, id) {
-    const novaLinha = document.createElement('tr');
-    const valorFormatted = parseFloat(valor).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    novaLinha.innerHTML = `
-                        <td id="td-produto"><input id="input-produto" type="text" class="form-control" value="${produto}" disabled></td>
-                        <td id="td-data"><input id="input-data" type="text" class="form-control" value="${formatarData(data)}" disabled></td>
-                        <td id="td-valor"><input id="input-valor" type="text" class="form-control" value="R$ ${valorFormatted}" disabled></td>
-                        <td>
-                          <div class="dropdown">
-                             <div class="d-flex justify-content-center align-items-center" id="caixa-desc">
-                                <button class="botao-mais-descricao" data-bs-toggle="dropdown">
-                                    <i id="icon-mais-descricao" class="bi bi-plus-circle"></i>
-                                </button>
-                                <ul id="dropdown-desc" class="dropdown-menu">
-                                    <li>
-                                        ${descricao || 'Não possui descrição'}
-                                    </li>                                    
-                                </ul>
-                            </div> 
-                         </div> 
-                        </td> 
-                        <td>
-                              <div class="d-flex justify-content-center align-items-center">
-                                 <button class="botao-alterar-item" data-item-id="${id}"><i id="icon-mais-descricao"
-                                     class="bi bi-pencil"></i>
-                                 </button>
-                          </div> 
-                          </td>
-                         <td>
-                              <div class="d-flex justify-content-center align-items-center">
-                                 <button class="botao-deletar-item" data-item-id="${id}"><i id="icon-mais-descricao"
-                                     class="bi bi-trash3"></i>
-                                 </button>
-                          </div> 
-                          </td>
-                    `;
-  
-  
-    const botaoDeletarItem = novaLinha.querySelector('.botao-deletar-item');
-    botaoDeletarItem.addEventListener('click', () => confirmarDeletar(botaoDeletarItem.dataset.itemId));
-  
-    return novaLinha;
-  }
-  
-  function confirmarDeletar(itemId) {
-    Swal.fire({
-        title: 'Remoção de item!',
-        text: 'Você tem certeza que deseja remover o item?',
-        icon: 'question',
-        showCancelButton: true, // Adiciona o botão de cancelar
-        cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Confirmar',
-        confirmButtonColor: '#5C7243',
-        cancelButtonColor: '#A3C977'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            deletarItem(itemId);
-        }
-    });
-  }
-  
-  function deletarItem(itemId) {
-    // Aqui você faz o fetch para deletar o item com a ID específica
-    fetch(`http://localhost:8080/item/deletar/${itemId}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-            // Aqui você pode incluir cabeçalhos adicionais, se necessário
-        },
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao deletar item');
-            }
-            carregarItens(sessionStorage.getItem('usuarioId'), 1, filtroMesSelecionado, filtroSetorSelecionado);
-            mostrarSaldoTotal(sessionStorage.getItem('usuarioId'), filtroMesSelecionado, filtroSetorSelecionado);
-            // Se necessário, faça algo após a deleção bem-sucedida
-        })
-        .catch(error => {
-            console.error('Erro ao deletar item:', error);
-        });
-  }
-  
-  const nextPageButton = document.getElementById('next-page');
-  if (nextPageButton) {
-    nextPageButton.disabled = currentPage === totalPages;
-    nextPageButton.style.cursor = currentPage === totalPages ? 'default' : 'pointer';
-  
-    nextPageButton.addEventListener('click', function (event) {
-        event.preventDefault();
-  
-        if (currentPage < totalPages) {
-            carregarItens(sessionStorage.getItem('usuarioId'), currentPage + 1, filtroMesSelecionado, filtroSetorSelecionado);
-            currentPage += 1; // Atualiza a variável currentPage
-            updateCursorStyle(); // Atualiza o estilo do cursor após mudar de página
-        }
-    });
-  }
-  
-  const prevPageButton = document.getElementById('prev-page');
-  if (prevPageButton) {
-    prevPageButton.disabled = currentPage === 1;
-    prevPageButton.style.cursor = currentPage === 1 ? 'default' : 'pointer';
-  
-    prevPageButton.addEventListener('click', function (event) {
-        event.preventDefault();
-  
-        if (currentPage > 1) {
-            carregarItens(sessionStorage.getItem('usuarioId'), currentPage - 1, filtroMesSelecionado, filtroSetorSelecionado);
-            currentPage -= 1; // Atualiza a variável currentPage
-            updateCursorStyle(); // Atualiza o estilo do cursor após mudar de página
-        }
-    });
-  }
-  
-  function updateCursorStyle() {
-    const nextPageButton = document.getElementById('next-page');
-    const prevPageButton = document.getElementById('prev-page');
-  
-    if (nextPageButton) {
-        nextPageButton.disabled = currentPage === totalPages;
-        nextPageButton.style.cursor = currentPage === totalPages ? 'default' : 'pointer';
-  
-  
-    }
-  
-    if (prevPageButton) {
-        prevPageButton.disabled = currentPage === 1;
-        prevPageButton.style.cursor = currentPage === 1 ? 'default' : 'pointer';
-  
-    }
-  }
-  
-  // FORMATA A DATA PARA APARECER CONFORME O EXEMPLO : 02/02/2024, COM "0" EM NÚMEROS UNITÁRIOS.
-  function formatarData(dataArray) {
-    const [ano, mes, dia] = dataArray;
-    const mesFormatado = mes.toString().padStart(2, '0');
-    const diaFormatado = dia.toString().padStart(2, '0');
-  
-    // FORMATA A DATA PARA APARECER CONFORME O EXEMPLO: 02/02/24, SEM O "20" DO ANO.
-    if (window.innerWidth <= 460) {
-        // Formata a data para "DD/MM/YY"
-        return `${diaFormatado}/${mesFormatado}/${ano.toString().slice(-2)}`;
-  
-    } else {
-        return `${diaFormatado}/${mesFormatado}/${ano}`;
-    }
-  
-  }
-  
-  
-  
-  
-  // Função para verificar e ocultar o menu lateral em telas menores
-  function hideMenuOnSmallScreens() {
+
+
+function hideMenuOnSmallScreens() {
     var screenWidth = window.innerWidth;
     var menuLateral = document.getElementById('menuLateral');
     var menuSUPERIOR = document.getElementById('menuSUPERIOR');
-    var reduzirDescricaoParaDesc = document.getElementById('reduzir-descricao-para-desc');
-    var reduzirEditar = document.getElementById('reduzir-editar');
-    var reduzirDeletar = document.getElementById('reduzir-deletar');
   
   
     if (screenWidth <= 460) { // Se a largura da tela for 460 pixels ou menos
-        menuLateral.style.display = 'none'; // Oculta o menu lateral
-        menuSUPERIOR.style.display = 'block';
-        reduzirDescricaoParaDesc.innerText = '';
-        reduzirDeletar.innerText = '';
-        reduzirEditar.innerText = '';
+      menuLateral.style.display = 'none'; // Oculta o menu lateral
+      menuSUPERIOR.style.display = 'block';
+  
   
     } else {
-        menuLateral.style.display = 'block'; // Exibe o menu lateral
-        menuSUPERIOR.style.display = 'none';
-        reduzirDescricaoParaDesc.innerText = 'Descrição';
-        reduzirDeletar.innerText = 'Deletar';
-        reduzirEditar.innerText = 'Editar';
+      menuLateral.style.display = 'block'; // Exibe o menu lateral
+      menuSUPERIOR.style.display = 'none';
+  
+  
     }
   }
   
-  // Chama a função quando a página é carregada e quando a janela é redimensionada
   window.onload = hideMenuOnSmallScreens;
   window.onresize = hideMenuOnSmallScreens;
   
   function stopPropagation(event) {
     event.stopPropagation();
   }
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const formulario = document.querySelector("#cadastroForm");
+  
+    formulario.addEventListener('submit', function (event) {
+      event.preventDefault();
+      validarCampos();
+    });
+  
+    // Adicionando a validação em tempo real
+    formulario.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', function () {
+        if (this.value.trim() !== '') {
+          this.classList.remove('input-invalido');
+          this.classList.add('input-valido');
+        } else {
+          this.classList.remove('input-valido');
+          this.classList.add('input-invalido');
+        }
+      });
+  
+      const urlParams = new URLSearchParams(window.location.search);
+      const itemId = urlParams.get('id');
+  
+      // Se você tiver o ID do item, faça uma solicitação para obter os detalhes do item
+      if (itemId) {
+        // Substitua 'http://localhost:8080/item/' pela URL correta do seu backend
+        fetch(`http://localhost:8080/item/item/${itemId}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Erro ao obter detalhes do item');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Preencha os campos de entrada com os valores do item
+            document.getElementById('nome').value = data.produto;
+            document.getElementById('data').value = formatarDataParaInputDate(data.dataCompra);
+            document.getElementById('valor').value = data.valor;
+            if (data.quantidade === 0) {
+              document.getElementById('qtde').style.display = "none";
+              document.getElementById('lb-qtde').style.display = "none";
+            } else {
+              document.getElementById('qtde').style.display = 'block';
+              document.getElementById('lb-qtde').style.display = "block";
+              document.getElementById('qtde').value = data.quantidade;
+            }
+            document.getElementById('descricao').value = data.descricao;
+          })
+          .catch(error => {
+            console.error('Erro ao obter detalhes do item:', error);
+          });
+      } else {
+        console.error('ID do item não fornecido na URL');
+      }
+  
+    });
+    // Este bloco de código será executado após o carregamento do DOM
+  
+    const nomeUsuario = sessionStorage.getItem('nomeUsuario');
+    const elementoNomeUsuario = document.getElementById('link-usuario');
+    const elementoNomeUsuario2 = document.getElementById('link-usuario2');
+  
+  
+    elementoNomeUsuario.innerText = nomeUsuario;
+    elementoNomeUsuario2.innerText = nomeUsuario;
+  
+  
+  
+  
+    formulario.addEventListener('submit', function (event) {
+      event.preventDefault();
+      validarAlteracao();
+    });
+  });
+  
+  function formatarDataParaInputDate(dataArray) {
+    const [ano, mes, dia] = dataArray;
+    const mesFormatado = (mes < 10 ? '0' : '') + mes; // Adiciona um zero à esquerda se o mês for menor que 10
+    const diaFormatado = (dia < 10 ? '0' : '') + dia; // Adiciona um zero à esquerda se o dia for menor que 10
+    return `${ano}-${mesFormatado}-${diaFormatado}`;
+  }
+  
+  function validarAlteracao() {
+    const itemId = obterItemIdDaURL(); // Obtém o ID do item da URL
+    const dataCompra = document.getElementById("data").value;
+    const dataCompraDate = new Date(dataCompra);
+    const ano = dataCompraDate.getFullYear();
+    const mes = (dataCompraDate.getMonth() + 1).toString().padStart(2, '0'); // Adiciona um zero à esquerda se for necessário
+    const dia = dataCompraDate.getDate().toString().padStart(2, '0'); // Adiciona um zero à esquerda se for necessário
+    const formatoData = `${ano}-${mes}-${dia}`;
+    const form = document.getElementById("cadastroForm");
+    const novoItem = {
+      produto: document.getElementById('nome').value,
+      dataCompra: formatoData,
+      valor: parseFloat(document.getElementById('valor').value),
+      descricao: document.getElementById('descricao').value
+    }
+  
+    const quantidadeInput = document.getElementById('qtde');
+    const quantidade = parseInt(quantidadeInput.value);
+    if (quantidadeInput.style.display !== 'none') {
+      novoItem.quantidade = quantidade;
+    } else {
+      novoItem.quantidade = 0; // Defina a quantidade como zero se o campo estiver oculto
+    }
+
+    form.classList.remove("was-validated");
+  
+    let validacao = true;
+  
+    if (novoItem.produto.trim() === "" || novoItem.dataCompra.trim() === "" || isNaN(novoItem.valor)) {
+      validacao = false;
+    }
+  
+    if (!validarCampos()) {
+      validacao = false;
+    }
+  
+    if (validacao) {
+      alterarItem(itemId, novoItem);
+    } else {
+      form.classList.add("was-validated");
+    }
+  }
+  
+  function obterItemIdDaURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+  }
+  
+  
+  function alterarItem(id, novoItem) {
+    fetch(`http://localhost:8080/item/alterar/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(novoItem)
+    })
+      .then(response => {
+        if (response.ok) {
+          Swal.fire({
+            title: 'Alteração bem sucedida!',
+            text: 'Item alterado com sucesso!',
+            icon: 'success',
+            confirmButtonText: 'Avançar',
+            confirmButtonColor: '#5C7243'
+          }).then(() => {
+            limparCampos();
+            window.location.href = "../ItensCadastrados/ItensCadastrados.html";
+          });
+        } else {
+          throw new Error('Erro ao tentar alterar o item');
+        }
+      })
+      .catch(function (error) {
+        console.error("Erro na requisição fetch:", error);
+        Swal.fire({
+          title: 'Erro!',
+          text: 'Erro ao tentar alterar o item. Por favor, tente novamente mais tarde.',
+          icon: 'error',
+          confirmButtonText: 'Voltar'
+        });
+      });
+  }
+  
+  
+  function redirecionarCancelar() {
+    window.location.href = "../ItensCadastrados/ItensCadastrados.html";
+    limparCampos();
+  }
+  
+  function limparCampos() {
+    document.getElementById("nome").value = "";
+    document.getElementById("data").value = "";
+    document.getElementById("valor").value = "";
+    document.getElementById("qtde").value = "";
+    document.getElementById("descricao").value = "";
+  }
+  
+  
+  function validarCampos() {
+  const produto = document.getElementById("nome");
+  const dataCompra = document.getElementById("data");
+  const valorUnitario = document.getElementById("valor");
+  const quantidade = document.getElementById("qtde");
+
+  const camposValidos = [produto, dataCompra, valorUnitario].every(campo => campo.value.trim() !== "");
+
+  if (!camposValidos) {
+    [produto, dataCompra, valorUnitario, quantidade].forEach(campo => campo.classList.add('input-invalido'));
+  } else {
+    [produto, dataCompra, valorUnitario, quantidade].forEach(campo => campo.classList.remove('input-invalido'));
+  }
+
+  return camposValidos;
+}

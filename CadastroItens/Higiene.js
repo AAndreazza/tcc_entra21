@@ -123,7 +123,8 @@ function cadastrar(produto, formatoData, valorUnitario, quantidade, descricao, u
           title: 'Cadastro bem sucedido!',
           text: 'Item cadastrado com sucesso!',
           icon: 'success',
-          confirmButtonText: 'Avançar'
+          confirmButtonText: 'Avançar',
+          confirmButtonColor: '#5C7243'
         }).then(() => {
           limparCampos();
           window.location.href = "../ItensCadastrados/ItensCadastrados.html";
