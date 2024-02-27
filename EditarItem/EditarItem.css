@@ -3,15 +3,7 @@ a {
     color: #FFFFFF;
 }
 
-#link-usuario2 {
-    text-decoration: underline;
-}
-
-#link-usuario2:hover {
-    color: #A3C977;
-}
-
-/*ESTILIZAÇÃO DO MENU LATERAL*/
+/*ESTILIZAÇÃO DO MENU LATERAL*/ 
 .MenuLATERAL {
     background-color: #5C7243;
     width: 80%;
@@ -66,14 +58,15 @@ a {
     border-radius: 20px;
     border: none;
     padding: 5px 15px;
-    margin: 50px 0 0 20px;
+    margin: 30px 0 0 20px;
 }
 
 #link-itens:hover {
     color: #5C7243;
 }
 
-/*ESTILIZAÇAO DO MENU SUPERIOR*/
+
+/*ESTILIZAÇAO DO MENU SUPERIOR*/ 
 .container a {
     color: white;
     text-decoration: none;
@@ -132,30 +125,114 @@ a {
     margin-top: -20px;
 }
 
-#link-itens-flex:hover {
+#link-itens-flex:hover,
+#link-itens:hover {
     color: #5C7243;
 }
 
-/*ESTILIZAÇÃO DOS CARDS*/
-.col-9 {
-    margin: 50px auto;
+/*ESTILIZAÇÃO DO CARD*/ 
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    background-color: #97b871;
 }
 
-.card {
+.btn-secondary:hover {
+    background-color: #97b871;
+}
+
+.input-invalido {
+    border: 2px solid rgb(230, 35, 35) !important;
+    /* !important para a borda vermelha*/
+}
+
+.input-valido {
+    border: 2px solid rgb(23, 177, 23) !important;
+    /* !important para a borda verde*/
+}
+
+.containerCard {
+    background-color: #CDE1B7;
+    color: #466F17;
+    width: 650px;
+    padding: 20px 20px 10px 20px;
+    border-radius: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.containerCard h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.containerCard label {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerCard input {
+    background-color: #E6E6E6;
     border: none;
     border-radius: 10px;
-    width: 300px;
-    height: 180px;
-    background-color: #A3C977;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.containerCard .botoesCadastro {
+    display: flex;
     justify-content: center;
 }
 
-.card-title,
-.card-text {
-    text-align: center;
+.cancelar,
+.cadastrar {
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    font-weight: bold;
+    font-size: medium;
+    padding: 10px;
+    margin: auto;
 }
 
-/*ESTILIZAÇÃO DO RODAPÉ*/
+.cadastrar {
+    background-color: #5C7243;
+}
+
+.cancelar {
+    background-color: #A3C977;
+}
+
+.containerCard .botoesCadastro .cadastrar:hover {
+    color: #CDE1B7;
+}
+
+.containerCard .botoesCadastro .cancelar:hover {
+    color: #5C7243;
+}
+
+.containerCard input#descricao {
+    height: 150px;
+}
+
+.container span {
+    border: none;
+    color: white;
+    background-color: #5C7243;
+}
+
+form input {
+    width: 100%;
+}
+
+/*ESTILIZAÇÃO DO RODAPÉ*/ 
 .footer {
     bottom: 0;
 }
@@ -184,25 +261,25 @@ a {
     font-size: large;
 }
 
-
-/*FLEX PARA MOBILE*/
 @media only screen and (max-width: 460px) {
 
+    .col-9 {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .containerCard {
+        width: 100%;
+        margin: 20px 5px 20px 30px;
+        justify-content: center;
+    }
+
     .MenuSUPERIOR {
-        width: 450px;
         color: white;
     }
 
-    .col-9 {
-        margin: 20px 0 20px 75px;
-    }
-
-    footer {
-        width: 450px;
-        align-items: center;
-    }
-
     #rodape {
+        padding-left: 20px;
         margin-left: 0;
     }
 

@@ -3,6 +3,14 @@ a {
   color: #FFFFFF;
 }
 
+#link-usuario2 {
+  text-decoration: underline;
+}
+
+#link-usuario2:hover {
+  color: #A3C977;
+}
+
 /*ESTILIZAÇÃO DO MENU LATERAL*/
 .MenuLATERAL {
   background-color: #5C7243;

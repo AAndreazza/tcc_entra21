@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itens cadastrados</title>
+    <title>Editar Itens</title>
     <link rel="shortcut icon" href="../Logos/2-cortada.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="ItensCadastrados.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="EditarItem.css">
+    <script src="EditarItem.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
@@ -22,12 +22,11 @@
         <div class="container ">
             <div class="d-flex ">
                 <div class="d-flex align-items-center">
-                    <a href="../PaginaPrincipal/PaginaPrincipal.html"><img src="../Imagens/2-cortada.png"
+                    <a href="../PaginaPrincipal/PaginaPrincipal.html"> <img src="../Imagens/2-cortada.png"
                             alt="Logo da Cash Control" style="height: 70px" class="mr-3">
                     </a>
-
                     <!-- NOME DO USUÁRIO -->
-                    <p id="nome-usuario" class="text-center m-0"> Olá, <a href="../PerfilUsuario/PerfilUsuario.html"
+                    <p id="nome-usuario" class="text-center m-0">Olá, <a href="../PerfilUsuario/PerfilUsuario.html"
                             id="link-usuario">usuário</a></p>
                 </div>
 
@@ -89,13 +88,15 @@
                             <a href="../CadastroItens/Transporte.html"> Transporte </a>
                         </li>
                         <li class="mt-2">
-                            <a href="../CadastroItens/Moradia.html"> Moradia </a>
-                        </li>
-                        <li class="mt-2">
                             <a href="../CadastroItens/Vestuario.html"> Vestuário </a>
                         </li>
                         <li class="mt-2">
                             <a href="../CadastroItens/Outros.html"> Outros</a>
+                        </li>
+                        <li class="mt-4">
+                            <button id='botao-itens-flex' type="button" class="btn">
+                                <a id="link-itens-flex" href="../ItensCadastrados/ItensCadastrados.html"> Cadastrados
+                                </a></button>
                         </li>
                     </ul>
                 </div>
@@ -103,9 +104,8 @@
         </div>
     </div>
 
-
     <!-- MENU LATERAL -->
-    <div class="row" id="porColunas">
+    <div class="row">
         <div class="col-3">
             <div class="MenuLATERAL " id="menuLateral">
                 <div class="container">
@@ -151,118 +151,65 @@
                                 </a></div>
                             <div class="mt-3"><a href="../CadastroItens/Saude.html"> Saúde </a></div>
                             <div class=" mt-3"><a href="../CadastroItens/Transporte.html"> Transporte </a></div>
-                            <div class=" mt-3"><a href="../CadastroItens/Moradia.html"> Moradia </a></div>
                             <div class=" mt-3"><a href="../CadastroItens/Vestuario.html"> Vestuário </a></div>
                             <div class=" mt-3" style="border-bottom: none;"><a href="../CadastroItens/Outros.html">
                                     Outros </a></div>
                         </div>
                     </div>
+
+                    <button id='botao-itens' type="button" class="btn">
+                        <a id="link-itens" href="../ItensCadastrados/ItensCadastrados.html"> ITENS CADASTRADOS
+                        </a></button>
                 </div>
             </div>
         </div>
 
-
-        <!-- CARD -->
+        <!--CRIANDO O CARD DE CADASTRO-->
         <div class="col-9">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="containerCard">
-                            <p class="itens-cadastrados"> Itens Cadastrados</p>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th style="font-size: large;" scope="col">Produto</th>
-                                            <th style="font-size: large;" scope="col">Data</th>
-                                            <th style="font-size: large;" scope="col">Valor</th>
-                                            <th id="reduzir-descricao-para-desc" style="font-size: large;" scope="col">Descrição</th>
-                                            </th>
-                                            <th id="reduzir-editar" style="font-size: large;" scope="col">Editar
-                                            </th>
-                                            <th id="reduzir-deletar" style="font-size: large;" scope="col"> Deletar
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tabelaCorpo">
-                                        <!-- Conteúdo da tabela vai aqui -->
-                                    </tbody>
-                                </table>
-                            </div>
+            <div class="col d-flex justify-content-center ">
+                <div class="containerCard  ">
+                    <h2>ALTERAR ITEM</h2>
 
-                            <div class="pagination-controls d-flex" id="div-ultimos-itens">
-
-                                <!-- FILTRO POR MÊS -->
-                                <div class="row mt-3 align-items-center">
-
-                                    <div class="col-md-3" id="div-filtro-mes">
-                                        <select id="filtro-mes" class="form-select">
-                                            <option value="0">Mês</option>
-                                            <option value="01">Janeiro</option>
-                                            <option value="02">Fevereiro</option>
-                                            <option value="03">Março</option>
-                                            <option value="04">Abril</option>
-                                            <option value="05">Maio</option>
-                                            <option value="06">Junho</option>
-                                            <option value="07">Julho</option>
-                                            <option value="08">Agosto</option>
-                                            <option value="09">Setembro</option>
-                                            <option value="10">Outubro</option>
-                                            <option value="11">Novembro</option>
-                                            <option value="12">Dezembro</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- FILTRO POR CATEGORIA -->
-                                    <div class="col-md-3" id="div-filtro-categoria">
-                                        <select id="filtro-categoria" class="form-select">
-                                            <option value="0">Setor</option>
-                                            <option value="01">Cuidados Pessoais</option>
-                                            <option value="02">Educação</option>
-                                            <option value="03">Financiamento</option>
-                                            <option value="04">Imposto</option>
-                                            <option value="05">Lazer</option>
-                                            <option value="06">Mercado - Alimentos</option>
-                                            <option value="07">Mercado - Bebidas</option>
-                                            <option value="08">Mercado - Higiene</option>
-                                            <option value="09">Mercado - Limpeza</option>
-                                            <option value="10">Mercado - Nota Fiscal</option>
-                                            <option value="11">Moradia</option>
-                                            <option value="12">Poupança e Investimento</option>
-                                            <option value="13">Saúde</option>
-                                            <option value="14">Transporte</option>
-                                            <option value="15">Vestuário</option>
-                                            <option value="16">Outros</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- TOTAL -->
-
-                                <div id="card-valor-total" class="col-md-4 d-flex">
-                                    <label id="label-valor-total" for="input-valor-total" class="form-label">Total:
-                                    </label>
-                                    <input id="input-valor-total" type="text" class="form-control"
-                                        placeholder="Valor Total" disabled style="background-color: #E6E6E6;">
-                                </div>
-
-                                <div class="pagination-controls d-flex justify-content-center align-items-center">
-                                    <div class="d-flex" id="iconesPagination">
-                                        <a href="#" id="prev-page" class="prev-page disabled">
-                                            <i class="bi bi-dash-circle green-icon" style="margin-right: 5px;"></i>
-                                        </a>
-                                        <p id="page-number" class="page-number">1</p>
-                                        <a href="#" id="next-page" class="next-page">
-                                            <i class="bi bi-plus-circle green-icon" style="margin-left: 5px;"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- FAZER EDIÇÃO -->
+                    <form id="cadastroForm" novalidate>
+                        <div>
+                            <label> PRODUTO </label>
+                            <input type="text" id="nome" name="nome" class="form-control" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback ">Preencha o campo.</div>
                         </div>
-                    </div>
+                        <div>
+                            <label> DATA DE COMPRA </label>
+                            <input type="date" id="data" name="data" class="form-control" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Preencha o campo.</div>
+                        </div>
+                        <div>
+                            <label> VALOR UNITÁRIO </label>
+                            <input type="number" id="valor" name="valor" class="form-control" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Preencha o campo.</div>
+                        </div>
+                        <div>
+                            <label id="lb-qtde"> QUANTIDADE </label>
+                            <input type="number" id="qtde" name="qtde" class="form-control" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Preencha o campo.</div>
+                        </div>
+                        <div>
+                            <label> DESCRIÇÃO DO PRODUTO </label>
+                            <input type="text" id="descricao" name="descricao" required>
+                        </div>
+                        <div class="botoesCadastro">
+                            <button class="cancelar" onclick="redirecionarCancelar()">CANCELAR</button>
+                            <button type="submit" class="cadastrar" id="botao">ALTERAR</button>
+                        </div>
                 </div>
+                </form>
             </div>
         </div>
+
+
     </div>
 
     <!-- RODAPÉ -->
@@ -288,7 +235,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="ItensCadastrados.js"></script>
+
 </body>
 
 </html>

@@ -1,21 +1,23 @@
-/*ESTILIZAÇÃO CABEÇALHO*/
+/*ESTILIZAÇÃO CABEÇALHO*/ 
 header {
     background-color: #5C7243;
     padding-left: 20px;
     padding-right: 100px;
 }
 
-#headerEntrar,#headerCadastrar {
+#headerEntrar,
+#headerCadastrar {
     align-items: end;
     font-weight: 600;
     color: #ffffff;
 }
 
-.headerEntrar:hover, .headerCadastrar:hover {
+.headerEntrar:hover,
+.headerCadastrar:hover {
     color: #A3C977;
 }
 
-/*ESTILIZAÇÃO DA PARTE INICIAL*/
+/*ESTILIZAÇÃO DA PARTE INICIAL*/ 
 .mainStart {
     background-color: #5C7243;
     display: flex;
@@ -64,7 +66,7 @@ header {
     color: #5C7243;
 }
 
-/*ESTILIZAÇÃO DO CAROUSEL*/
+/*ESTILIZAÇÃO DO CAROUSEL*/ 
 .col-12 {
     margin-top: -70px;
 }
@@ -74,7 +76,8 @@ header {
     transform: scale(1.1);
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
     width: 25px;
     height: 25px;
     background-color: #7c995a;
@@ -84,7 +87,8 @@ header {
     margin-right: 50px;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
     background-size: 80%;
     width: 30px;
     height: 30px;
@@ -98,7 +102,7 @@ header {
     color: #5C7243;
 }
 
-/*ESTILIZAÇÃO DO MAIN DEVS*/
+/*ESTILIZAÇÃO DO MAIN DEVS*/ 
 .mainDevs {
     background-color: #ffffff;
     color: #5C7243;
@@ -205,34 +209,31 @@ svg {
 #frase-impacto {
     color: #FFFFFF;
     text-align: center;
-    font-size: medium;
-    margin-left: -150px;
+    font-size: large;
+    margin-left: -80px;
 }
 
-#frase-newsletter {
-    font-size: small;
-    padding-left: 15px;
-}
-
-#input-email {
-    font-size: smaller;
-    width: 230px;
-    border-radius: 20px;
-    margin-top: -10px;
-}
-
-#botao-inscreva-se {
+#botao-atendimento {
     color: #495b36;
     background-color: #A3C977;
     font-size: smaller;
     border-radius: 20px;
     margin-top: -10px;
     font-weight: 600;
+    width: 230px;
+    margin-left: 200px;
+
 }
 
-#botao-inscreva-se:hover {
+#botao-atendimento:hover {
     background-color: #7c995a;
     color: white;
+}
+
+#link-atendimento {
+    text-decoration: none;
+    color: #FFFFFF;
+
 }
 
 /* FLEX-BOX PARA MOBILE*/
@@ -252,10 +253,7 @@ svg {
 
     #frase-impacto {
         margin-left: 0px;
-    }
-
-    #frase-newsletter {
-        padding-left: 0px;
+        font-size: small;
     }
 
     header {
@@ -268,5 +266,9 @@ svg {
         margin-top: 175px;
         margin-left: 5px;
         margin-right: 5px;
+    }
+
+    #botao-atendimento {
+        margin-left: 100px;
     }
 }
