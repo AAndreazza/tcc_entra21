@@ -31,6 +31,10 @@ function validarCadastro() {
     validacao = false;
   }
 
+  if (tel.length != 14){
+    validacao = false;
+  }
+
   if (senha !== senhaConfirmar) {
     document.getElementById("senha").classList.add("is-invalid");
     document.getElementById("senha-feedback").innerText = "As senhas não coincidem.";
@@ -48,6 +52,7 @@ function validarCadastro() {
   if (validacao) {
     cadastrar(nome, email, senha, cpf, tel);
   } else {
+    informarErro();
     form.classList.add("was-validated");
   }
 }
@@ -170,4 +175,13 @@ function formatarCpf(input) {
   }
 
   input.value = numero;
+}
+
+function informarErro(){
+  Swal.fire({
+    title: 'Cadastro inválido!',
+    text: 'Informações informadas estão incorretas!',
+    icon: 'error',
+    confirmButtonText: 'Avançar'
+})
 }
