@@ -66,7 +66,7 @@ a {
   border-radius: 20px;
   border: none;
   padding: 5px 15px;
-  margin: 50px 0 0 20px;
+  margin: 50px 0 0 0;
 }
 
 #link-itens:hover {
@@ -308,6 +308,7 @@ td input {
   .containerCard {
     width: 112%;
     margin-left: 5px;
+    margin-top: 20px;
   }
 
   .MenuSUPERIOR {
@@ -342,7 +343,7 @@ td input {
     width: 90px;
     margin-left: 0;
   }
-  
+
   .bi {
     font-size: small;
     color: #000000;
@@ -400,7 +401,20 @@ td input {
   #frase-impacto {
     font-size: small;
   }
-}
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-   background-color: #97b871;
+
+  #imagem-rodape {
+    margin-left: 0px;
   }
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  background-color: #97b871;
+}
+
+#imagem-rodape {
+  margin-left: 30px;
+}
